@@ -1,0 +1,109 @@
+// create an NumPy ndarray object 
+
+import numpy as np
+arr = np.array([1,2,3,4,5])
+print(arr)
+print(type(arr))  // tells us the type of the object passed to it.
+
+// To create an ndarray, we can pass a list, tuple or any array-like object into the array() method,
+   and it will be converted an ndarray:
+   
+import numpy as np
+arr = np.array((1,2,3,4,5))
+print(arr)
+
+Output:
+[1,2,3,4,5]
+
+// 0-D arrays, or Scalars, are the element in an array. Each value in an array is a 0-D array.
+
+import numpy as np
+arr = np.array(42)
+print(arr)
+
+Output:
+42
+
+// An array that has 0-D arrays as its elements is called uni-dimensional or 1-D array.
+// create a 1-D array containing the values 1,2,3,4,5
+import numpy as np
+arr = np.array([1,2,3,4,5])
+print(arr)
+
+// An array that has 1-D arrays as its elements is called a 2-D array.
+// These are often used to represent matrix or 2nd order tensors.
+// NumPy has a whole sub module dedicated towards matrix operations called numpy.matrix
+// Create a 2-D array containing two arrays with the values 1,2,3 and 4,5,6:
+import numpy as np
+arr = np.array([[1,2,3],[4,5,6]])
+print(arr)
+
+Output:
+[[1 2 3]
+ [4 5 6]]
+ 
+// An array that has 2-D arrays(matrices) as its elements is called 3-D array.
+// These are often used to represent a 3rd order tensor.
+// create a 3-D array with 2-D arrays, both containing two arrays with the values 1,2,3 and 4,5,6:
+import numpy as np
+arr = np.array([[1,2,3],[4,5,6]],[[1,2,3],[4,5,6]])
+print(arr)
+
+
+// NumPy Arrays provides the ndim attribute that returns an integer that tells us how many dimensions the array have.
+import numpy as np
+a = np.array(42)
+b = np.array([1,2,3,4,5])
+c = np.array([[1,2,3],[4,5,6]])
+d = np.array([[1,2,3],[4,5,6]],[[1,2,3],[4,5,6]])
+print(a.ndim)
+print(b.ndim)
+print(c.ndim)
+print(d.ndim)
+
+Output:
+0
+1
+2
+3
+
+//when the array is created, you can define the number of dimensions by using the ndmin argument.
+// Create an array with 5 dimensions and verity that it has 5 dimensions.
+import numpy as np
+arr = np.array([1,2,3,4],ndmin=5)
+print(arr)
+print('number of dimensions :", arr.ndim)
+
+Output:
+[[[[[1 2 3 4]]]]]
+number of dimensions : 5
+
+
+Exercise:
+
+1, 
+Insert the correct syntax for printing the number 50 from the array
+
+arr = np.array([[10,20,30,40],[50,60,70,80]])
+print(arr[1,0])
+
+2, Insert the correct slicing syntax to print the following selection of the array:
+Everything from (including) the second item to (not including) the fifth item.
+
+arr = np.array([10,15,20,25,30,35,40])
+print(arr[1:4])
+
+3, Insert the correct slicing syntax to print the following selection of the array:
+Every other item from (including) the second item to (not including) the fifth item.
+
+arr = np.array([10,15,20,25,30,35,40])
+print(arr[1:4:2])
+
+
+
+
+
+
+
+
+

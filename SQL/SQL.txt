@@ -1,0 +1,395 @@
+1, Find the second highest salary in the emp table.
+A, select max(sal) from emp where sal not in(select max(sal) from emp); 
+   select max(sal) from emp where sal<(select max(sal) from emp);
+   
+2, Display the highest payed employess in each department 
+A, select max(sal) from emp; // return the maximum salary in the employee table
+   select min(sal) from emp; // return the minimum salary in the employee table  
+   select max(sal),deptno from emp group by deptno 
+   select min(sal),deptno from emp group by deptno 
+   
+  select count(*) from emp;
+  select count(*),deptno from emp group by deptno
+  
+3, Display alternate records in SQL
+A, select rownum,empno,sal,ename from emp; 
+   select rownum,empno,sal,ename from emp order by sal desc; // displays record in salary descening order
+   select * from (select empno,ename,sal, rownum rn from emp order by rn) where mod(rn, 2) <> 0;
+   
+4, Find duplicated values and its frequency of a coloumn.
+A, select count(ename) from emp;
+   select ename,count(*) from emp group by ename;
+   select ename,count(*) from emp group by ename having count(*)>1; 
+   select ename from emp group by ename having count(*)>1;
+   select ename from emp group by ename order by ename desc having count(*)>1; 
+   
+   
+5, Pattern matching in SQL (Like Operator) 
+
+ (a) Display the employee names whose name start with 'M'
+ (b) Display the employee names whose name ends with 'M'
+ (c) Display the names of all employees haveing 'M' in any position in their name.
+ (d) Display the names of all employees whose name does not contain 'M' anywhere.
+ 
+(a) select ename from emp where ename like 'M%'
+(b) select ename from emp where ename like '%N'
+(c) select ename from emp where ename like '%M%'
+(d) select ename from emp where ename not like '%M%'
+
+6, Pattern matching in SQL 
+ (a) Display names of all employees whose name contains exactly 4 letters.
+ (b) Display the names of employees whose name contains the (i) second letter as 'L'(ii)fourth letter as 'M'
+ (c) Display the employee names and hire dates for the employees joined in the month of december.
+ (d) Display the name of employess whose name contains exactly 2 'L's
+ (e) Display the names of employees whose name starts with 'J' and ends with 'S'
+ 
+(a) select ename from emp where ename like '____'
+(b)(i) select ename from emp where ename like '_L%'
+   (ii) select ename from emp where ename like '___M%'
+(c) select hiredate, ename from emp where hiredate like '%DEC%'
+(d) select ename from emp where ename like '%LL%' 
+(e) select ename from emp where ename like 'J%S'
+
+***************************************************************************************************************
+https://www.w3schools.com/sql/exercise.asp?filename=exercise_like1 
+
+7, Insert the missing statement to get all the columns from the Customers table.
+
+select * from customers;
+
+8, Write a statement that will select the City column from the Customers table. 
+
+select City from customers;
+
+9, Select all the different values from the Country column in the Customers table.
+
+select distinct Country from Customers;
+
+10, Select all records where the City column has the value "Berlin".
+
+select * from customers where City = "Berlin"
+
+11, Select all records where the CustomerID column has the value 32.
+
+select * from Customers where CustomerID = 32;
+
+12, Select all records from the Customers table, sort the result alphabetically by the column City.
+
+select * from customers order by City;
+
+13, Select all records from the Customers table, sort the result reversed alphabetically by the column City.
+
+select * from customers order by City desc;
+
+14, Select all records from the Customers table, sort the result alphabetically, first by the column Country, then, by the column City.
+
+select * from order by Country,City;
+
+15, Select all records where the City column has the value 'Berlin' and the PostalCode column has the value '12209'
+
+select * from customers where City = 'Berlin' and PostalCode = '12209';
+
+16, Select all records where the City column has the value 'Berlin' OR 'London'
+
+select * from customers where City = 'Berlin' or City = 'London'; 
+
+17, Use the NOT keyword to select all records where City is NOT "Berlin"
+
+select * from customers where not city = 'Berlin'
+
+18, Insert a new record in the Customers table
+
+insert into customers( CustomerName,Address,City,PostalCode,Country) values ('Hekkan Burger',Gateveien 15','Sandnes',4306','Norway');
+
+19, select all records from the Customers where the PostcalCode column is empty.
+
+select * from customers where PostalCode is NULL;
+
+20, Select all records from the Customers where the PostalCode column is NOT empty.
+
+select * from Customers where PostalCode is NOT NULL;
+
+21, Update the city column of all records in the Customers table.
+
+update Customers set City = 'Oslo'; 
+
+22, Set the value of the City columns to 'Osla', but only the ones where the Country column has the value "Norway"
+
+update Customers set City = 'Oslo' where Country = 'Norway';
+
+23, update the City value and the Country value.
+
+update Customers where City = 'Osla',Country = 'Norway' where CustomerID = 32;
+
+24, Delete all the records from the customers table where the Country value is 'Norway'.
+
+delete from customers where Country = 'Norway';
+
+25, Delete all the records from the Customers table.
+
+delet from Customers;
+
+26, Use the MIN function to select the record with the smallest value of the Price column.
+
+select min(Price) from products; 
+
+26, Use an SQL Function to select the record with the highest value of the Price column.
+
+select max(Price) from products;
+
+27, Use the correct function to return the number of records that have the Price value set to 18
+
+select count(*) from product where Price = 18;
+
+28, Use an SQL function to calculate the average Price of all products.
+
+select avg(Price) from products;
+
+29, Use an SQL function to calculate the sum of all the Price column values in the Products table.
+
+select sum(Price) from products;
+
+https://www.w3schools.com/sql/exercise.asp?filename=exercise_like1
+
+30, Select all records where the value of City column starts with the letter "a".
+
+select * from Customers where City like 'a%'; 
+
+31, Select all records where the value of the City column ends with the letter "a".
+
+select * from Customers where City like '%a';  
+
+32, Select all records where the value of the City column contains the letter "a".
+
+select * from Customers where City like '%a%';
+
+33, Select all records where the value of the City column starts with letter "a" and ends with the letter "b".
+
+select * from Customers where City like 'a%b';
+
+34, Select all records where the value of the City column does NOT start with the letter "a".
+
+select * from customers where City not like 'a%';
+
+35, Select all records where the second letter of the city is an "a".
+
+select * from customers where City like '_a%';
+
+36, Select all records where the first letter of the City is an "a" or "c" or an "s".
+
+select * from customers where City like '[acs]%';
+
+37, Select all records where the first letter of the City starts with anything from an "a" to an "f".
+
+select * from customers where City like '[a-f]%';
+
+38, select all records where the first letter of the City is NOT an "a" or a "c" or an "f".
+
+select * from customers where City like '[!acf]%' 
+
+39, Use the IN operator to select all the records where Country is either "Norway" or "France"
+
+select * from Customers Where Country in('Norway','France'); 
+
+40, Use the IN operator to select all the records where Country is NOT "Norway" and NOT "France".
+
+select * from Customers where Country not in ('Norway','France'); 
+
+41, USe the between operator to select all the records where the value of the Price column is between 10 and 20.
+
+select * from products where Price between 10 and 20; 
+
+42, Use the between operator to select all the records where the vlaue of the Price column in NOT between 10 and 20.
+
+select * from Products where price not between 10 and 20; 
+
+43, Use the between operator to select all the records where the value of the productName column is alphabetically between 
+    'Geltost' and 'Pavlova'.
+	
+select * from products where ProductName between 'Geitost' and 'Pavlova';
+
+44, When displaying the Customers table, make an ALIAS of the PostalCode column, the column should be called Pno instead.
+
+select CustomerName,Address,PostalCode as Pno from Customers;
+
+45, When displaying the Customers table, refer to the table as Consumers instead of Customers.
+
+select * from Customers as Consumers;
+
+46, Insert the missing parts in the JOIN clause to jion the two tables orders and Customers, 
+    using the CustomerID field in both tables as the relationship between the two tables.
+	
+select * from orders left join customers on orders.customerID = Customers.CustomerID; 
+
+47, Choose the correct join clause to select all records from the two tables where ther is a match in both tables.
+
+select * from Orders inner join Customers on Orders.CustomerID = Customers.CustomerID;
+
+48, Choose the correct JOIN clause to select all the records fromt he Customers table plus all the matches in the Orders table.
+
+select * from orders right join Customers On orders.CustomerID=Customers.CustomerID; 
+
+49, List the number of customs in each country. 
+
+select count(CustomerID),Country from Customers group by Country;
+
+50, List the number of customers in each country, ordered by the country with the most customers first. 
+
+select count(CustomerID), Country from Customers group by country Order by count(CustomerID) desc; 
+
+51, Write the correct SQL statement to create a new database called testDB.
+
+create database testDB;
+
+52, Write the correct SQL statement to delete a database named testDB.
+
+drop database testDB;
+
+53, Write the correct SQL statment to create a new table called Persons.
+
+create table Persons(
+	PersonID int,
+	LastName varchar(255),
+	FirstName varchar(255),
+	Address varchar(255),
+	City varchar(255)
+); 
+
+54, Write the correct SQL statement to delete a table called Persons.
+
+drop table Persons;
+
+55, Use the truncate statment to delete all data inside a table.
+
+truncate table Persons;
+
+56, Add a column of type DATE called Birthday.
+
+alter table persons add Birthday DATE;
+
+57, Delete the column Birthday from the Persons table.
+
+alter table Persons drop column Birthday 
+
+
+https://www.w3schools.com/sql/exercise.asp?filename=exercise_database7
+
+**************************************************************************************************
+
+https://www.w3schools.com/sql/sql_quiz.asp
+
+1, What does sQL stand for?
+A, Structured Query Language 
+
+2, Which SQL statement is used to extract data from a database?
+A, select
+
+3, Which SQL statement is used to update data in a database?
+A, update
+
+4, which SQL statement is used to delete data from a database?
+A, delete
+
+5, which SQL statement is used to insert new data in a database?
+A, insert into
+
+6, With SQL, how do you select a column named "FirstName" from a table named "Persons"?
+A, select FirstName from persons;
+
+7, With SQL, how do you select al lthe columns from a table named "Persons"?
+A, select * from persons
+
+8, With SQL, how do you select all the records from a table named "Persons" where the value of the column "FirstName" is "Peter"?
+A, select * from Persons where FirstName='Peter'
+
+
+9, With SQL, how do you select all the records from a table named "Persons" where the value of the column "FirstName" starts with an "a"?
+A, select * from person where firstName like 'a%';
+
+10, The OR operator displays a record if ANY conditions listed are true.
+    The AND operator displays a record if ALL of the conditions listed are true.
+A, True
+
+11, With SQL, how do you select all the records from a table named "Persons" where the "FirstName" is "Peter" and the "LastName" is "Jackson"?
+A, select * from Persons where FirtName = 'Peter' and LastName='Jackson'
+
+
+12, With SQL, how do you select all the records from a table named "Persons" where the "LastName" is alphabetically between (and including) "Hansen"
+    and "Pettersen"?
+A, select * from persons where LastName BETWEEN 'Hansen' AND 'Pettersen'
+
+13, Which SQL statement is used to return only different values?
+A, select distinct 
+
+14, Which SQL keyword is used to sort the result-set?
+A, order by
+
+15, With SQL, how can you return all the records from a table named "Persons" sorted descending by "FirstName"?
+A, select * from Persons ORDER BY FirstName DESC
+
+16, With SQL, how can you insert a new record into the "Persons" table?
+A, insert into Persons values('Jimmy','Jackson')
+
+17, With SQL, how can you insert "Olsen" as the "LastName" in the "Persons" table?
+A, insert into Persons(LastName) values("Olsen");
+
+18, How can you change "Hansen" into "Nilsen" in the "LastName" column in the Persons table?
+A, update Persons set lastName='Nilsen' where LastName='Hansen'
+
+19, With SQL,how can you delete the records where the "FirstName" is "Peter" in the Persons Table?
+A, delete from Persons where FirstName='Peter'
+
+20, With SQL,how can you return the number of records in the "Persons" table?
+A, select count(*) from Persons
+
+21, What is the most common type of join?
+A, inner join
+
+22, Which operator is used to select values within a range?
+A, between
+
+23, The NOT NULL constraint enforces a column to not accept NULL values.
+A, True
+
+24, Which operator is used to search for a specified pattern in a column?
+A, Like
+
+25, Which SQL statement is used to create a database table called 'Customers'>
+A, creat table Customers
+
+ https://www.w3schools.com/quiztest/result.asp
+ 
+ 
+ *******************************************************************************************************************
+
+
+	
+  
+
+
+   
+
+
+
+
+
+   
+
+    
+   
+   
+   
+  
+
+
+
+
+
+ 
+
+
+
+
+ 
+
+

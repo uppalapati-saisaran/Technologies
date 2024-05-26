@@ -1,0 +1,18 @@
+- NumPy is a Python library.
+- NumPy is used for working with arrays.
+- NumPy is short for "Numerical Python"
+
+- Starting with a basic introduction and ends up with creating and plotting random data sets, and working with NumPy functions:
+
+
+  Basic : Introduction, Getting Started, Creating Arrays, Array Indexing, Array Slicing, Data Types, Copy vs View, Array Shape,
+          Array Reshape, Array Iterating, Array Join, Array Split, Array Search, Array Sort, Array Filter.
+		 
+  Random : Random Intro, Data Distribution, Random Permutation, Seaborn Module, Normal Dist, Binomial Dist, Poisson Dist, Uniform Dist,
+           Logistic Dist, Multinomial Dist, Exponential Dis, Chi Square Dist, Rayleigh Dist, Pareto Dist, Zipf Dist.
+		   
+
+  ufunc : ufunc Intro, Create Function, Simple Arithmetic, Rounding Decimals, Logs, Summations, Products, Differences, Finding LCM
+          Finding GCD, Trigonometric, Hyperbolic and Set Operations.
+		  
+	

@@ -1,0 +1,33 @@
+  // file is located in the same folder as Python
+  f = open("demofile.txt","r")
+  print(f.read())
+  
+  // if the file is located in a different location,
+     you will have to specify the file path.
+  f = open("D:\\myfiles\welcome.txt","r")
+  print(f.read())
+  
+  // By default the read() method returns the whole text,
+  but you can also specify how many characters you want
+  to return.
+  f=open("demofile.txt","r")
+  print(f.read(5))
+  
+Read Lines:
+
+- You can return one line by using the readline() method:
+- By calling readline() two times, you can read the two first lines.
+  f = open("demofile.tx","r")
+  print(f.readline()) 
+  
+  
+- By looping through the lines of the file, you can read the
+  whole file, line by line:
+  
+  f = open("demofile.txt","r")
+  for x in f:
+	print(x) 
+	
+	
+
+

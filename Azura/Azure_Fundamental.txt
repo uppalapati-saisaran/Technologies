@@ -1,0 +1,348 @@
+* The primarily uses the Azura portal and command line interface to create resources and does not require scripting skills.
+
+
+****************************************************************************************************************************
+ 
+                        Introduction to Microsoft Azura Fundamentals 
+
+****************************************************************************************************************************
+
+* Azura has simple web services for hosting your business presence in the cloud. 
+* Azura also supports running fully virtualized computers managing your custom software solutions.
+* Azura provides a wealth of cloud based services like remote storage, database hosting, and centralized account management.
+* Azura also offers new capabilities like artifical intelligence, and Internet of Things focused services.
+
+What is Azura Fundamentals?
+
+* Many exercises provide a temporary Azura portal environment called the sandbox, which allows you to practice creating
+  cloud resources for free at your own pace.
+
+Why should I take Azura Fundamentals?
+
+* This exam includes three knowledge domain areas:
+
+(01) Describe cloud concepts
+(02) Describe Azura Architecture and services
+(03) Describe Azura management and governance
+
+******************************************************************************************************************************
+
+                             Introduction to cloud computing 
+
+*****************************************************************************************************************************
+
+What is cloud computing?
+
+- Cloud computing is the delivery of computing services over the internet.
+- Cloud computing services includes IT infrastructure such as virtual machines,storage,databases and networking.
+- Cloud services also expand the traditional IT offerings to include things like Internet of Things(IoT), machine learning (ML)
+  and artifical intelligence(AI).
+  
+Describe the shared responsibility model ?
+
+- With the shared responsibility model, these responsibilities get shared between the cloud provider and consumer.
+- The phyical security, power, cooling, and network connectivity are the responsibility of the cloud provider.
+- The consumer isn't collocated with the datacenter, so it wouldn't make sense for the consumer to have any of those responsilibities.
+  * At the same time, the consumer is responsible for the data and information stored in the cloud.
+  * The consumer is also responsible for access security, meaning you only give access to those who need it.
+  * At the same things, the responsilibility depends on the situation.
+  
+- The shared responsilibility model is heavily tied into the cloud service types: 
+  (01) Infrastructure as a service (Iaas) (02) Platform as a service (Paas) (03) Software as a service (Saas)
+  
+ https://learn.microsoft.com/en-us/training/modules/describe-cloud-compute/4-describe-shared-responsibility-model
+
+- Infrastructure as a service (Iaas) places the most responsibility on the consumer, with the cloud provider being responsiable
+  for the basics of physical security, power, and connectivity.
+- Software as a service (Saas)  places most of the responsibility with the cloud provider.
+- Platform as a service (Paas) being a middle ground between Iaas and Saas,
+  rests somewhere in the middle and evenly distributes responsibility between the cloud
+  provider and the consumer.
+
+- When using a cloud provider, you'll always be responsible for:
+  (01) The information and data stored in the cloud.
+  (02) Devices that are allowed to connect to our cloud
+       (cell phones, computers, and so on)
+  (03) The accounts and identifies of the people,services, and 
+       devices within your organization.
+	   
+- The cloud provider is always responsible for:
+  The physical datacenter, the physical network and the physical hosts.
+  
+- Your service model will determine responsibility for things like:
+  Operating systems, Network controls, Applications, Identity and infrastruture
+  
+Define cloud models?
+
+- The cloud models define the deployment type of cloud resources. 
+- The threee main models are: private, public, and hybrid.
+
+(01) Private cloud
+- Private cloud provides much greater control for the company and its IT deparment. However, it also comes with greater cost and 
+  fewer of the benefits of a public cloud deployment.
+- A private cloud may be hosted from your onsite datacenter.
+- It may also be hosted in a dedicated datacenter offsite, potentially even by a third party that has dedicated that datacenter
+  to your company.
+  
+  * Organizations have complete control over resources and security.
+  * Data is not collocated with other organizations' data
+  * Hardware must be purchased for startup and maintenance
+  * Organisations are responsible for hardware maintence and updates.
+
+(02) Public cloud 
+- The general public availability is a key difference between public 
+  and private clouds.
+  
+  * No capital expenditures to scale up.
+  * Applications ca be quickly provisioned and deprovisioned.
+  * Organizations pay only for what they use.
+  * Organizations don't have complete control over resources and security.
+
+(03) Hybrid cloud
+- A hybrid cloud is a computing environment that uses both public and private clouds in an interconnected envirnoment. 
+
+  * Provides the most flexibility
+  * Organisations determine where to run their applications.
+  * Organisations control security, compliance, or legal requirements.
+  
+
+(04) Multi-cloud
+- You deal with two public cloud providers and manage resources and 
+  security in both environments.
+  
+Azura Arc
+- Azura Arc is a set of technologies that helps manage your cloud environment.
+
+Azure VMware Solution 
+- VMware in a private cloud environment but want to migrate to a public
+  or public or hybrid cloud? Azure VMware solutions lets you run your VMware
+  workloads in Azura with seamless integration and scalability.
+  
+Describe the consumpation-based model :
+- When comparting IT infrastructure models, there are two types of expenses to consider.
+  (01) Capital expenditure : is typically a one-time, up-front expenditure to purchase or secure tangible resources.
+  (02) Operational expenditure : is spending money on services or products over time.
+ 
+- Cloud computing falls under OpEx because cloud computing operates on a consumption-based model.
+- This consumpation-based model has many benefits, including.
+  (01) No upfront costs.
+  (02) No need to purchase and manage costly infrastructure that user might not use to its fullest potential.
+  (03) The ability to pay for more resources when they're needed.
+  (04) The ability to stop paying for resources that are no longer needed.
+  
+Compare cloud pricing models
+  
+- You typically pay only for the cloud services you use,which helps you
+  (01) Plan and manage your operating costs.
+  (02) Run your infrastructure more efficiently.
+  (03) Scale as your business needs change.
+
+
+1, what is cloud computing?
+A, Delivery of computing services over the internet.
+
+2, Which cloud model uses some datacenters focused on providing cloud services to anyone that wants them,
+   and some data centers that are focused on a single customer?
+A, Hybrid cloud 
+
+3, According to the shared responsibility model, which cloud service type
+   places the most responsibility on the customer?
+A, Infrastructure as a Service 
+
+   
+   
+******************************************************************************************************************
+
+          Describe the benefits of using cloud services 
+
+******************************************************************************************************************
+  
+
+* When building and deploying a cloud application, two of the biggest considerations are uptime (or availbility) and ability to handle demand (or scale). 
+
+1, High availability :
+
+- High availabiliy focuses on ensureing maximum availiablility, regardless of disruptions or events that may occur.
+- When you're architecting your solution, you'll need to account for service availability guarantees.
+- These guarantees are part of the service level aggrements(SLAs).
+
+2, Scalability: 
+
+- Major benefit of cloud computing is the scalability of cloud resources.
+- The other benefit of scalability is that you aren't overpaying for services.
+- Scalability generally comes in two varieties: vertical and horizontal. 
+
+a, Vertical Scaling:
+
+- With veritcal scaling, if you were developing an app and you needed more processing power, you could vertially scale up to 
+  add more CPUs or RAM to the virtual machine. 
+  
+b, Horizontal scaling:
+
+- you could add additional virtual machines or containers, scaling out. 
+
+3, Reliability :
+
+- Reliability is the ability of a system to recover from failures and continue to function.
+- The cloud by virtue of its decentralized design, naturally supports a reliable and resilient infrastructure.
+
+
+4, Predictability :
+
+- Predictability in the cloud lets you move forward with confidence.
+- Predictability can be focused on performance predictability or cost predictability.
+
+a, Performance: 
+-  Performance predicatability focuses on predicting the resources needed to deliever a positive experience for you customers.
+-  Autoscaling, load balaning, ahd high availability are just some of the cloude concepts that support performance predictability.
+
+b, cost: 
+- Cost predictability is focused on predicting or forecasting the cost of the cloud spend.
+- You can even use tools like the Total Cost of Ownership(TCO) or Pricing Calculator to get an estimate of potential cloud spend.
+
+5, Security and governance in the cloud
+
+- Whether you're deploying infrastructure as a service or software as a service, cloud features support governance and compliance.
+- Things like set templates help ensure that all your deployed resources meet corporate standards and government regulatory requirements. Plus, you can update
+  all your deployed resources to new standards as standards change.
+- Cloud based auditing helps flag any resource that's out of compilance with our corporate standards and provide mitigation strategies.
+- Depending on your operating model, software patches and updates may also automatically be applied, which helps with both goverance and security.
+
+- On the security side, if you want maximum control of security, infrastructure as a service provides you with physical resources but lets you manage the 
+  operating systems and installed software, including patches and maintenance.
+- If you want patches and maintence taken care of automatically, platform as a service or software as a service deployments may be the best cloud strategies for you.
+- Cloud is inteneded as an over-the-internet delivery of IT resources, cloud providers are typically well suited to handle things like disturbed denial of service (DDOS)
+  attacks, making your network more robust and secure.
+
+- By establishing a good goverance footprint early, you can keep your cloud foot print updated,secure, and well managed.
+
+
+https://learn.microsoft.com/en-us/training/modules/describe-benefits-use-cloud-services/4-security-governance-cloud
+
+*****************************************************************************************************************************************
+
+								Benefits of manageability in the cloud 
+
+*****************************************************************************************************************************************
+
+- A major benefit of cloud computing is the manageability options.
+- There are two types of manageability for cloud computing.
+
+1, Management of the cloud
+
+- Management of the cloud speaks to managing your cloud resources. In the cloud, you can:
+1, Automatically scale resource deployment based on need.
+2, Deploy resources based on a preconfigured template, removing the need for manual configuration.
+3, Monitor the health of resources and automatically replace failing resources.
+4, Receive automatic alerts based on configured metrics, so you're aware of performance in real time.
+
+2, Management in the cloud 
+
+- Management in the cloud speaks to how you're able to manage your cloud environment and resources.
+- You can manage these:
+1, Through a web portal
+2, using a command line interface
+3, Using APIs
+4, Using PowerShell 
+
+**********************************************************************************************************************************************
+
+
+1, Which type of scaling involves adding or removing resources (such as virtual machines or containers) to meet demand?
+A, Horizontal scaling - is adding or substracting the number of resources. 
+
+2, What is characterized as the ability of a system to recover from failures and continue to function>
+A, Reliability  - is the ability of a system to recover from failures and continue to function, and it is one of the 
+   the pillars of the Microsoft Azura Well-Architected Framework.
+   
+   
+**********************************************************************************************************************************************
+
+                                    Describe Infrastructure as a Service 
+									
+**********************************************************************************************************************************************
+
+- Infrastructure as a service is the most flexible category of cloud services,as it provides you the maximum amount of control for your cloud resources.
+- In an Iaas model, the cloud provider is responsible for maintaining the hardware, network connectivity and physical security. You're responsible 
+  for everything else: operating system installation, and maintenance, network configuration, database and storage configuration and so on.
+- With IaaS, you are essentially renting the hardware in a cloud datacenter, but what you do with that hardeware is up to you.
+
+- Some common scenarios where Iaas might make sense include:
+
+1, Lift and shift migration: you're setting up cloud resources similar to your on-prem datacenter, and then simply
+   moving the things running on-prem to running on the Iaas infrastructure.
+   
+2, Testing and development : you have established configurations for development and test environments that you need to rapidly replicate.
+   You can start up or shut down the different environments rapidly with an Iaas structure while maintaining complete control.
+   
+*****************************************************************************************************************************************************
+
+                                 Describe Platform as a Service 
+
+*****************************************************************************************************************************************************
+	
+- Platform as a service is a middle ground between renting space in a data center and paying for a complete and deployed solution.
+- In a Paas environment, the cloud provider maintains the physical infrastructure, physical security and connection to the internet.They also maintian the 
+  operating systems, middleware, developement tools, and business intelligence services that make up a cloud solution.
+- In a Paas scenario, you don't have to worry about the licensing or patching for operating systems and databases.
+- Paas is well suited to provide a complete development environment without the headache of maintaining all the developement infrastructure.
+
+- Depending on the configuration,you or the cloud provider may be responsible for networking settings and connectivity within your cloud envirnoment,
+  network and application security and the directory infrastructure.
+  
+- Some common scenerios where Paas migh make sense include:
+
+1, Developement framework : Paas provides a framework that developers can build upon to develop or customize cloud based applications.
+   Similar to the way you create an excel macro, Paas lets developers create applications using built-in software components. Cloud features
+   such as scability, high availability, and multi-tenant capability are included, reducing the amount of coding that developers must be.
+2, Analytics or business intelligence: Tools provided as a service with Paas allow organizations to analyze and mine their data, finding insights
+   and patterns and predicting outcomes to improve forecasting,product design decisions, investment returns and other busineess decisions.
+   
+   
+ *****************************************************************************************************************************************************
+ 
+                             Describe Software as a service 
+ 
+ ******************************************************************************************************************************************************
+
+- Software as a service is the most complete cloud service model from a product perspective.
+- With Saas, you're essentially renting or using a fully developed application.
+- Email, finanical software, messaging applications and connectivity software are all common example of a Saas implementation.
+- While the Saas model may be the least flexible, it is also the easiest to get up and running. It requires the least amount of 
+  technical knowledge or expertise to fully employ.
+  
+- Some common scenerios for Saas are:
+
+1, Email and messaging
+2, Business productivity applications.
+3, Finance and expense tracking.
+
+*******************************************************************************************************************************************************
+
+1, Which cloud service type is most suited to a lift and shift migration from on on-premises data center to a cloud deployment?
+A, With an Iaas service type, you can approximate your on-premises environment, making a lift and shift tranition to the cloud relatively straightforward.
+
+2, What type of cloud service type would a Finance and expense tracking solutions typically be in?
+A, Saas provides access to software solutions, such as finance and expense tracking, email or ticketing systems.
+
+*********************************************************************************************************************************************************
+
+
+  https://learn.microsoft.com/en-us/training/paths/microsoft-azure-fundamentals-describe-cloud-concepts/
+  
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+	   
+
+

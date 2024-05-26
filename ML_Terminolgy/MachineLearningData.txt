@@ -1,0 +1,96 @@
+- Up to 80% of a Machine Learning project is about collecting data.
+* What data is Required
+* What data is Available
+* How to Select the data?
+* How to collect the data?
+* How to Clean the data?
+* How to prepare the data?
+* How to Use the data?
+
+- What is Data?
+  * Data can be many things.
+  * With Machine learning, data is collecttion of facts:
+  Numbers - Prices, Dates
+  Measurements - Size, Height, Weight
+  Words - Names and Places
+  Observations - Counting Cars
+  Descriptions - It is cold
+  
+- Intelligence Needs Data
+
+  Human intelligence needs data:
+  - A real estate broker needs data about the sold houses to estimate prices.
+  - Artifical intelligence also needs data:
+  - A Machine Learning program needs data to estimate prices.
+  - Data can help us to see and understand
+  - Data can help us to find new opportunities.
+  - Data can help us to resolve misunderstandings.
+  
+- Health care
+	
+  Healthcare and life scienes collect public health data and patient data to learn how to improve patient care and save lives.
+  
+- Business 
+
+  The most successful companies in many sectors are data driven. They use sophisticated data analytics to learn how the company can perform better.
+  
+- Finance
+
+  Banks and insurance companies collect and evaluate data about customers, loans and deposits to support strategic decision-making
+  
+- Storing Data
+
+*  The most common data to collect are Numbers and Measurements.
+*  Often data are stored in arrays representing the relationship between values.
+*  This table contains house prices versus size:
+  Price  7  8 8 9 9 9 10 11 14 14 15
+  Size   50 60 70 80 90 100 110 120 130 140 150
+  
+- Quantitative vs Qualitative
+
+  *Quantitative data are numerical: 55 cars, 15 meters, 35 children
+  *Qualitative data are descriptive: It is cold, it is long, it was fun
+  
+- Census or Sampling 
+
+  * A census is when we collect data for every member of a group.
+  * A Sample is when we collect data for some members of a group.
+  * If we wanted to know how many Americans smoke cigarettes, we could ask every persoin in the US(a census), or we could ask 10000 people(a sample).
+  * Census is Accurate, but hard to do. A sample is Inaccurate, but is easier to do.
+  
+- Sampling Terms
+  * A population is group of individuals (objects) we want to collect information form
+  * A Census is information about every individual in a population.
+  * A Sample is information about a part of the population(In order to represent all).
+  
+- Random Samples 
+
+   * In order for a sample to represent a population, it must be collected randomly.
+   * A Random sample, is a sample where every member of the population has an equal chance to appear in the sample.
+   
+- Sampling Bias 
+
+   * A sampling Bias(Error) occurs when samples are collected in such a way that some individuals are less(or more)
+     likely to be included in the sample.
+	 
+- Big Data 
+
+   * Big data is data that is impossible for humans to process without the assitance of advanced machines.
+   * Big data does not have any definition in terms of size, but datasets are becoming larger and larger as we continously collect more and more data and 
+     store data at a lower and lower cost.
+	 
+- Data Mining
+
+   * With big data comes complicated data structures.
+   * A huge part of big data processing is refining data.
+   
+   
+
+  
+
+  
+
+    
+
+  
+  

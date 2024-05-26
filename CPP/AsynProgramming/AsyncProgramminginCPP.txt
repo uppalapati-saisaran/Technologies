@@ -1,0 +1,360 @@
+* Asynchorous programming :
+
+1, Executors
+2, Boost.Asio
+3, Libubifex 
+
+********************************************************************************************************************
+
+												1, Executors 
+
+********************************************************************************************************************
+
+- 
+void f1() 
+{
+   cout << "Hello, World\n";
+}
+
+// ...
+
+dispatch(ex,f1); 
+
+f1 - invocable object or callable
+ex - executable context or executor - which can invoke executbale object.
+
+* Executors : An executors consists of a set of rules about where, when, and how to run a callable.
+            A callable can be a function, a function object, or a lamdba function. 
+			
+			- Where : The callable may run on an internal or external processor and that the result is read
+			  back from the internal or external processor.
+			- When : The callable may run immediately or just be scheduled.
+			- How : The callable may run on a CPU or GPU or even be exeucted in the vectorised way. 
+			
+			
+* Concurrency via Executor 
+
+class bank_account
+{
+    int balance_ = 0;
+	std::experimental::thread_pool pool_{1};
+public:
+	void deposit(int amount) 
+	{
+		post(pool_, [=]
+		{
+			balance_ += amount;
+		});
+	}
+	
+	void withdraw(int amount)
+	{
+		post(pool_,[=]
+		{
+			if(balance_ >= amount)
+				balance_-=amount;
+		});
+	}
+}; 
+
+1, bank_account is active object 
+2, All the functions inside active object are able to run asynchrously.
+3, active object has its own thread or execution context.
+
+- A thread pool is an example of an execution context. An execution context represents a place where function objects will be executed.
+- This is distinct from an executor which, as an embodiment of a set of rules, is intended to be a light weight object that is chaep to 
+  copy and wrap for future adapation.
+
+- Active object, need to wait for asynchrous operation to be completed. There are different way to do that. one of them are futures, permitives (C++ 17), 
+
+- Way 1 :  Waiting for function completion 
+
+  void withdraw(int amount)
+  {
+	std::future<void> fut = std::experimental::post(pool_,[=] 
+	{
+		if(balance_ >= amount)
+			balance_-= amount;
+	},
+	std::experimental::use_future);
+	// if std::experimental::use_future is passed to post function then will wait for operation to be completed. 
+	fut.get(); 
+  }
+
+- Way 2 : Waiting for function completion 
+          - function handler , platform API 
+
+  template<class CompletionToken> 
+  auto withdraw(int amount,CompletionToken&& token)
+  // token is functional handler 
+  // && is universal reference. 
+  {
+   return std::expermential::post(pool_, [=]
+   {
+	 if(balance_ >= amount)
+		balance_ -= amount;
+   },
+   std::forward<CompletionToken>(token));
+ } 
+ 
+- Completion tokens
+ 
+  std::future<std::string> fut = std::experimental::dispatch(ex_,
+  [] { return 1; },   //  Step1 : execute it 
+  [] (int i) { return i+1; }, // Step2 : After Step 1
+  [] (int i) { return i * 2; }, // Step 3 : After Step 2 
+  [] (int i) { return std::to_string(i); }, // Step 4 : After Step 3 
+  [](std::string s) { return "value is " + s; }, // Step 5 : After Step 4
+  std::experimental::use_future);
+  
+  std::cout << fut.get() << std::endl; 
+  
+- Extend bank account class more. 
+
+  template<class CompletionToken>
+  auto transfer(int amount, bank_account& to_acct,ComplettionToken&& token) 
+  {
+	   return std::expermental::dispatch(
+	   std::experimental::wrap(ex_,[=]
+	   {
+		  if(balance_ >= amount)
+			{
+			  balance_ = amount;
+			  return amount;
+			}
+		  return 0;
+	    }),
+		std::expermental::wrap(to_acc.ex_,[&to_acct](int deducted) 
+		{
+			to_acct.balance_ += deducted;
+		}),
+		std::forward<CompletionToken>(token));
+   }
+   
+https://github.com/chriskohlhoff/executors 
+
+Executors in Boost.Asio : 
+
+boost::asio::io_context io_context; 
+// io_context is execution context 
+
+boost::asio::ip::tcp::socket socket(io_context); 
+// socket is I/O object. 
+// It is bind to io_context 
+// I/O object uses Execution context for all its asynchrous operation. 
+// Execution context is not a thread or thread pool. How to bind this execution context with thread. 
+
+void start() { // start async read; 
+   socket.async_read_some(net::buffer(data),[](size_t length) { handleRead(length); });
+}
+
+void handleRead(size_t length) {
+   // start async write 
+   net::async_write(socket,net::buffer(data),[]() { handleWrite(); });
+}
+
+void handleWrite() { // start asynchorous 
+    socket.async_read_some(net::buffer
+	   [] (size_t length) { handleRead() } 
+}   
+     
+io_context.run() // It can be done in separate thread. 
+
+
+ASIO with coroutines :
+
+awaitable<void> echo(tcp::socket socket, await_context ctx) {
+size_t length;
+char data[128];
+while(true) {
+	length = co_wait socket.async_read_some(net::buffer(data), ctx);
+	co_await async_write(socket, net::buffer(data, length), ctx); 
+}
+}
+
+Libunifex :
+
+Unified Executors: 
+
+- The 'unifex' project is an implementation of the C++ sender/receiver async programming model. 
+
+Senders and receivers 
+
+Here, things get a bit more complicated. The paper defines the following (major) concepts:
+
+1, Sender: work that has not been scheduled for execution yet, to which one must add a continuation ( a reciever) and 
+   then "launch" or enquue for execution.
+  
+2, reciever: is a callback object to receive the results from a sender object.
+
+3, scheduler: a factory of single-shot senders.
+
+4, operation_state: the state of an asynchronous operation, the result of connecting a sender with a recevier. 
+
+
+int main() 
+{
+	single_thread_context ctx;
+	for(int i=0; i<5; ++i) {
+		execute(ctx.get_schedular(),[i]() {
+			printf("hello execute() %i\n",i);
+		});
+		
+	return 0;
+} 
+
+struct my_recv0 {
+    // Sender calls this. if work is successful
+	void set_value() { cout << "impulse\n"; }
+	// Sender calls this. if work is canceled. 
+	void set_done() noexcept {}
+	// Sender calls this. if error
+	void set_error(exception_ptr) noexcept {}
+};
+
+template<typename T>
+struct my_recv {
+	void set_value(T val) { cout << val << endl; }
+	void set_done() noexcept {}
+	void set_error(exception_ptr) noexcept {}
+}; 
+
+// execution context 
+static_thread_pool pool{3};
+auto sched = pool.scheduler();
+//single-shot sender
+auto sndr1 = schedule(sched); 
+
+auto op_state = connect(sndr1, my_recv0{});
+start(op_state);  //prints "impulse" 
+
+//computation with P1897R3 abstractions
+auto f = [](int x) { return 3.141592 * x; };
+auto print = [](double x) { cout << x; };
+auto sndr = just(2)
+            | on(sched)
+			| transform(f) 
+// prints the results 2*3.141592
+submit(move(sndr),my_recv<double>{});
+
+
+********************************************************************************************* 
+
+auto schedular = context.get_scheduler();
+auto startTime = steady_clock::now() 
+
+sync_wait(then(
+	when_all(
+		then( // sender 
+		      // lazy 
+			  // first argument 
+		     schedule_after(scheduler,100ms),
+			 // second argument 
+			 [=]() {
+			 auto time = steady_clock::now() - startTime;
+			 auto timeMs = duration_cast<milliseconds>(time).count();
+			 std::cout << "part1 finished - [" << timeMs << "]\n";
+			 return time;
+		    });
+		then( // sender 
+		      // lazy 
+		     schedule_after(schedular, 200ms),
+			 [=]() {
+			 auto time = steady_clock::now() - startTime;
+			 auto timeMs = duration_cast<milliseconds>(time).count();
+			 std::cout << " part2 finished - [" << timeMs << "]\n";
+			 return time;
+			 });
+	    // second argument 
+		[](auto&& a,auto&& b) {
+			std::cout 
+			     << "when_all finished. ["
+				 << duration_cast<milliseconds>(std::get<0>(std::get<0>(a))).count()
+				 << ", "
+				 << duration_cast<milliseconds>(std::get<0>(std::get<0>(b))).count()
+				 << "]\n";
+		}));
+	
+std::cout << "all done\n"; 
+
+******************************************************************************************************
+
+unifex::new_thread_context ctx;
+
+auto makeThreadTask = [&](int i) {
+	return unifex::then(
+		unifex::schedule(ctx.get_schedular()),
+		[i] {
+			std::stringstream s;
+			s << "Task " << i << " running on thread " << std::this_thread::get_id()
+			cout << s.str();
+			
+			thread_local trace_construction_destruction t;
+		});
+};
+
+unifex::sync_wait(
+	unifex::when_all(
+		makeThreadTask(1),
+		makeThreadTask(2),
+		makeThreadTask(3),
+		makeThreadTask(4)));
+
+std::cout << "Shutting down new_thread_context\n";
+
+*************************************************************************************************************
+
+int main()  {
+	timed_single_thread_context context;
+	using namespaces std::chrono;
+	auto startTime = steady_clock::now();
+	
+	auto op = on_stream(current_schedular, range_stream{0,20})
+	   | for_each([](int value) {
+	         //Simulate some work
+			 std::printf("processing %i\n", value);
+			 std::this_thread::sleep_for(10ms);
+		})
+	   | stop_when(schedule_after(100ms));
+	   sync_wait(on(context.get_scheduler(), std::move(op)));
+	   
+	auto endTime = steady_clock::now();
+	
+	std::printf(
+	"took %i ms\n",(int)duration_cast<milliseconds>(endTime - startTime));
+}
+
+
+*******************************************************************************************************************
+
+	
+
+			 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+  
+ 
+ 
+
+

@@ -1,0 +1,82 @@
+C:\Users\suppalapati> python
+or
+C:\Users\suppalapati> py
+
+// you can verify that python is installed or not.
+
+*********************************************************************************
+
+C:\Users\suppalapati>py
+>>> quit()
+// come out of the python shell. 
+
+*********************************************************************************
+
+C:\Users\suppalapati>py --version
+// check the python version
+
+*********************************************************************************
+
+C:\Users\suppalapati>py -m venv Poll
+// To create virtual environment for the project.
+
+***********************************************************************************
+
+C:\Personal\Technologies\Django\LearningProject\Poll\Scripts>activate.bat
+// To activite a virtual environment
+
+***********************************************************************************
+
+(Poll) C:\Personal\Technologies\Django\LearningProject\Poll\Scripts>py -m pip install Django
+// To install django, ensure your virtual enviroment is active, and execute the following command:
+
+************************************************************************************
+
+(Poll) C:\Personal\Technologies\Django\LearningProject\Poll>django-admin --version
+5.0.4
+// you can verify your django version
+
+(Poll) C:\Personal\Technologies\Django>python -m django --version
+5.0.4
+
+************************************************************************************
+
+(Poll) C:\Personal\Technologies\Django\LearningProject\Poll>py -m pip install "colorama >= 0.4.6"
+// quality of life feature adds colored output to the terminal. 
+
+************************************************************************************* 
+
+DJANGO_COLORS = nocolor 
+//To disable the above set colored feature
+
+*************************************************************************************
+
+Django 5.0
+Python 3.10 and later.
+
+************************************************************************************
+
+Auto-generate some code that establishes a Django project 
+- a collection of settings for an instance of Django
+- including database configuration
+- Django-specific options
+- application-specific settings
+
+*************************************************************************************
+
+C:\Personal\Technologies\Django\LearningDjango>django-admin startproject mysite
+// Create a directory where you'd like to store your code.
+
+**************************************************************************************
+
+// Put your code in some directory outside of the document root (/var/www) such as /home/mycode
+
+**************************************************************************************
+
+https://docs.djangoproject.com/en/5.0/intro/tutorial01/ 
+
+
+
+
+
+

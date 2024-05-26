@@ -1,0 +1,50 @@
+Access Array Elements :
+
+- Array indexing is the same as accessing an array element.
+- You can access an array element by referring to its index number.
+- The indexes in NumPy arrays start with 0, meaning that the first element has index 0, and the second has index 1 etc.
+
+// Get the first element from the following array:
+import numpy as np
+arr = np.array([1,2,3,4])
+print(arr[0]) 
+
+// Get the second element from the following array:
+import numpy as np
+arr = np.array([1,2,3,4]) 
+print(arr[1]) 
+
+// Get third and fourth elements from the following array and add them.
+import numpy as np
+arr = np.array([1,2,3,4])
+print(arr[2] + arr[3])
+
+
+// Access the element on the first row, second column:
+import numpy as np
+arr = np.array([[1,2,3,4,5],[6,7,8,9,10]])
+print('2nd element on lst row:', arr[0,1])
+
+//Access the element on the 2nd row, 5th column:
+import numpy as np
+arr = np.array([[1,2,3,4,5],[6,7,8,9,10]])
+print('5th eleement on 2nd row: ', arr[1,4])
+
+
+//Acess the third element of the second array of the first array:
+import numpy as np
+arr = np.array([[[1,2,3],[4,5,6]],[[7,8,9],[10,11,12]]]
+print(arr[0,1,2])
+
+// negative indexing to access an array from the end.
+import numpy as np
+arr = np.array([[1,2,3,4,5],[6,7,8,9,10]])
+print('Last eleemnt from 2nd dim: ',arr[1,-1])
+
+
+
+
+
+
+
+

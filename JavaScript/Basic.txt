@@ -1,0 +1,13 @@
+- JavaScript is the programming language of the web.
+- JavaScript is one of the 3 languages all web developers must learn:
+  1, HTML to define the content of web pages.
+  2, CSS to specify the layout of web pages.
+  3, JavaScript to program the behaviour of web pages. 
+  
+- You don't have to get or download JavaScript.
+
+- JavaScript is alreay running in your browser on your computer,
+  on your tablet, and on your smart-phone.
+  
+- Javascript is free to use for everyone. 
+

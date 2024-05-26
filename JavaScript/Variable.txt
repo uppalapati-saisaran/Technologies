@@ -1,0 +1,209 @@
+* Variables are containers for storing Data
+
+* JavaScript Variables can be declared in 4 ways:
+1, Automatically
+2, using var
+3, using let
+4, const
+
+* They are automatically declared when first used:
+
+<!DOCTYPE html>
+<html>
+<body>
+<h1>JavaScript Variable<h1>
+<p>In this example, x,y, and z are undeclared.</p>
+<p>They are automatically declared when first used.</p>
+
+<p id="demo"></p>
+</script>
+x = 5;
+y = 6;
+z = x + y;
+document.getElementIdBy("demo").innerHTML = 
+"The value of z is: " + z;
+</script>
+</body>
+</html>
+
+** It is considered good programming pratice to always declare variables before use.
+* The var keyword was used to all JavaScript code from 1995 to 2015
+* The let and const keywords were added to JavaScript in 2015
+* The var keyword should only be used in code written for older browsers.
+
+* Mixed 
+
+<!DOCTYPE html>
+<html>
+<body>
+<h1>JavaScript Variable</h1>
+<p>In this example, price1, price2, and total are variables.</p>
+<p id="demo"></p>
+<script>
+const price1 = 5;
+const price2 = 6;
+let total = price1 + price2
+document.getElementIdBy("demo").innerHTML =
+"The total is: " + total;
+</script>
+</body>
+</html>
+
+* When to Use var,let, or const?
+1, Always declare variables.
+2, Always use const if the value should not be changed.
+3, Always use const if the type should not be changed (Arrays and Objects)
+4, Only use let if you can't use const
+5, Only use var if the MUST support old browsers.
+
+* Identifiers
+
+- All JavaScript variables must be identified with unique names. These unique names are called identifiers.
+- The general rules for construting names for variables (unique identifiers) are:
+  (01) Names can contain letters, digits, underscores, and dollar signs.
+  (02) Names must begin with a letter.
+  (03) Names can also begin with $ and _(but will not use it in this tutorial).
+  (04) Names are case senstive (y and Y are different variables).
+  (05) Reserved words (like JavaScript keywords) cannot be used as names.
+  
+* The Assignment Operator
+
+* Data Types
+
+- JavaScript can handle many types of data, but for now, just think of numbers and strings.
+- Strings are written inside double or single quotes.
+- Numbers are written without quotes. If you put a number in quotes, it will be treated as a text string.
+
+<!DOCTYPE html>
+<html>
+<body>
+<h1>JavaScript Variables</h1>
+<p>Strings are written with quotes.</p>
+<p>Numbers are written without quotes.</p>
+<p id="demo"></p>
+<script>
+const pi = 3.14;
+let person = "John Doe";
+let answer = 'Yes I am!'
+document.getElementIDBy("demo").innerHTML =
+pi + "<br>" + person + "<br>" + answer;
+</script>
+</body>
+</html>
+
+* Declaring a JavaScript Variable
+
+<!DOCTYPE html>
+<html>
+<body>
+<h1>JavaScript Variables</h1>
+<p>Create a variable, assign a value to it, and display it:</p>
+<p id="demo"></p>
+<script>
+let carName = "Volvo";
+document.getElementById("demo").innerHTML = carName;
+</script>
+</body>
+</html>
+
+* One Statement, Many Variables
+
+<!DOCTYPE html>
+<html>
+<body>
+<h1>JavaScript Variables</h1>
+<p>You can declare many variables in one statement</p>
+<p id="demo"></p>
+<script>
+// you can declare many varibale in one statement.
+let person = "John Doe", carName = "Volvo", price = 200;
+//or
+// A declaration can span multiple lines:
+let person = "John Doe",
+carName = "Volvo",
+price = 200; 
+document.getElementById("demo").innerHTML = carName;
+</script>
+</body>
+</html>
+
+* Value = undefined 
+
+- Variable declared without a value will have the value undefined.
+
+* Re-Declaring JavaScript Variables
+
+- If you re-declare a JavaScript variable declared with var, it will not lose its value.
+- You cannot re-declare a variable declared with let or const.
+
+* JavaScript Arithmetic
+
+<!DOCTYPE html>
+<html>
+<body>
+<h1>JavaScript Variables</h1>
+<p>The result of adding "5" + 2 + 3 is:</p>
+<p id="demo"></p>
+
+<script>
+// If you put a number in quotes, the rest of the numbers will be treated as strings, and concatenated. 
+let x = "5" + 2 + 3;
+
+let x = 2 + 3 + "5";  // 55 
+
+document.getElementId("demo").innerHTML = x;
+</script>
+
+</body>
+</html>
+
+* JavaScript Dollar Sign $
+
+- Since JavaScript treats a dollar sign as a letter, identifiers containing $ are valid variable names:
+- Using the dollar sign is not very common in JavaScript, but professional programmers often use it as an alias for the main function in a JavaScript library.
+- In the JavaScript libary jQuery, for instance, the main function $ is used to select HTML elements. In jQuery $("p"); means "select all p elements". 
+  
+<!DOCTYPE html>
+<html>
+<body>
+<h1>JavaScript Variables</h1>
+<p>The dollar sign is treated as a letter in JavaScript names.</p>
+<p id="demo"></p>
+<script>
+let $$$ = 2;
+let $myMoney = 5;
+document.getElementById("demo").innerHTML = $$$ + $myMoney;
+</script>
+</body>
+</html>
+
+* JavaScript UnderScore (_) 
+
+- Since JavaScript treats underscore as a letter, identifiers containing _ are valid variable names:
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>JavaScript Variables</h1>
+<p>The underscore is treated as a letter in JavaScript names.</p>
+<p id="demo"></p>
+
+<script>
+let _x = 2;
+let _100 = 5;
+document.getElementById("demo").innerHTML = _x + _100;
+</script>
+</body>
+</html>
+
+
+
+
+
+ 
+
+
+
+
+

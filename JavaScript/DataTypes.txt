@@ -1,0 +1,166 @@
+* Java script has 8 data types 
+
+1, String 2, Number 3, Bigint 4, Boolean 5, Undefined
+6, Null 7, Symbol 8, Object 
+
+- The Object Datatype 
+
+- The object data type can contain:
+
+1, An object 2, An array 3, A date 
+
+
+* Examples:
+
+// Numbers:
+let length = 16;
+let weight = 7.5;
+
+// Strings:
+let color = "Yellow"
+let lastName = "Johnson";
+
+// Booleans
+let x = true;
+let y = false;
+
+//Object
+const person = {firstName:"John",lastName:"Doe"};
+
+//Array object:
+const cards = ["Saab","Volvo","BMW"];
+
+//Date Object:
+const date = new Data("2022-03-25");
+
+- Note: when adding a number and a string, JavaScript will treat the number as a string.
+
+<!DOCTYPE html>
+<html>
+<body>
+<h2>JavaScript</h2>
+<p>When adding a number and a string, JavaScript will treat the number as a string.</p>
+<p id="demo"></p>
+<script>
+let x = 16 + "Volvo";
+document.getElementById("demo").innerHTML = x;
+</script>
+</body>
+</html>
+
+Output : 
+
+JavaScript
+When adding a string and a number, JavaScript will treat the number as a string.
+Volvo16
+
+* JavaScript evaluates expressions from left to right, Different sequences can produce different results:
+
+let x =  16+4+"Volvo":
+
+Output:
+
+20Volvo
+
+let x = "Volvo" + 16 + 4;
+
+Output:
+
+Volvi64
+
+
+* JavaScript has dynamic types. This means that the same variable can be used to hold different data types:
+
+- Example:
+  
+  let x; //Now x is undefined.
+  x = 5; //Now x is a Number
+  x = "John"; //Now x is a String
+  
+  
+* A string is a series of characters like "John Doe".
+
+- Strings are writen with quotes. you can use single or double quotes:
+
+// Using double quotes:
+let carName1 = "Volvo XC60";
+
+// Using single quotes:
+let carName2 = 'Volvo XC60';
+
+- You can use quotes inside a string, as long as they don't match the quotes surrounding the string:
+
+- Example:
+
+  // Single quotes inside double quotes:
+  let answer1 = "It's alright";
+  
+  // Single quotes inside double quotes:
+  let answer2 = "He is called 'Johnny'";
+  
+  // Double quotes inside single quotes:
+  let answer3 = 'He is called "Johnny"';
+  
+  
+* All JavaScript numbers are stored as decimal numbers (floating point).
+
+- Numbers can be written with, or without decimals:
+
+  // With decimals
+  let x1 = 34.00;
+  
+  // Without decimals
+  let x2 = 34;
+  
+* Extra large or extra small numbers can be written with scientific notation:
+
+  let y = 123e5; // 12300000
+  let z = 123e-5; // 0.00123
+  
+  
+* Javascript numbers are always one type: double (64-bit floating point).
+
+
+* Javascript BigInt is a new datatype that can be used to store integer values that are too big to be represented by a normal JavaScript Number.
+
+  let x = BigInt("123456789012345678901234567890");
+  
+- You cannot perform math between a BigInt type and a Number type. 
+
+  
+* Booleans can only have two values: true or false 
+
+- Example :
+
+	let x = 5;
+	let y = 5;
+	let z = 6;
+	(x == y)  //Returns true
+	(x == z)  //Returns false
+	
+- Booleans are often used in conditional testing. 
+
+
+* Javascript arrays are written with square brackets.
+
+- Array items are separated by commas.
+
+- The following code declares (creates) an array called cars, cantaining three items ( car names):
+
+- Example :  const cars = ["Saab","Volvo,"BMW"];
+
+- Array indexes are zero-based, which means that first item is [0], second is [1], and so on.
+
+* Javascript objects are written with curly braces {}.
+
+- Object properties are written as name:value pairs, separated by commas.
+
+  const person = {firstName:"John", lastName:"Doe", age:50,eyeColor:"blue"};
+  
+- The object (person) in the example above has properities: firstName,lastName,age, and eyeColor.
+
+
+https://www.w3schools.com/js/js_datatypes.asp
+  
+  
+

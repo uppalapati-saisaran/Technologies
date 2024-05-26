@@ -1,0 +1,391 @@
+
+
+old_str = "Python2.7"
+new_str = old_str  // both variables consists of value "Python2.7"
+
+new_str[2]  // prints the letter 't' 
+
+new_str[2] = 'T'  // 'str' object does not support item assignment. 
+                  // strings in python are immutable 
+				 
+
+
+new_str = "Python3.0" // value of new_str is changed to "Python3.0". 
+                      // it will not effect the value of old_str.  
+					  
+***************************************************************************
+
+import copy
+
+first_str = 'Will'  // value of first_str is 'Will'
+
+second_str = copy.copy(first_str)  // copy the value of first_str to second_str
+                                   // Both first_str and second_str consists of same value.
+                                   // first copy is module name, second copy is function name
+								   
+second_str = 'Smith'    // value of second_str is changed to 'Smith'
+                       // It will not effect the value of first_str
+					   
+first_str = 'Johnny'   // value of first_str is changed to 'Johnny' 
+
+second_str = copy.deepcopy(first_str)  // copy the value of first_str to second_str 
+                                       // Both first_str and second_str consists of same value.
+
+second_str = 'Depp'  // change the value of second_str 
+                     // it will not effec the value of first_str 
+					 
+*****************************************************************************
+
+// There is no difference between assignment operator, copy and deepcopy with respective
+   to the string are considered. 
+// It will change with respective to the complex data types.
+
+***************************************************************************** 
+
+Performing Shallow Copies of Lists:
+
+names = ["Sara","David","Warner","Sandy"]
+new_names = names // names and new_names values are same.
+
+new_names[1]  // it prints the value "David" 
+
+new_name[1] = 'Ridley'  // assign new_name[1] with new value 'Ridley'
+                        // Both the lists name[1] and new_names[1] are changed to 'Ridley'
+// Assignment is Shallow copy. 
+
+
+new_name_copycopy = copy.copy(names) ;  // names and new_name_copycopy values are same.
+new_name_copycopy[1] = "Paarth"  // assign new_name_copycopy[1] with new value 'Paarth'
+                                 // name[1] and new_name[1] lists index values are different values.
+								    name[1] consists of old value.
+// copy.copy created deep copy of the list.
+
+
+
+old_list = [[1,2,3],[4,5,6],[7,8,9]]
+new_list = copy.copy(old_list) // Both new_list and old_list lists consists of same values.
+
+old_list[1][1]  // prints the value of 5
+
+old_list[1][1] = 'Five'  // it will changes the value of new_list[1][1] as well. 
+// Created a deep copy of the outer list and a shallow copy of the inner list.	
+
+new_list[2].append('Ten') // it will change the values of old_list[2] as well. 
+
+old_list.append([10,11,12]) // it willl only change the old_list not new_list 
+
+
+**************************************************************************************
+
+Performing Deep Copies of Lists:
+
+import copy
+companies = ["hackerearth","google","facebook"]
+
+new_companies = copy.deepcopy(companies)  // Both new_companies and companies having same values.
+
+new_companies[1] = "microsoft"    // Both new_companies and companies have different values. 
+
+copy.copy() and copy.deepcopy() - performs the same function in non-nested list. 
+
+old_list = [[1,2,3],[4,5,6],[7,8,9]]
+new_list = copy.deepcopy(old_list) // Both new_list and old_list lists consists of same values.
+
+old_list[1][2] = 'Six' // it will not change the value of new_list[1][2]. 
+                       // Only the value of old_list[1][2] will change.
+					   
+
+companies = ["hackerearth","google","facebook"]
+new_companies = companies[:]  // It will perform deep copy
+
+new_companies[0] = 'Skillsoft'  // It will change the value in new_companies only. 
+
+*****************************************************************************************
+
+Creating Shallow and Deep Copies of Tuples
+
+fruits = ("apple","banana","cherry")
+
+new_fruits = fruits // Both tuples consists of same values.
+
+new_fruits[2] = "orange"  // 'tuple' object does not support item assignment.
+
+Assignment operator : 
+
+fruits = ("apple",["banana","cherry"],"blackcurrent")
+
+new_fruits = fruits // Both tuples consists of same values.
+
+new_fruits[1][0]  // 1 is index of tuple  and 0 is index of list 
+                  // output is banana
+
+new_fruits[1][0] = "orange" // Both fruits and new_fruits are changed. 
+
+Copy : 
+
+import copy 
+
+bikes = ('Honda','Suzuki','Triumph',['Kawasaki','Ducati])
+
+new_bikes = copy.copy(bikes) // Both tuples consists of same values.
+
+new_bikes[3][0] = 'Dodge' // Both bikes and new_bikes are changed.
+
+DeepCopy :
+
+
+bikes = ('Honda','Suzuki','Triumph',['Kawasaki','Ducati])
+
+new_bikes = copy.deepcopy(bikes) // Both tuples consists of same values.
+
+new_bikes[3][0] = 'Dodge' // Only new_bikes value is changed not bikes.
+
+***************************************************************************************************
+
+Creation Shallow Copies of Dictionaries 
+
+// Assignment operator 
+
+months = { "jan": 1, 'feb': 2, 'march': 3, 'april': 4}
+
+new_months = months // Both consists of same value. 
+
+new_months['feb'] = 'FEB' //Both dictionaries consists of same value.
+
+// Copy 
+
+import copy 
+
+employees = {"Alison" : 2007, 'Bart' : 2008, 'Cathy' : 2009, 'Dan' : 2010}
+
+employees_copy = copy.copy(employees)  // Both consist of same value
+
+employee_copy["Alison"] = 2005 // employee_copy consists of new value. 
+
+orig_dict = {'one':1, 'two':2, 'three':3, 'four':[1,2,3,4.0]} 
+
+new_dict = copy.copy(orig_dict); 
+
+new_dict['four'][3] = 'FOUR' // Both orig_dict and new_dict values will change.
+
+new_dict['four'].append(5)  // Both orig_dict and new_dict values will change.
+
+orig_dict = { 'one':1, 'two':2, 'three':{'zero':0, 'one':1}, 'four':4}
+
+new_dict = copy.copy(orig_dict)
+
+new_dict['three']['zero']
+
+new_dict['three']['zero'] = 'ZERO' // Both orig_dict and new_dict values are changed.
+
+orig_dict = { 'one':1, 'two':2, 'three': {0,1,2},'four':4 }
+
+new_dict = orig_dict;
+
+new_dic['three'].add(3) // Both orig_dict and new_dict values are changed.
+
+****************************************************************************************************
+
+
+Creation Deep Copies of Dictionaries :
+
+
+import copy 
+
+employees = {"Alison" : 2007, 'Bart' : 2008, 'Cathy' : 2009, 'Dan' : 2010}
+
+employees_copy = copy.deepcopy(employees)  // Both consist of same value
+
+employee_copy["Alison"] = 2005 // employee_copy consists of new value. 
+
+orig_dict = {'one':1, 'two':2, 'three':3, 'four':[1,2,3,4.0]} 
+
+new_dict = copy.deepcopy(orig_dict); 
+
+new_dict['four'][3] = 'FOUR' // only new_dict values will change.
+
+new_dict['four'].append(5)  // Only new_dict values will change.
+
+orig_dict = { 'one':1, 'two':2, 'three':{'zero':0, 'one':1}, 'four':4}
+
+new_dict = copy.deepcopy(orig_dict)
+
+new_dict['three']['zero']
+
+new_dict['three']['zero'] = 'ZERO' // only new_dict values are changed.
+
+orig_dict = { 'one':1, 'two':2, 'three': {0,1,2},'four':4 }
+
+new_dict = copy.deepcopy(orig_dict);
+
+new_dic['three'].add(3) // new_dict values are changed.
+
+*****************************************************************************************
+
+Creating Shallow and Deep Copies of Sets: 
+
+set1 = {'c++','php','java','python'}
+
+set2 = set1 
+
+set2.add('sql')  // both set1 and set2 values are change.
+
+set2.pop() // both set1 and set2 values are change.
+
+set2[2]  // 'set' object does not support indexing 
+
+set2[2] = 'ruby' // 'set' object does not support item assignment.
+
+set_1 = { 'c++','php',['java','python'],'sql'}  // TypeError: unhashable type: 'list' 
+
+set_1 = { 'c++','php',('java','python'),'sql' }
+
+set_2 = set_1 // Both consists of same value 
+
+import copy
+
+teachers_set = {"Ave","Mia","Jacob","Daniel"}
+
+new_teacher_set = copy.copy(teacher_set) //Both the values of the sets are same.  
+
+teachers_set.add("Emma") // It will affect only teachers_set 
+new_teachers_set.remove("Ave") // It will affect only new_teachers_set 
+
+new_teacher_set = copy.deepcopy(teacher_set) // Both the values of the sets are same.
+teachers_set.add("Emma") // It will affect only teachers_set 
+new_teachers_set.remove("Ave") // It will affect only new_teachers_set 
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+							
+
+
+
+
+
+                       
+
+
+						
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+								   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

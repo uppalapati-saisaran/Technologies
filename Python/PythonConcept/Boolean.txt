@@ -1,0 +1,104 @@
+* Booleans represent one of two values: True or False.
+
+- print(10>9)
+  print(10 == 9)
+  print(10<9)
+  
+Output:
+  True
+  False
+  False
+  
+* Evaluate a string and a number
+
+- print(bool("Hello"));
+  print(bool(45))
+  
+Output:
+  True
+  True
+  
+* Most Values are True
+- Almost any values is evaluated to True if it has some sort of content.
+- Any string is True, except empty strings.
+- Any number is True, except 0
+- Any list,tuple,set and dictionary are True, except empty ones.
+
+bool("abc")
+bool(123)
+bool(["apple","cherry","banana"])
+
+Output:
+True
+True
+True
+
+* Some Values are False
+- In fact, there are not many values that evaluate to False,
+  except empty values, such as (),[],{},"", the number 0, and the value None.
+- And of course the value False evaluates to False.
+
+bool(False)
+bool(None)
+bool(0)
+bool("")
+bool(())
+bool([])
+bool({})
+
+Output:
+
+False
+False
+False
+False
+False
+False
+False
+
+* One more value, or object in the case, evaluates to False, and that is if you have an object that 
+  is made from a class with a __len__ function that returns 0 or False:
+  
+class myclass():
+	def __len__(self):
+		return 0
+myobj = myclass()
+print(bool(myobj))
+
+Output: 
+False 
+
+
+
+* You can create functions that returns a boolean value:
+  def MyFunction() :
+	return True
+  print(MyFunction())
+  
+Output: 
+True 
+  
+  
+* Print "Yes!" if the function returns True, otherwise print "NO!"
+  def MyFunction():
+    return True;
+  if myFunction():
+	print("Yes!")
+  else:
+	print("No!") 
+	
+Output:
+Yes!
+
+* Python also many built-in functions that return a boolean value, like the isinstance() function,
+  which can be used to determine if an object is of a certain data type:
+- Check if an object is an integer or not:
+  x = 200
+  print(isinstance(x,int))
+  Output:
+  True
+  
+
+  
+  
+  

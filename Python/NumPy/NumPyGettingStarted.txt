@@ -1,0 +1,28 @@
+// Installation of NumPy
+// If you have Python and PIP already installed on a system
+
+C:/Users/Your Name>pip instally numpy 
+// if this command fails, then use a python distribution that already has NumPy installed like, Anaconda, Spyder etc.
+
+import numpy
+//or
+// Numpy is usually imported under the np alias
+import numpy as np
+arr = numpy.array([1,2,3,4,5])
+//or
+arr = np.array([1,2,3,4,5])
+print(arr)
+
+output:
+[1,2,3,4,5]
+
+// Checking NumPy Version
+import numpy as np
+print(np.__version__)
+
+Output:
+1.16.3
+
+
+
+

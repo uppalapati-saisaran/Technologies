@@ -1,0 +1,43 @@
+- Clusters are collections of similar data.
+- Clustering is a type of unsupervised learning.
+- The Correlation coefficient describes the strength of a relationship.
+
+- Clusters
+
+  * Clusters are collections of data based on similarity.
+  * Data points clustered together in a graph can often be classified into clusters.
+
+- Identifying Clusters
+
+  * Clusters can hold a lot of valuable inforamtion, but clusters come in all sorts of shapes, so how can we recognize them?
+  * The two main methods are:
+  (01) Using visualization (02) Using an Clustering Algorithm
+  
+- Clustering 
+
+  * Clustering is a type of Unsupervised Learning.
+    - Collect similar data in groups
+	- Collect dissimilar data in other groups.
+	
+- Clustering Methods
+
+  * Density Method, Hierarchical Method, Partitioning Method, Grid-based Method
+  (01) Density Method - considers points in a dense regions to have more similarties and difference than points in a lower dense region.
+       The density method has a good accurancy. It also has the ability to merge clusters.
+	   Two common algorithms are DBSCAN and OPTICS
+  (02) Hierarchical Method - forms the clusters in a tree-type structure. New clusters are formed using previously formed clusters.
+       Two common algorithms are CURE and BIRCH.
+  (03) Grid-based Method - formulates the data into a finite number of cells that form a grid-like structure. 
+       Two common algorithms are CLIQUE and STING
+  (04) Partitioning Method - partitions the objects into k clusters and each partition forms one cluster.
+       One common algorithm is CLARANS.
+	   
+- Correlation coefficient :
+
+  * The correlation coefficient describes the strength and direction of a linear relationship and x/y variables on a scatterplot.
+  * The value of r is always between -1 and +1
+  
+
+
+
+  

@@ -1,0 +1,58 @@
+
+- The format() method allows you to format selected parts of a string.
+
+- Input come from a database or user input? To control such values, add placeholders (curly brackets {} ) in the text,
+  and run the values through the format() method.
+  
+- Add a placeholder where you want to display the price:
+
+  price = 49
+  txt = "The price is {} dollars"
+  print(txt.format(price)) 
+  
+  
+  The price is 49 dollars
+  
+- Format the price to be displayed as a number with two decimals:
+  
+  txt = "The price is {:.2f} dollars"
+  
+  The price is 49.00 dollars
+  
+- Add more placeholders
+  
+  quantity = 3
+  itemno = 567
+  price = 49
+  myorder = "I want {} pieces of item numer {} for {:.2f} dollars."
+  print(order.format(quantity,itemno,price)) 
+  
+  I want 3 pieces of item number 567 for 49.00 dollars.
+  
+- use Index numbers to be usre that values are placed in the correct placeholders:
+
+  quantity = 3
+  itemno = 567
+  price = 49
+  myorder = "I want {0} pieces of item number {1} for {2:.2f} dollars."
+  
+  print(myorder.format(quantity,itemno,price))
+  
+- If you want to refer to the same value more than once, use the index number 
+  
+  age = 36
+  name = "John"
+  txt = "His name is {1}. {1} is {0] years old."
+  print(txt.format(age,name))
+  
+  His name is John. John is 36 years old. 
+  
+- Named indexes 
+
+  myorder = "I have a {carname}, it is a {model}."
+  print(myorder.format(carname="Ford",model="Mustang")
+  
+  I have a Ford, it is a Mustang.
+  
+  
+  

@@ -1,0 +1,11 @@
+* Single Line comments
+
+- Single line comments with // 
+
+* Multi-line comments
+
+- Multi-line comemnts start with /* and end with */
+
+* It is most common to use single line comments.
+* Block comments are often used for formal documentation.
+

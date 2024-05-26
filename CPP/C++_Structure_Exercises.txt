@@ -1,0 +1,112 @@
+// C++ program to print ASCII Value of Character
+
+using namespace std;
+int main() 
+{
+   char c='A';
+   cout << "The ASCII value of " << c <<  "is" << int(c);
+   return 0;
+}
+65
+
+The ASCII value of A is 65 
+
+********************************************************************
+
+// C++ progrm to find the size of int, char, float and double
+   data types.
+
+#include<iostream>
+using namespace std;
+
+int main() 
+{
+	 int integerType;
+	 char charType;
+	 float floatType;
+	 double doubleType;
+	 
+	 //Calculate and Print
+	 // the size of integer type.
+	 cout << "Size of int is:" << sizeof(integerType) << "\n";
+	 
+	 //Calculate and Print
+	 // the size of doubleType
+	 cout << "Size of double is:" << sizeof(doubleType) << "\n";
+	 
+	 //Calculate and Print
+	 // the size of charType
+	 cout << "Size of char is:" << sizeof(charType) << "\n";
+	 
+	 //Calculate and Print
+	 // the size of floatType
+	 cout << "Size of float is" << sizeof(floatType) << "\n"; 
+	 
+	 return 0;
+} 
+
+Output:
+
+Size of int is: 4
+Size of char is: 1
+Size of float is: 4
+Size of double is: 8
+
+********************************************************************************
+
+// C++ program to generate random double
+// uisng random function
+#include<iostream>
+#include<time.h>
+
+using namespace std;
+
+// Driver code 
+int main() 
+{
+  const long max_rand = 1000000L;
+  double lower_bound = 0;
+  double higer_bound = 100;
+  
+  srandom(time(NULL)); 
+  
+  //Using random function to 
+  // get random double value
+  double random_double = lower_bound + (upper_bound-lower_bound) 
+                         * (random() % max_rand) / max_rand;
+						 
+  cout << random_double << endl;
+  return 0;
+}
+
+
+// C++ program to generate random double
+// uniform_real_disturbution and
+// default_random_engine
+
+#include<iostream>
+#include<random>
+using namespace std;
+
+int main()
+{
+	//Declaring the upper and lower
+	// bounds
+	double lower_bound = 0;
+	double higer_bound = 100;
+	
+	uniform_real_disturbution<double> unif(lower_bound,upper_bound);
+	default_random_engine re;
+	
+	//Getting a random double value
+	double random_double = unif(re)
+	
+	cout << random_double << endl;
+	
+	return 0; 
+} 
+
+***********************************************************************************
+
+https://www.geeksforgeeks.org/cpp-exercises/
+

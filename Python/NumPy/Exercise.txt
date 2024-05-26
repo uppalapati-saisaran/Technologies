@@ -1,0 +1,457 @@
+Array Creation
+
+import numpy as np
+array_one = np.array([0,1,3,5,7,9])
+array_one
+
+Output: 
+array([0,1,3,5,7,9])  
+
+********************************************
+
+num = [11,22,33,44,55,66,77]
+array_two = np.array(num)
+array_two
+
+Output:
+array([11,22,33,44,55,66,77])
+
+*******************************************
+
+array_of_zeroes = np.zeros((2,3))
+array_of_zeroes
+
+Output: 
+array([0.,0.,0.,],
+      [0.,0.,0.,])
+	  
+******************************************
+	  
+array_of_ones = np.ones((3,2))
+array_of_ones
+
+Output:
+array([[1.,1.],
+       [1.,1.],
+	   [1.,1.])
+	   
+******************************************
+
+array_empty = np.empty((3,2))
+array_empty
+
+
+******************************************
+
+array_eye = np.eye(4)
+array_eye
+
+array([1.,0.,0.,0.],
+      [0.,1.,0.,0.],
+	  [0.,0.,1.,0.],
+	  [0.,0.,0.,1.]
+	  
+*********************************************
+
+array_of_evens = np.arrange(2,24,2)
+array_of_events
+
+Output: 
+array([2,4,6,8,10,12,14,16,18,20,22])
+
+********************************************
+  
+array_of_floats = np.arrange(1,3,0.3)
+array_of_floats
+
+Output: 
+array([1.0,1.3,1.6,1.9,2.2,2.5,2.8]) 
+
+******************************************** 
+
+array_2D = np.array([(3,4,6),(2,1,6)])
+array_2D
+
+Output:
+array([[3,4,6],[2,1,6]])
+
+
+********************************************
+
+array_2D.shape
+
+Output: (2,3) 
+
+********************************************
+
+np.arange(8)
+
+Output: array([0,1,2,3,4,5,6,7])
+
+********************************************
+
+array_nd = np.arrange(8).reshape(2,4)
+array_nd
+
+array([[0,1,2,3],
+      [4,5,6,7]]) 
+	  
+******************************************
+
+array_nd
+array_ones = np.ones_like(array_nd)
+array_ones
+
+array([[1,1,1,1],
+      [1,1,1,1]])
+	  
+******************************************
+
+Printing Arrays
+
+x = np.arrange(36).reshape(3,4,3)
+print(x) 
+
+
+*****************************************
+
+x = np.array(10222)
+print(x)
+
+0 1 2 3 4 5 ... 10222
+
+... - ellipsis 
+
+*****************************************
+
+import sys
+np.set_printoptions(threshold = sys.maxsize)
+// This will eliminate the threshold at which NumPy uses ellipsis for large arrays.
+
+
+****************************************
+
+Basic Operations
+
+import numpy as np
+p = np.array([9,8,7])
+q = np.array([3,2,4])
+p+q
+p-q
+p*q
+p/q
+p%q
+p *= 4
+
+Output: array[[12,10,11]]  // Same way for two dimensional arrays. 
+
+p > 8
+
+Output: array([False, True, True])
+
+****************************************
+
+fleet_mileage = np.array[1,2,3,4,5,6]
+fleet_mileage.sum()
+fleet_mileage.min()
+fleet_mileage.max()
+print('Mean :', fleet_mileage.mean()); 
+
+Output : 21 
+****************************************
+
+num = np.arrange(16).reshape(4,4)
+array([0,1,2,3],
+      [4,5,6,7],
+	  [8,9,10,11],
+	  [12,13,14,15])
+
+
+num.sum() // Sums up each value in the array 
+
+num.sum(axis=0) // sums up the column
+array([24,28,32,36])
+
+num.sum(axis=1) // sumes up the column
+array([6,22,38,54])
+
+num.min(axis=1)
+num.mean(axis=1)
+
+******************************************
+
+Universal Functions:
+
+import numpy as np
+circle_radii = np.array([[145,120,90,60,45,30])
+circle_diameters = 2 * circle_radii
+circle_area = np.pi * circle_radii** 2 
+circle_diameters
+circle_area
+
+Output: 
+array([290,240,180,120,90,60]) 
+
+print('Sine values:')
+sine_value = np.sin(angle_radians)
+arcsine_values = np.arcsine(sine_values)
+print('Cos values:') 
+np.cos(angle_radians)
+print('Tangent values:') 
+np.tan(angle_radians) 
+
+
+x = np.arange(4,31,5)
+array([4,9,14,19,24,29])
+expo = np.exp(x)
+expo
+
+sqrt = np.sqrt(x)
+sqrt
+
+np.median(x)
+
+float_values = np.genfromtxt('datasets/float_values.csv',delimiter=',')
+float_values 
+float_values.shape // It consists of around 6000 elements.
+// Set of aggregate function 
+print('Mean = %i', %np.mean(float_values)) 
+print('Median = %i', %np.median(float_values))
+print('Variance = %i', %np.var(float_values))
+print('Standard Deviation = %i' %np.std(float_values))
+
+******************************************************************************************
+
+ Indexing and Slicing 
+ 
+1, 
+import numpy as np
+x = np.arange(10)**3
+x
+
+array([0,1,8,27,64,125,216,343,512,729])
+
+x[3] : 27
+x[-4] : 216
+x[1:8] : 
+x[3:-3] :
+x[ :8] :
+x[3:0] :
+x[:10:2] :
+x[::-1] :
+
+Two dimensional array :
+
+companies = np.array([['Samsung','Microsoft','IBM','Spotfiy','Filpkart'],
+                     [1938,1975,1911,2006,2007],
+					 [489000,131000,380000,3000,30000]])
+					 
+companies
+
+             array([['Samsung','Microsoft','IBM','Spotfiy','Filpkart'],
+                     ['1938','1975','1911','2006','2007'],
+					 ['489000','131000','380000','3000','30000']], dtype='<U9')
+					 
+companies[0] 
+
+arary(['Samsung', 'Microsoft','IBM','Spotify','FilpKart'], dtype='<U9')
+
+companies[:,2]
+
+array(['IBM','1911','380000'],dtype='<U9'
+
+companies[0:2]
+
+'IBM'
+
+companies[0 (row indices):2 (column indices), 2:4 ]
+array(['IBM','Spotify'],['1911','2006']], dtype='<U9')
+
+companies[:,2:4]
+array(['IBM','Spotify'],
+      ['1911','2006']], 
+	  ['380000','3000']], dtype='<U9')
+	  
+companies[0, ....]
+print "Company names"
+
+companies[...,2]
+print // columns related to index 2
+
+****************************************************************************************
+
+Itering Over Arrays
+
+companies = np.array(['Samsung','Microsoft','IBM','Spotify','Filpkar'],
+                     [1930,1979,1911,2006,2007],
+					 [489000, 131000, 380000, 3000, 30000]);
+					 
+i = 0
+for row in companies:
+	print('Row', i, ': ',row)
+	
+Output:
+   Row 0 : ['Samsung','Microsoft','IBM','Spotify','Filpkart']
+   Row 1 : ['1930',1979','1911','2006','2007']
+   Row 2 : ['489000','131000','380000','3000','30000']
+   
+companies.flatten() // rows wise order ( C language side ordering ) 
+
+Output: array[['Samsung','Microsoft','IBM','Spotify','Filpkart','1938',
+               '1975','1911','2006','2007',489000','131000','380000',
+			   '3000','30000'], dtype='<U9']
+			   
+for data in companies.flatten(order='F'): // columns wise order ( fortron side ordering )
+    print(data)
+	
+Samsung
+1938
+489000
+Microsoft
+1975
+131000
+IBM
+...
+...
+30000
+
+num = np.arange(16).reshape(4,4)
+num
+
+for i in np.nditer(num):   // rows wise ordering 
+	print(i) 
+
+for i in np.nditerm(num, order = 'F'): // columns wise ordering
+	print(i) 
+	
+for i in np.nditer(num, order = 'F', flags = ['external_loop']]:
+	print(i)
+Output:
+[0 4 8 12]
+[1 5 9 13]
+[2 6 10 14]
+[3 7 11 15]
+
+for array in np.nditer(num):
+	array[...] = array * array
+	
+--> array[...] : ValueError: assignment destinction is read-only.
+
+for array is np.nditer(num, op_flags = ['readwrite']):
+	array[...] = array * array
+	
+	
+**************************************************************************************************
+
+Reshaping Arrays:
+
+import numpy as np
+tech_companies = np.array(['IBM','Apple Inc','Intel','Dell','Microsoft'],
+                          ['New York','California','California','Texas','Washington']])
+tech_companies
+
+array([['IBM','Apple',...],['New York','California',...]],dtype='<U10'
+
+tech_companies.shape
+(2,5) 
+
+tech_companies.ravel();  // Similar to flatten function 
+
+tech_companies.T
+array(['IBM','New York'],
+      ['Apple Inc','California'],
+	  ....
+	  ....
+	  ....
+	  ]], dtype='<U10')
+
+tech_companies.T.ravel()
+
+tech_companies.shape
+(2,5)
+
+tech_companies.reshape(5,2) // row wise
+
+np.arrange[18].reshape(3 (row) ,6 (column)) // 
+
+companies // name of the companies 
+
+companies.reshape(-1, 4)
+// -1 - it depends on number of elements. But columns should be 4
+
+companies.reshape(4,-1)
+// 4 - Number of rows should be four. But columns should be number of elements.
+
+companies.reshape(5,-1) 
+// ValueError: cannot perform operation because number of elements in companies array are 8
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+	
+	
+
+
+
+
+
+			   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

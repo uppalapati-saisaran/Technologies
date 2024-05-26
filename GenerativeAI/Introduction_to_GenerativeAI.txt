@@ -1,0 +1,554 @@
+***************************************************************************************************
+
+              Introduction to Generative AI 
+
+**************************************************************************************************
+
+
+* what Generative AI is
+* how it is used
+* how it differ from traditional machine learning methods.
+* it also covers google Tools to help you develop
+   own Gen AI apps
+   
+   
+1, Define Generative AI
+2, Explain how generative AI works
+3, Describe Generative AI model types
+4, Describe Generative applications.
+
+
+* DeepLearning => subset => Machine Learning => subset => Artifical intelligence
+
+***************************************************************
+
+
+* Arttifical intelligence is a discipline
+* science is a discipline of artifical intelligence.
+* AI is the theroy and development of computer systems able to 
+  perform tasks normally requiring human intelligence.
+  
+***************************************************************
+  
+* Machine Learning  is subfield
+* ML gives computers the ability to learn without explict programming.
+* ML models are divided into unsupervised ML models and 
+  supervised ML models.
+
+* supervised ML models is labelled data. 
+* labelled data comes with tag (i.e, name)
+* supervised learning implies the data is already labeled.
+* In supervised learning we are learning from past examples
+  to predicate future values. 
+* classic example of supervised learning:
+  
+  input data: x ==> Passed to ===> Model ===> PredicateOut(y) 
+  ==> Compared with ==> Excepted output(y) [ Training data] 
+  ==> If the results are so far then it is the error then
+  ==> Modified the data and give back to Model. 
+  
+* unsupervised ML modesl is unlabelled data.
+* unlabelled data comes without tag.
+* unsupervised learning implies the data is not labeled.
+* unsupervised problems are all about looking at the raw data,
+  and seeing if it naturally falls into groups.
+* classic example of unsupervised learning: 
+  
+  input data: x ===> passed to ===> Model ===> Generated example
+  
+*************************************************************************
+  
+* Deep learning is a subset of ML. 
+* Deep learning uses Aritifical Neural Networks - allowing them to process
+  more complex patterns than traditional machine learning.
+* input layer ==> hidden layer ==> output layer   
+
+* Generative AI is a subset of Deep Learning.
+* Large Language Models (LLMs) are also a subset of Deep Learning.
+
+* Deep Learning model types are divided into
+(01) Discriminative
+- Used to classify or predict.
+- Typically trained on a dataset of labeled data.
+- Learns the relationship between the features of the data points
+  and labels.
+  
+(02) Generative
+- Generates new data that is similar to data it was trained on.
+- Understands distribution of data and how likely a given example   
+  is
+- Predict next word in a sequence.
+
+  Discriminative technique ---> Classify ( Discriminative model -
+  classify as a dog or a cat) ---> Dog
+
+  Generative technique ---> Generate --> Generative model 
+  (generate dog image) ---> Dog
+  
+  Predicative ML Model
+   
+  Data,Labels -> Predictive ML Model (Learns relationship between
+  data and label) --> Output --> Label
+  
+  Unstructed -> input -> GenAI Model (Learns patterns in unstructed
+  content) --> Output --> New Content
+  
+  
+* How to identify deep learning is GenAI or not?
+  Input --> ML System --> Output ->
+  (01) Not GenAI when y is a: Number, Discrete, Class, Probability
+  (02) is GenAI when y is : Natural language, Image, Audio 
+  
+  y = f(x)
+  x - input data
+  f - Model
+  y - Model output
+  
+  
+* Classical supervised & Unsupervised Learning
+
+  Training code, Labeled data ----> Model Building --->
+  
+  Predict or classify or cluster
+  
+* Gen AI Supervised, Semi-Supervised and Unsupervised Learning
+
+  Training code, Labeled data, unlabeled data 
+  
+  --> Foundation Model --> 
+  
+  (01) ---> Generate new content ---> Text Generation
+  (02) ---> Generate new content ---> Code Generation
+  (03) ---> Generate new content ----> Image Generation
+  
+
+* Generative language models | LaMDA, PaLM, GPT, etc
+
+* What is Generative AI?
+  GenAI is a type of Artifical intelligence that creates new content
+  based on what it has learned from existing content.
+  
+  The process of learning from existing content is called training
+  and results in the creation of a statistical model.
+  
+  When given a prompt, GenAI uses this statistical model to predict
+  what an expected response might be-and this generate new content.
+  
+* Generative language models
+  Generative language models learn about patterns in language through training data.
+  Then, give some text, they predict what comes next.
+  
+* Generative image models
+  Generative image models produce new images using techniques like diffusion.
+  Then, give a prompt or related imagery, they transform random noise into images or generate images from photos.
+  
+
+* Input: Image   
+  Output: Text image captioning, visual question answering, image captioning 
+  Output : Image Super resolution, Image completion  
+  Output: Video Animation.
+  
+* Input: Text 
+  Output: Text Translation, summarization, Question Answering, Grammar correction
+  Output: Image  Super resolution, Image completion
+  Output: Audio Text to speech
+  Output: Decisions Play games.
+  
+* Gemini 
+     I'm making a sandwich with peanut butter and  
+	 
+	 * Sure I can help you with that. Here are some of the most popular spreads to put on a peanut butter sandwich:
+	    - Jelly or jam: strawberry, grape, raspberry, apricot, peach, blackberry, blueberry, etc.
+		
+* Power of AI comes from transformer 
+
+  How's it going?  -- input -->  Transformer ( ->  Encoding component -> Decoding component ) 
+  --> Generative pre-trained transformer model -- output --> I'm doing alright, thanks for asking. How are you?
+  
+* Hallucinations make the output text difficult to understand and make the model more likely to generate incorrect or misleading information.
+* Hallucinations are bad
+
+* Prompting ( Summarize a text of x, Generate a poem in the style of x, Give me a list of keywords based on semantic similarity of x )
+  --> Large Language Model -- Output --> Summarization , Writing, keyword extraction
+ 
+* Generative AI depends a lot on training data.  
+
+* Generative AI models
+
+1, Text -> Text  ( One language to Another language) 
+2, Text -> Image 
+3, Text -> Video
+4, Text -> 3D 
+5, Text -> Tasks
+   Find and summarize recent news in international soccer  -> Here's what I've found: trades for star forwards have been widespread
+ 
+6, Foundation model 
+
+Data (Text, Image, Speech, Structure data, 3D signal) -- Training -->  Foundation model  -- Adaption -->
+Tasks (Question Answering, Sentiment analysis, Information extraction, Image captioning, Object recognition, Instruction following ) 
+
+ - Language of Foundation models :  paLM API for chat, paLM API for text, BERT 
+ 
+ - Vision Foundation models : Embeddings extractor, Stable Diffusion V1-5, BLIP image captioning, BLIP VQA, CLIP, OWL-ViT, ViT GPT2
+ 
+ - Gemini code generation :
+          * Convert Python to Json code.
+          * I have a Pandas DataFrame with two columns - one with the filename and one with the hour in which it is generated:
+            File Hour
+            F1  1
+            F2  2
+            F3  1
+            F4  1
+          * I am trying to convert it to a JSON file with the following format:
+            {"File":"F1","Hour":1}
+
+  - Gemini code generation can help you 
+          * Debug lines of source code.
+          * Explain you the code line by line.
+          * Cross sql queries for databases.
+          * Translate code from one language to another.
+          * Generate documenation and tutorials for source code.
+  
+  - Vertex AI Studio 
+      * Quickly explore and customize generative AI model. 
+	  * Developers create and deploy.
+	  * Library of pre-trained models.
+      * Tools for fine-tuning models.	
+      * Tool for deploying models to production. 	
+      * Community forum for developers to share ideas and collaborate. 
+	  
+   - Vertex AI is help to create 
+     Chatbots
+	 Digital assistants
+	 Customer search engines
+	 Knowledge bases
+	 
+   - PaLM API 
+       Model training tool 
+       Model deployment tool  
+       Model monitoring tool 	
+
+* Gemini 
+
+1, What is Generative API?
+A, Generative AI is a type of artifical intelligence that can create new content,such
+   as text, images, audio, and video.
+   
+2, What is an example of both a generative AI and a discriminative AI model?
+A, A generative AI model could be trained on a dataset of images of cats and then
+   used to generate new images of cats. 
+   A discriminative AI model could be trained on a dataset of cats and dogs and 
+   then used to classify new images as either cats or dogs.
+   
+3, what are foundation models in Generative AI?
+A, Which is a large AI model pre-trained on a vast quantity of data desigend to be
+   adapted or fine tuned to a wide range of downstream tasks such as sentiment analysis, image
+   captioning and object recogniation foundation models have the potential to revolutionize
+   many industries including healthcare, finance and customer service.  
+
+4, what is prompt?
+A, A prompt is a short piece of text that is given to a large language model or llm as input
+   and it can be used to control the output of the model in a variety of ways. 
+
+5, Hallucinations are words or phrases that are generated by the model that are often
+   nonsensical or grammatically incorrect. What are some factors that can cause hallucinations?
+   Select three options?
+A, (1) The model is trained on noisy or dirty data.
+   (2) The model is not trained on enough data.
+   (3) The model is not given enough context.
+   
+***********************************************************************************************************
+
+                            Introduction to Large Language Models 
+ 
+
+***********************************************************************************************************
+
+* Learn to define large language models.
+* Describe large language models use cases.
+* Explain prompt tuning and describe google's generative AI development tools
+
+* Large language modesl are a subset of deep learning.
+* Generative AI and large language model intersect and they are both a part of deep learning. 
+
+* What are large language models?
+- Large language models refer to large general purpose language models that can be pre-trained
+  and then fine-tuned for specific purposes.
+
+* What do pre-trained and fine-tuned mean great questions?
+- Imagine training a dog often you train your dog basic commands such as sit, come, down and stay these commands
+  are normally sufficient for everyday life and help your dog become a good Canan Citizen but if you need
+  special service dogs such as a police dog a guide dog or a hunting god you add special trainings right.
+  the similar ideal applies to large language models.
+  These models are trained for general purposes to solve common language probelms such as text classification question 
+  answering document summarization and text generation across 
+  
+
+                                                AWS 
+
+*************************************************************************************************************************************
+
+                           Generative AI Learning Plan - Developers (Partner) 
+
+**************************************************************************************************************************************
+
+
+*  Generative AI is a type of AI that can create new content and ideas, including conversations, stories, images, sounds, and even data itself.
+*  This is a transformational technology that is top of mind of AWS customers acorss industireis who are building these capabilities into their applications and products.
+
+***************************************************************************************************************************************
+	                   Introduction to generative AI - Art of the possible - Course 
+***************************************************************************************************************************************
+https://explore.skillbuilder.aws/learn/course/17176/introduction-to-generative-ai-art-of-the-possible;lp=1939
+
+Introduction to generative AI
+use cases
+risks and benefits
+content generation example
+
+***************************************************************************************************************************************
+                      					Overview of ML 
+***************************************************************************************************************************************
+
+* Generative artifical intelligence is a branch of machine learning. 
+* It is concerned with the development of algorithms that can create natural language text, images, code, audio, or videos based on user input.
+* Generative AI has numerous applications in various industries, such as media, entertainment, healthcare, and finance. 
+ 
+
+*****************************************
+ What is ML?						
+*****************************************
+
+* ML is training a computer to recognize patterns in historical data to make predications on new data.
+* These predications are then used to take business actions.
+* In pratice, ML progresses as follows: 
+
+	DataSet ->  Recognize Patterns -> Make predicitions
+
+* A dataset is used to train a model. In this dataset, there are features and labels. The goal is to take features as inputs
+  and find a formula that predicts the labels or outputs. The resulting ML algorithms can take new data, recognize patterns in the data,
+  apply the formula, and make predications about the data.
+
+******************************************
+
+History of ML at Amazon ?
+
+******************************************
+
+* Many of the Amazon services customers use are driven by ML.
+* Our ecommerence recommendations engine is driven by ML.
+* The paths that optimize robotic picking routes in our fulfillment centers are driven by ML.
+* Our supply chain, forecasting and capacity planning are informed by ML.
+
+* Amazon Prime Air (drone delivery) and the computer vision technology in Amazon Go (a physical retail store without formal check out experience) use deep leanring.
+* Amazon Alexa, powered by more than 30 different ML systems, helps customers billions of times each week to manage smart homes, shop, get information and entertainment and more.
+
+******************************************
+
+Understaning the difference between generative AI and traditional ML
+
+******************************************
+
+* Generative AI is a subnet of deep learning because it can adopt models built using deep learning, but without retraining or fine tuning.
+* Deep learning uses the concept of neurons and synapses similar to how our brain is wired.
+* Example of deep learning applications in Amazon Recognition which can analysze millions of images, streaming and stored videos within seconds.
+* Amazon CodeWhisperer, an example of a generative AI application, can generate code suggestions in real time based on your comments and existing code.
+
+* Generative AI is powered by large langugage models that are pretained on internet-scale data, these models are called foundation models(FMs).
+  With FMs, instead of gathering labeled data for each model and training multiple models as in tranditional ML, customers can adopt the same FM
+  to perform multiple tasks.
+  
+* The large language models have the ability to predict the next word in a sentence by taking into consideration the position and the context
+  of a word in a sentence. LLMs use this ability to generate new context. 
+  
+******************************************
+
+Evolution of ML and the emergence of generative AI
+
+******************************************
+
+* Machine learning has been around for decodes and the data scientists have been building models for many years.
+* Evolution of ML choose the following three flashcards to reveal the answers.
+
+(01) Investment in team size.
+(02) Willlingness to invest in big ideas.
+(03) Investment in compute
+
+***************************************************************************************************************************
+
+								Basics of Generative AI 
+
+****************************************************************************************************************************
+
+********************************************
+
+What is generative AI?
+
+********************************************
+	  
+* Generative AI is a type of AI that can create new content,including conversations, stories, images, videos, music, and code.
+* Generative AI is powered by ML models. However, generative AI is powered by very large models that are pretrained on vast  
+  collections of data.
+* Code generation example:
+  - An example of generative AI that businesses are using is Amazon CodeWhisperer [ wis,par,ar / a person who whispers very quietly, so that only people who are close can hear] 
+    , the AI coding companion.
+  - CodeWhisperer is a generative AI tool that increases developer productivity by generating code.
+  
+* During the Amazon CodeWhisperer preview, Amazon ran a productivity chanllenge.
+* Participants who used CodeWhisper were 27 percent more likely to complete tasks successfully and did so an average
+  of 57 percent faster thatn those who didn't use codeWhisperer.
+  
+* Developers are often forced to break their workflow to search the internet or to ask their colleagues for help completing the task.Although this can 
+  help them obtain the starter code they need,it's disruptive [ dis-rap-tive, causing or tending to cause disruption ]. They must leave their integrated
+  development environment to search or ask questions in a forum or to find and ask a colleague--further adding to the disruption. 
+
+* Instead, CodeWhisper meets developers where they are most productive, providing real-time recommendations as they write code or comments in their IDE.
+
+* What are customers saying about CodeWhisperer?
+  - Accenture uses CodeWhisperer is improve developer productivity, including for developer onboarding, writing boilerplate code,
+    using unfamiliar languages, and detecting security vulnerabilities.
+  - CodeWhisper to reduce our development efforts by up to 30% and we are now focusing more on improving security, quality, and performance.
+
+
+* Amazon CodeWhiperper, Free for individual use is now generally available.
+
+*****************************************
+
+Common use cases 
+
+*****************************************  
+
+* You can apply generative AI across all lines of business, including engineering, marketing, customer service, finance, and sales.
+* You can also apply it to many use cases, from text summarization to image generation.
+
+1, Improve customer experience
+
+- You can use generative AI to improve customer experience through capabilities such as chatbots, virtual assistants,
+  intelligent contact centers, personalization, and content moderation.
+  
+2, Boost employee productivity 
+
+- You can boost your employees' productivity with generative AI powered conversational search, content creation, 
+  text summarization, and code generation, among others.
+- Business users spend a lot of time extracting data and insights from a dashboard to create presentations for other stackholders.
+  Amazon QuickSight leverages the power of generative AI to generate, customize and share compelling visual narratives using natural
+  language prompts, thereby increasing business user productivity.
+  
+3, Creativity:
+
+- You can use generative AI to turbocharge production of all types of creative content, from art and music to text,images, animations, and video.
+
+4, Improve business operations:
+
+- Finally, you can use generative AI to improve business operations with intelligent document processing, maintenance assistant,
+  quality control and visual inspection, and synthetic training data generation.
+  
+*************************************************************************************************************************************************
+
+										How Amazon uses generative AI 
+*************************************************************************************************************************************************
+
+- One of the ways Amazon is using generative AI is with the Create with Alexa feature.
+- Create with Alexa uses advances in convervational and generative AI to empower young storyteller to build unique stories with a narrative arc,
+  coloreful graphics, and fun, complementary background music.
+- The animated storie then come to life on the scren of Amazon Echo Show devices.
+
+- To build these stories, Alexa researchers created several different content generators using generative AI.
+- To learn more about the create with Alexa feature, choose the start or arrow buttons to display each of the following three steps.
+
+- The Alexa story creation experience uses AI to arrange visual elements on either artist-rendered or AI-generated backgrounds
+  to illustrate stories produced by a separate AI module.
+ 
+Story generation: 
+
+- The story generator includes two models that use pretrained language models.
+- The planner model receives the customer-selected prompts and uses them to generate a longer set of keywords that are allocated to separated scenes.
+- The keywords constitue the story plan.
+- The text generator model receives the story plan and outputs the story text.
+- It uses human-written stories labeled according to the themes that cusotmers will ultimately choose from, such as underwater and enchanted forest. 
+
+
+Scene generation 
+
+- The scene generation text is processed through two natural language processing modules.
+- This makes it possible for the module to determine references to pronouns and other indicative words and rewrite the text accordingly.
+- Example : if the mermaid mentioned in scene one is referred to as she in scene two, the module rewrites she as the mermaid. 
+            This makes it more efficient for the scene generator to interpret the text.
+			
+
+Music generation
+
+- An AI musical arragement system ensures that all the pieces fit together based on their attributes, such as chord progression,
+  rhythm and instrument type.
+  
+- A text-to-speech model computes the time it will take to read the text. 
+- The model's output serve to help determine the duration and character of the background music.
+- A paralinguistic analysis model scores the text along multiple axes, such as claim to exciting and sad to happy.
+
+*******************************************************************************************************************************************************
+
+Generative AI services on AWS :
+
+Foundation models
+as a service            ------->    Amazon Bedrock 
+
+Build your              ------->    Amazon SageMaker and Amazon SageMager JumpStart
+own models
+
+Compute                 ------->    AWS Trainium and AWS Inferentia 
+
+
+
+- Amazon is focused on three macro layers to generative AI: compute, build your own models, and FMs.
+
+(01) Compute 
+
+- First there is the compute required to run large language models.
+- Amazon has two specialized chips for this very purpose. Details are as follows.
+  - AWS inferentia and AWS Trainium are purpose-build ML accelerators that AWS designed from the ground up.
+  - The first-generation of AWS inferentia delivers significant performance and cost savings benefits for deploying smaller models.
+  - AWS Trainium and AWS Inferentia2 are built for training and deploying ultra-large generative AI models with hundreds of billions of parameters.
+  
+
+(02) Build your own models
+- Next, you can build your own models using Amazon SageMaker JumpStart. Details are as follows:
+  - You can use Amazon SageMaker along with the purpose-built AWS Trainium chip to train your own LLMs.
+  - Alternatively, choose one of the language models available in SageMaker Jumpstart and retrain it with your own data.
+  
+(03) Foundation models
+- Finally, there are the models themselves.
+- FMs with billions of parameters require time and resources to pretrain.
+- Why build your own FM when you can take advantage of the leading FMs already on the market.
+- Considerations are as follows.
+  - Amazon Bedrock is a fully managed service that makes FMs,including Amazon Titan models, from leading AI startups
+    and Amazon available through an API. Customers can choose from a wide range of FMs to find the model that 
+	is best suited for their use case.
+  - Amazon Bedrock is the most efficient way to build and scale generative AI applications with FMs.
+
+********************************************************************************************************************************************  
+
+https://explore.skillbuilder.aws/learn/course/17176/play/107986/introduction-to-generative-ai-art-of-the-possible;lp=1939 
+
+
+        
+ 
+      
+  
+ 
+
+
+
+  
+
+  
+  
+    
+
+ 
+
+
+
+
+  
+
+

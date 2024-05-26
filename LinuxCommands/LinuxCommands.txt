@@ -1,0 +1,230 @@
+
+https://www.hostinger.com/tutorials/linux-commands
+
+1, ls  - Lists a directory's content.
+2, pwd - Shows the current working directory's path.
+3, cd -  Changes the working directory.
+4, mkdir - Creates a new directory
+4, rm  - Deletes a file
+5, cp - copies file and directories, including their content
+6, mv - moves or renames files and directories
+7, touch - creates a new empty file
+8, file  - checks a file's type
+9, zip and unzip - createas and extracts a ZIP archive
+10, tar - Archives files without compression in a TAR format.
+11, nano, vi, and jed - Edits a file with a text editor.
+12, cat - Lists,combines and writes a file's content as a standard output.
+13, grep - Searches a string within a file
+14, sed = Finds, replaces, or deletes patterns in a file.
+15, head - Displays a file's first ten lines.
+16, tail - Print a file's last ten lines.
+17, awk - Finds and manipulates patterns in a file.
+18, sort - Reorders a file's content.
+19, cut - Sections and prints lines from a file.
+20, diff - Compares two files content and their differences.
+21, tee - Prints command outputs in Terminal and a file.
+22, locate - Finds files in a system's database
+23, find - outputs a file or folder's location.
+24, sudo - Runs a command as a superuser
+25, su - Runs programs in the current shell as another user.
+26, chmod - Modifies a file's read, write and execute permissions.
+27, chown - changes a file,directory or symbolic link's ownership.
+28, useradd and userdel - Creates and removes a user account.
+29, df - Displays the system's overall disk space usage.
+30, du - Checks a file or directory's storage consumption.
+31, top - Displays running processes and the system's resource usage.
+32, htop - works like top but with an interactive user interface.
+33, ps - Creates a snapshot of all running processes.
+34, uname - Prints information about your machine's kernel,name, and  
+            hardware.
+35, hostname - Shows your system's hostname
+36, time - calculates commands' execution time
+37, systemctl - Manages system services
+38, watch - Runs another command continuously.
+39, jobs - Display a shell's running processes with their statuses.
+40, kill - Terminates a running processes
+41, shutdown - Turns off or restarts the system
+42, ping - Checks the system's network connectivity.
+43, wget - Downloads files from a URL.
+44, curl - Transmits data between servers using URLs
+45, scp - securely copies files or directories to another system
+46, rsync - synchronizes conent between directories or machines.
+47, ifconfig - Displays the system's network interfaces and their configurations.
+48, netstat - Shows the system's network information, like routing and sockets.
+49, traceroute - Tracks a packet's hops to its destination.
+50, nslookup - Queries a domain's IP address and vice versa.
+51, dig - Displays DNS information,includeing record types.
+52, history - Lists previously run commnads
+53, man - shows a command's manual
+54, echo - prints a message as a standard output.
+55, ln - Links files and directories
+56, alias and unalias - Sets and removes an alias for a file or command
+57, cal - Displays a calender in Terminal.
+58, apt-get - Manages Debian-based distros package libraries.
+
+
+******************************************************************************************************
+
+Sed command :
+
+
+1, Replacing or substituting string : 
+    - Sed command is mostly used to replae the text in a file. 
+    - The below simple sed command replaces the word "unix" with "linux" in the file. 
+   
+     $sed  's/unix/linux/' geekfile.txt
+	 
+	 "s" specifies the subsititution operation.
+	 "/" are delimiters.
+	 "unix" is the search pattern
+	 "linux" is the replacement string. 
+	 
+    - By default, the sed command replaces the first occurance of the pattern in each line and 
+	  it won't replae the second, thrid..occurance in the line.
+	 
+2, Replacing the nth occurrence of a pattern in a line: 
+  
+     $sed 's/unix/linux/2' geekfile.txt 
+	 
+	 - /2 flags to replace the first,second occurance of a pattern in a line. 
+	 
+3, Replacing all the occurance of the pattern in a line:
+
+   $sed 's/unix/linux/g' geekfile.txt
+   
+     - /g to replace all the patterns from the nth occurenace of a pattern in a line. 
+   
+4, Replacing from nth occurrence to all occurrences in a line 
+
+    $sed 's/unix/linux/3g' geekfile.txt 
+	
+	- /3g replaces the third, fourth, fifth "unix" word with "linux" word in a line. 
+	
+5, Parenthesize first character of each word.
+
+   $ echo "Welcome To The Geek Stuff" | sed 's/\(\b[A-Z]\)/\(\1\)/g'
+   
+   Output : (W)elcome (T)o (T)he (G)eek (S)tuff
+   
+   
+6, Replacing string on a specific line number
+
+   $sed '3 s/unix/linux/' geekfile.txt
+   
+7, Duplicating the replaced line with /p flag:
+
+   $sed 's/unix/linux/p' geekfile.txt 
+   - The /p print flag prints the replace line twice on the terminal.
+   - if a line does not have the search pattern and is not replaced, then the /p prints that line only once. 
+   
+8, Printing only the replaced lines:  
+
+   $sed -n 's/unix/linux/p' geekfile.txt 
+   
+   - if you use -n aline without /p, then the sed does not print anything. 
+   
+9, Replacing string on a range of lines:
+
+   $sed '1,3 s/unix/linux/' geekfile.txt 
+   
+   $sed '2,$ s/unix/linux/' geekfile.txt  // $ indicates the last line in the file. 
+   
+   
+10, Deleting lines from a particular file. 
+
+    $sed '5d' filename.txt 
+    // delete 5th line in the file.
+	
+	$sed '$d' filename.txt 
+	// delete a last line 
+	
+	$sed '3,6d' filename.txt 
+	// delete line from range x to y 
+	
+	$sed '12,$d' filename.txt 
+	// delete 12th line to last line 
+	
+	$sed '/abc/d' filename.txt 
+	// delete pattrn matching line 
+	
+https://www.geeksforgeeks.org/sed-command-in-linux-unix-with-examples/
+
+
+*******************************************************************************************************************	
+   
+
+AWK commands:
+
+$cat > employee.txt
+ajay manager account 45000
+sunil clerk account 25000
+varun manager sales 25000
+amit manager account 47000
+tarun peon sales 15000 
+deepak clerk sales 23000
+sunil peon sales 13000
+satvik director purchase 800000
+
+
+$ awk '{print}' employee.txt 
+
+// No pattern is given.
+// So that actions are applicable to all the lines.
+// Action print without any argument prints the whole line by default, so it prints all the lines of the file without failure. 
+
+$ awk '/manager/{print}' employee.txt
+// the awk command prints all the line which matches with the manager
+
+
+$ awk '{print $1,$4}' employee.txt
+// the awk command splits the record delimited by whitespace character by default and stores it in the $n variables.
+// if the line has 4 words, it will be stored in $1,$2,$3, and $4 respectively.
+// Also, $0 represents the whole line.
+
+
+$ awk '{print NR,$0}' employee.txt
+// awk command with NR prints all the lines along with the line number
+
+$ awk '{print $1,$NF}' employee.txt
+// $1 represents Name
+// $NF represents Salary
+// $NF represents last field.
+
+$ awk 'NR == 3, NR == 6 {print NR,$0}' empolyee.txt
+// Prints the line starting with 3 and ending with 6
+
+
+- For the given text file
+$cat > geeksforgeeks.txt
+A   B  C
+Tarun  A12 1
+Man B6 2
+Praveen M42 3
+
+$awk '{print NR "-" $1}' geeksforgeeks.txt
+// To print the first item along with the row number(NR) separated with "-" from each line in greeksforgeeks.txt
+
+$awk '{print $2}' geeksforgeeks.txt
+// The question should be: - to return the second column/item from geeksforgeeks.txt
+
+$awk 'NF < 0' geeksforgeeks.txt 
+// here NF should be 0 not less than the user have to print the line number also:
+$awk 'NF == 0 {print NR}' geeksforgeeks.txt 
+or
+awk 'NF <= 0 {print NR}' geeksforgeeks.txt 
+
+https://www.geeksforgeeks.org/awk-command-unixlinux-examples/?ref=lbp
+
+
+
+
+
+
+
+
+
+
+
+
+
+

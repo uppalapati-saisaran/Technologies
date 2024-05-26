@@ -1,0 +1,848 @@
+Write a C++ program to implement a class called Shape with virtual member functions
+for calculating area and perimeter. 
+Derive classes such as Circle,Rectangle, and Triangle from the Shape class and 
+override virtual functional accordingly.
+
+#include<iostream> 
+// Include necessarey header for input/output stream
+#include<cmath>
+// Include necessary header for mathematical functions
+
+const double PI = 3.14159;
+// Define constant value for PI
+
+class Shape { // Define a base class named Shape
+ public:
+   // Virtual member function to calculate the area
+   // ( pure virtual function )
+   virtual double calculateArea() const = 0;
+   
+   // Virtual member function to calculate the perimeter
+   // ( pure virtual function )
+   virtual double calculatePerimeter() const = 0;
+};
+
+class Circle: public Shape { 
+// Define a derived class named Circle inheritance Shape 
+private :
+	double radius;
+	// Private member variable to store the radius of the Circle.
+public:
+	//Constructor for Circle class
+	Circle(double rad): radius(rad) {}
+	
+	//Override the virtual member function to calculate the area
+	double calculateArea() ocnst override {
+		return PI * pow(radius,2);
+	} 
+	
+	//Override the virtual member function to calculate the perimeter
+	double calculatePerimeter() const override {
+	   return 2 * PI * radius;
+	}
+};
+
+class Rectangle : public Shape {
+private:
+	double length;
+	double width;
+public:
+	Rectangle(double len,double wid): length(len),width(wid) {}
+
+    double calculateArea() const override {
+	  return length * width;
+	}
+	
+	double calculatePerimeter() const override {
+	return 2*(length + width)
+	}
+};
+
+class Triangle: public Shape { 
+ private:
+	double side1;
+	double side2;
+	double side3;
+	
+ public:
+	Triangle(double s1,double s2,double s3):side1(s1),side2(s2),side3(s3)
+	{ }
+	
+	double calculateArea() const override {
+	  double s = (side1 + side2 + side3)/2;
+	  return sqrt(s*(s-side1)*(s-side2) * (s-side3)));
+    }
+	
+	double calculatePerimeter() const override {
+	  return side1+side2+side3;
+	}
+};
+
+int main() {
+	Circle circle(7.0);
+	Rectangle rectangle(4.2,8.0);
+	Triangle triangle(4.0,4.0,3.2);
+	
+	std::cout << "Circle: " << std::endl;
+	std::cout << "Area: " << circle.calculateArea() << std::endl;
+	std::cout << "Perimeter: " << circle.calculatePerimeter() << std::endl;
+	
+	std::cout << "\nRectangle: " << std::endl;
+	std::cout << "Area: " << rectangle.calculateArea() << std::endl;
+	std::cout << "Perimeter: " << rectangle.calculatePerimeter() << std::endl;
+	
+	std::cout << "\nTriangle: " << std::endl;
+	std::cout << "Area: " << triangle.calculateArea() << std::endl;
+	std::cout << "Perimeter: " << triangle.calculatePerimeter() << std::endl;
+	
+	return 0;
+}
+
+********************************************************************************
+
+2, Write a C++ program to implement a class called Student that has private member
+variables for name, class, roll number, and marks. Include member functions to calculate
+the grade based on the marks and display the student's information.
+
+#include<iostream>
+#include<string> 
+
+class Student { 
+	private:
+		std::string name;
+		std::string studentClass;
+		int rollNumber;
+		double marks;
+	public:
+		Student(const std::string & studentName,
+		        const std::string & sClass,
+				int rNumber,
+				double smarks)
+        : name(studentName),studentClass(sClass),rollNumber(rNumber),marks(smarks)
+        
+        std::string calculateGrade() {
+			if(marks >= 90) {
+				return "A+";
+			} else if(marks >= 80) {
+			    return "A";
+			} else if(marks >= 70) {
+			    return "B";
+			} else if(marks >= 60) {
+			    return "C";
+			} else {
+			    return "D";
+		    }
+		}
+
+        void displayInformation() {
+          std::cout << "\n\nName: " << name << std::endl;
+		  std::cout << "Class: " << studentClass << std::endl;
+		  std::cout << "Roll Number: " << rollNumber << std::endl;
+		  std::cout << "Marks: " << marks << std::endl;
+		  std::cout << "Grade: " << calculateGrade() << std::endl;
+	    }
+};
+
+int main() {
+		std::string studentName;
+		std::string sClass;
+		int rollNum;
+		double studentMarks;
+		
+		std::cout << "Student details: ";
+		std::cout << "\nName: ";
+		std::getline(std::cin, studentName);
+		
+		std::cout << "Class: ";
+		std::getline(std::cin, sClass);
+		
+		std::cout << "Roll number: ";
+		std::cin >> rollNum;
+		
+		std::cout << "Marks (0-100): "; 
+		std::cin >> studentMarks;
+		
+		Student student(studentName,sClass,rollNum,studentMarks);
+		student.displayInformation();
+		
+		return 0;
+}
+
+***********************************************************************************************
+
+3, 	
+
+#include<iostream>
+using namespace std;
+
+int main()
+{
+  try {
+  int age = 15;
+  if(age >= 18) {
+     cout << "Access granted - you are old enough.";
+  } else {
+     throw(age);
+  }
+  catch(int myNum) {
+   cout << "Access denied - you must be at least 18 years old.\n";
+   cout << "Age is: : << myNum;
+  }
+return 0;
+}
+
+Output:
+
+Access denied - You must be at least 18 years old.
+Age is: 15
+
+**********************************************************************************
+ 
+4, 
+
+#include<iostream>
+#include<fstream>
+#include<string>
+
+using namespace std;
+
+int main() {
+	// Create a text file 
+	ofstream myWriteFile("filename.txt");
+	
+    // write to the file
+	myWriteFile << "Files can be tricky, but it is fun enough!";
+	
+	//Close the file
+	myWriteFile.close();
+	
+	//Create a text string,which is used to output the text file
+	string myText;
+	
+	//Read from the text file
+	ifstream MyReadFile("filename.txt");
+	
+	//Use a while loop together with the getline() function to read
+	  the file line by line.
+	while(getline(MyReadFile,myText)) {
+	  // Output the text from the file
+	  cout << myText;
+	}
+	
+	// Close the file
+	MyReadFile.close();
+}
+
+********************************************************************************
+
+5,
+
+#include<iostream>
+#include<string>
+using namespace std;
+
+//Base class
+class Animal {
+public:
+	void animalSound() {
+		cout << "The animal makes a sound\n";
+	}
+};
+
+//Derived class
+class Pig : public Animal {
+public:
+	void animalSound() {
+		cout << "The pig says: wee wee\n";
+	}
+};
+
+// Derived class
+class Dog : public Animal {
+public:
+   void animalSound() {
+		cout << "The dog says: bow wow\n";
+	}
+};
+
+int main() {
+	Animal myAnimal;
+	Pig myPig;
+	Dog myDog;
+	
+	myAnimal.animalSound();
+	myPig.animalSound();
+	myDog.animalSound();
+	return 0; 
+}
+
+*****************************************************************************
+
+6, 
+
+// C++ program to demostrate the use of class templates
+
+#include<iostream>
+using namespace std;
+
+// class templates
+template<class T>
+class Number {
+   private:
+   // Variable of type T
+   T num;
+   
+   public:
+     Number(T n): num(n) {} // constructor
+	 T getNum() {
+		return num;
+	 }
+};
+
+int main() {
+     // create object with int type
+	 Number<int> numberInt(7);
+	 
+	 // create object with double type
+	 Number<double> numberDouble(7.7);
+	 
+	 cout << "int Number = " << numberInt.getNum() << endl;
+	 cout << "double Number = " << numberDouble.getNum() << endl;
+	 
+	 return 0;
+} 
+
+*****************************************************************************
+
+7,
+
+#include<iostream>
+using namespace std;
+
+template<class T>
+classs Calculator {
+	private:
+	 T num1,num2;
+	public:
+	 Calculator(T n1,T n2) {
+	     num1 = n1;
+		 num2 = n2;
+	 }
+	 
+	 void displayResult() {
+		cout << "Numbers: " << num1 << " and " << num2 << "." << endl;
+		cout << num1 << " + " << num2 << " = " << add() << endl;
+		cout << num1 << " - " << num2 << " = " << substract() << endl;
+		cout << num1 << " * " << num2 << " = " << multiply() << endl;
+		cout << num1 << " / " << num2 << " = " << divide() << endl;
+	}
+	
+	T add() { return num1 + num2; }
+	T substract() { return num1 - num2; }
+	T multiply() { return num1 * num2; }
+	T divide() { return num1 / num2; }
+};
+
+int main() {
+    Calculator<int> intCalc(2,1);
+    Calculator<float> floatCalc(2.4,1.2);
+
+    cout << "Int results:" << endl;
+    intCalc.displayResult();
+
+    cout << endl
+         << "Float result: " << endl;  
+    floatCalc.displayResult();
+
+    return 0;
+} 
+
+
+***************************************************************************************	
+	
+8, C++ Templates with multiple parameters
+
+#include<iostream>
+using namespace std;
+
+// Class template with multiple and default parameters.
+template<class T,class U, class V = char>
+class ClassTemplate {
+  private:
+	  T var1;
+	  U var2;
+	  V var3;
+  public: 
+	ClassTemplate(T v1,U v2, V v3):var1(v1),var2(v2),var3(v3) {}
+	// constructor
+	
+    void printVar() {
+		cout << "var1 = " << var1 << endl;
+		cout << "var2 = " << var2 << endl;
+		cout << "var3 = " << var3 << endl;
+	}
+};
+
+int main(){
+   // create object with int,double and char types
+   ClassTemplate<int, double> obj1(7,7.7,'c');
+   cout << "obj1 values: " << endl;
+   obj1.printVar();
+
+   // create object with int,double and bool types
+  ClassTemple<double, char, bool> obj2(8.8,'a',false);
+  cout << "\nobj2 values: " << endl;
+  obj2.printVar();
+  
+  return 0;
+}
+
+************************************************************************************
+
+9, C++ STL Vector Containers 
+
+#include<iostream>
+#include<vector>
+
+using namespace std;
+
+int main() {
+	// create vector of int type
+	vector<int> numbers {1,2,3,4,5};
+	
+	//print vector elements using ranged loop
+	for(int number : numbers) {
+		cout << number << " ";
+	}
+	
+    return 0;
+} 
+
+
+**********************************************************************************
+
+10, C++ STL Vector Iterators 
+
+#include<iostream>
+#include<vector>
+using namespace std;
+
+int main() {
+	// initialize vector of int type
+	vector<int> numbers {1,2,3,4,5};
+	
+	//initialize vector iterator to point to the first element
+	vector<int>::iterator itr = numbers.begin();
+	cout << "First Element:" << *itr << " " << endl;
+	
+	// change iterator to point to the last element
+	itr = numbers.end() - 1;
+	cout << "Last Element: " << *itr;
+	
+	return 0;
+}
+
+*********************************************************************************
+
+11, C++ STL Sorting Algorithm
+
+#include<iostream>
+#include<algorithm>
+#include<vector>
+
+using namespace std;
+
+int main() {
+ // Initialize vector of int type
+ vector<int> numbers = {3,2,5,1,4};
+ 
+ //sort vector elements in ascending order
+ sort(numbers.begin(),numbers.end());
+ 
+ //print the sorted vector
+ for(int number : numbers) {
+	cout << number << " ";
+ }
+ return 0;
+}
+
+*******************************************************************************
+
+12, C++ Vector Initialization 
+
+#include<iostream>
+#include<vector>
+using namespace std;
+
+int main() {
+	// initializer list 
+	vector<int> vector1 = {1,2,3,4,5};
+	
+	// uniform initialization 
+	vector<int> vector2{6,7,8,9,10};
+	
+	// method 3
+	vector<int> vector3(5,12);
+	
+	cout << "vector1 = "; 
+	
+	// ranged loop
+	for(const int& i : vector1) {
+	   cout << i << " ";
+	}
+	
+	cout << "\nvector2 =";
+	
+	// ranged loop
+	for(const int& i : vector2) {
+		cout << i << " ";
+	}
+	
+	cout << "\nvector3 = ";
+	
+	// ranged loop 
+	for (int i : vector3) {
+		cout << i << " ";
+	}
+	
+	return 0;
+}
+
+*****************************************************************************
+
+13, C++ STL Vector - Add Elements to a Vector
+
+#include<iostream>
+#include<vector>
+using namespace std;
+
+int main() {
+	vector<int> num {1,2,3,4,5};
+	cout << "Initial Vector: ";
+	for(const int& i : num) {
+		cout << i << " ";
+	}
+	
+	// add the integers 6 and 7 to the vector
+	num.push_back(6);
+	num_push_back(7);
+	
+	cout << "\nUpdated Vector: ";
+	for(const int& i : num) {
+		cout << i << " ";
+	}
+	
+	return 0;
+}
+
+******************************************************************************
+
+
+14, C++ STL Vector - Access Elements of a Vector 
+
+#include<iostream>
+#include<vector>
+using namespace std;
+
+int main() {
+   vector<int> num{1,2,3,4,5};
+   
+   cout << "Element at Index 0: " << num.at(0) << endl;
+   cout << "Element at Index 2: " << num.at(2) << endl;
+   cout << "Element at Index 4: " << num.at(4);
+   
+   return 0;
+  }
+  
+ ******************************************************************************
+ 
+ 
+ 15, C++ STL Vector - Change Vector Element
+ 
+ #include<iostream>
+ #include<vector>
+ int main() {
+	vector<int> num {1,2,3,4,5};
+	cout << "Initial Vector: ";
+	for(const int& i : num) {
+	   cout << i << " ";
+	}
+	
+	// change elements at indexes 1 and 4
+	num.at(1) = 9;
+	num.at(4) = 7;
+	
+	cout << "\nUpdated Vector: ";
+	
+	for(const int& i : num) {
+	  cout << i << " ";
+	}
+	
+	return 0;
+} 
+
+*********************************************************************************
+
+16, C++ STL Vector - Delete Elements from C++ Vectors
+
+#include<iostream>
+#include<vector>
+
+using namespace std;
+int main() {
+	vector<int> prime_numbers{2,3,5,7};
+	
+	//initial vector
+	cout << "Initial Vector: ";
+	for (int i : prime_numbers) {
+		cout << i << " ";
+	}
+	
+	// remove the last element
+	prime_numbers.pop_back();
+	
+	//final vector
+	cout << "\nupdated Vector: ";
+	for(int i : prime_numbers) {
+		cout << i << " ";
+	}
+	
+	return 0;
+} 
+
+*********************************************************************************
+
+17, C++ sTL Vector - functions
+
+size() - returns the number of elements present in the vector
+clear() - removes all the elements of the vector
+front() - returns the first element of the vector
+back() - returns the last element of the vector
+empty() -  returns 1(true) if the vector is empty
+capacity() - check the overall size of a vector 
+
+
+*******************************************************************************
+
+https://www.programiz.com/cpp-programming/standard-template-library
+
+*******************************************************************************
+
+
+18, C++ Maps
+
+#include<iostream>
+#include<map>
+using namespace std;
+
+int main() {
+	map<int, string> student;
+	
+	//use[] operator to add elements
+	student[1] = "Jacqueling" 
+	student[2] = "Blake"
+	
+	// use insert() method to add elements
+	student.insert(make_pair(3,"Denise"));
+	student.insert(make_pair(4,"Blake"));
+	
+	// add elements with duplicate keys
+	student[5] = "Timothy";
+	student[5] = "Aaron";
+	
+	for(int i=1; i<= student.size(); ++i) 
+	{
+		cout << "Student[" << i << "]:" << student[i] << endl;
+	}
+	
+	return 0;
+}
+
+*******************************************************************************
+
+19, C++ Maps - Access keys and Values
+
+#include<iostream>
+#include<map>
+using namespace std;
+
+int main() {
+	map<int,string> student;
+	
+	student[1] = "Jacqueline";
+	student[2] = "Blake";
+	student[3] = "Denise";
+	student[4] = "Aaron";
+	
+	//declare map iterator
+	map<int. string>::iterator iter;
+	
+	// use iterator to display map elements
+	for(iter=student.begin();iter! = student.end(); ++iter)
+	{
+		cout << iter->first << " - " << iter->second << endl;
+	}
+    return 0;
+}
+
+*****************************************************************************
+	
+20, C++ find() Function for Maps
+
+map<int, string> student;
+map<int, string>::iterator iter;
+
+student[1] = "Jacqueline";
+student[2] = "Blake"
+
+// find the key 2 in the student map
+// store the return vale in iter
+iter = student.find(2) 
+
+*****************************************************************************
+
+21, C++ clear() function for Maps
+
+map<int, string> student;
+student[1] = "Jacqueline";
+student[2] = "Blake";
+
+cout << student.size(); // Output : 2
+student.clear();
+cout << student.size(); // Output: 0 
+
+
+*****************************************************************************
+
+22, C++ erase() function for maps
+
+1, erase() using a key
+   student_rank.erase("Rachel");
+   
+2, erase() Using an Iterators
+   // Initialize an iterator pointing to the beginning of the map
+   map<string, int>::iterator itr = student_rank.begin();
+   // increment the iterator to point to the second element.
+   itr++;
+   
+   // delete the second element
+   student_rank.erase(itr);
+   
+3, erase() to Remove Individual Elements
+
+  // display initial map values
+  cout << "Initial Values:" << endl;
+  
+  for(itr=student.begin();itr!=student.end();++itr) {
+	cout << itr->second << ", ";
+	
+  cout <<  endl;
+  
+  // use itr iterator to point to the first map element
+  itr = student.begin();
+  
+  // remove the first element
+  student.erase(itr)
+  
+  // remove the element having key 4
+  student.erase(4)
+  
+  // display final map values
+  cout << "\nFinal values:" << endl;
+  
+  for(itr = student.begin();itr!=student.end(); ++itr) {
+	cout << itr->second << ". ";
+  }
+  return 0;
+}  
+
+4, erase() to Remove a Range of Elements
+
+#include<iostream>
+#include<map>
+using namespace std;
+
+int main() {
+  //create a map named student
+  map<int, string> student{{1,"Denise"},{2,"Blake"},
+  {3, "Courtney"}, {4, "John"}, {5, "Jennifer"}};
+  
+  // create a map iterator
+  map <int, string>::iterator iter;
+  
+  // display initial map values 
+  cout << "Initial Values :" << endl;
+  for(iter=student.begin();iter!=student.end();++iter) {
+     cout << iter->second << ", ";
+  }
+  
+  cout << endl;
+  
+  // remove a range of elements
+  student.erase(student.find(2),student.find(5));
+  
+    // display initial map values 
+  cout << "Final Values :" << endl;
+  for(iter=student.begin();iter!=student.end();++iter) {
+     cout << iter->second << ", ";
+  }
+
+  return 0;
+}
+
+**********************************************************************************
+
+
+
+
+  
+	 
+	 
+		
+	
+				
+			
+
+
+
+
+
+
+
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+ 
+
+
+
+
+
+
+
+
+
+
+https://www.w3resource.com/cpp-exercises/oop/index.php

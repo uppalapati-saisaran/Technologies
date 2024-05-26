@@ -1,0 +1,104 @@
+// How to create variables:
+var x;
+let y;
+
+//How to use variables:
+x = 5;
+y = 6;
+let z = x + y;
+
+- JavaScript Values
+* The JavaScript syntax defines two types of values:
+(01) Fixed values  (02) Variable values
+* Fixed values are called Literals.
+* Variable values are called Variables.
+
+- JavaScript Literals
+  <!DOCTYPE html>
+  <html>
+  <body>
+  <h2>JavaScript Numbers</h2>
+  <p>Number can be written with or without decimals.</p>
+  <p id="demo1"></p>
+  <p id="demo2"></p>
+  <script>
+	  document.getElementById("demo1").innerHTML = 10.50; or 1001;
+	  document.getElementById("demo2").innerHTML = 'John Doe' or "John Doe"; 
+  </script>
+  </body>
+  </html>
+
+- JavaScript Variables
+* Variables are used to store data values.
+* JavaScript uses the keywords var, let and const to declare variables.
+* An equal sign is used to assign values to variables.
+
+<!DOCTYPE html>
+<html>
+<body>
+<h2>JavaScript Variables</h2>
+<p>In this example, x is defined as a variable.
+Then, x is assigned the value of 6:</p>
+<p id="demo"></p>
+<script>
+let x;
+x = 6;
+document.getElementById("demo").innerHTML = x;
+</script>
+</body>
+</html>
+
+- JavaScript Expressions
+
+* 5 * 10
+
+* x * 10
+
+* The values can be various types, such as numbers and strings.
+* "John" + " " + "Doe"
+
+- JavaScript Keywords
+* JavaScript keywords are used to identify actions to be performed.
+* The let keyword tells the browser to certain variables:
+  let x,y;
+  x = 5 + 6;
+  y = x * 10;
+* The var keyword also tells the browser to create varibles.
+  var x,y;
+  x = 5+6;
+  y = x * 10;
+  
+- JavaScript Comments
+* Code after double slashes // or between /* and */ is treated as a comment.
+
+
+- JavaScript Identifiers/Names
+* A JavaScript name must begin with:
+  - A letter (A-Z or a-z)
+  - A dollar sign($)
+  - Or an underscore(_)
+  - Numbers are not allowed as the first character in names.
+  - Subsequent characters may be letters, digits, underscores, or dollar signs.
+  
+- Javascript is Case Sensitive
+  * The variables lastName and lastname, are two different variables.
+  
+- JavaScript and Camel Case
+  * Historically, programmers have used different ways of joining multiple words into one variable name:
+  * Hyphens : Hyphens are not allowed in Java Script. They are reserved for substractions.
+  * Underscore : first_name,last_name,master_card,inter_city
+  * Upper Camel Case(Pascal Case): FirstName, LastName, MasterCard, InterCity.
+  * Lower Camel Case: JavaScript programmers tend to use camel case that starts with a lowercase letter:
+	firstName,lastName,masterCard,interCity.
+
+- JavaScript Character Set
+  * JavaScript uses the unicode character set.
+  * Unicode covers (almost) all the characters,punctuations and symbols in the world.
+  
+  
+
+  
+
+
+
+

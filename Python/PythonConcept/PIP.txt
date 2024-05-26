@@ -1,0 +1,35 @@
+
+- PIP is a package manager for python packages, or modules.
+
+- A Package contains all the file you need for a module.
+
+- Modules are Python code libraries you can include in your project.
+
+- Check PIP version
+
+CommandPrompt> pip --version 
+ 
+- Download a package named "camelcase"
+
+CommandPrompt>pip install camelcase
+
+- Using a package
+- Imoort and use "camelcase"
+
+import camelcase
+c=camelcase.CamelCase()
+text="lorem ipsum dolor sit amet"
+print(c.hump(txt))
+
+#This method capitalizes the first letter of each word.
+Lorem Ipsum Dolor Sit Amet
+
+- Remove a Package 
+
+CommandPrompt>pip uninstall camelcase
+
+- List packages 
+
+CommandPrompt>pip list 
+
+

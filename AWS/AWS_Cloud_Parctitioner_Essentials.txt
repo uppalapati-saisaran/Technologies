@@ -1,0 +1,324 @@
+
+**************************************************************************************************************************************
+
+                                             Introduction to AWS Cloud Practitioner Essentials
+
+***************************************************************************************************************************************
+
+* AWS cloud knowledge by learning about 
+  (01) AWS Cloud concepts
+  (02) AWS services
+  (03) security
+  (04) architecture
+  (05) pricing
+  (06) Support
+  
+****************************************************************************************************
+  
+* AWS offers a massive range of services for every business, starting with basic elements, like
+  compute, 
+  storage and 
+  network security tools, through 
+  complex solutions like 
+  block chain,
+  machine learning,
+  or artifiical intelligence and 
+  robot developement platforms, all the way thourgh very specialized tool sets,like 
+  video production management systems, and 
+  orbital satellites you can rent by the minute. 
+  
+****************************************************************************************************
+   
+*  In computing, a client (webbrowser or desktop application). A server ( Amazon Elastic Compute Cloud EC2) -  a type of virtual server.
+
+*  Cloud computing is the on-demand delivery of IT resources over the internet with pay-as-you-go pricing. 
+
+* At AWS, we call that the undifferentiated heavy lifting of IT. Tasks that are common, often repetitive and ultimately time-consuming;
+  there are the tasks AWS wants to help you with. So you can focus on that makes you unique. Over the internet, seeems with simple enough,
+  but it implies that you can access resources using a secure webpage console or programmatically.
+  
+****************************************************************************************************
+  
+* Deployment models for cloud computing 
+  - When selecting a cloud strategy, a company must consider factors such as required 
+    (01) cloud application components
+	(02) preferred resources management tools, and 
+	(03) any legacy IT infrastructure requirement.
+	
+****************************************************************************************************
+	
+  - The three cloud computing deployement models are cloud-based, on-premises, and hybrid
+  
+ (01) cloud based deployement 
+       - you can migrate existing applications to the cloud, or you can design and build new applications in the cloud.
+	     (01) you can build those applications on low-level infrastructure that requires your IT staff to manage them.
+	     (02) you can build those applications on high-level services that reduce that 
+		      - management, 
+			  - architecting and 
+			  - scaling requirements of the core infrastructure.
+       - Example : A company might create an application consisting of virtual servers, databases, and networking components that are 
+	               fully based in the cloud. 
+ 
+ (02) On-premises deployment 
+       - It is also known as a private cloud deployment.
+       - In this model, resources are deployed on premises by using 
+	     (01) virtualization and 
+		 (02) resource management tools.
+       - Example : you might have applications that run on technology that is fully kept in your on-premises data center.
+                   Though this model is much like legacy IT infrastructure, its incorporation of application management 
+                   and virtualization technologies helps to increase resource utilization.
+  
+ (03) Hydrid deployment
+	- cloud based resources are connected to on-premises infrastructure.
+        - Example 1: You have legacy applications that are better maintained on premises, or government regulations require
+                     your business to keep certain records on premises.
+        - Example 2: With a hybrid deployement, the company would be able to keep the legacy applications on premises 
+                     while benefiting from the data and analytics services that run in the cloud.
+
+********************************************************************************************************
+
+* Benefits of cloud computing
+
+(01) Trade upfront expenses for variable expense ( companies can implement innovative ideas)
+(02) Stop spending money to run and maintain data centers ( focus more on your application and customers) 
+(03) Stop guessing capacity
+     Example : you can launch Amazon EC2 instances when needed, and pay only for the compute time you use.
+               Instead of paying for unused resources or having to deal with limited capacity, you can access only the capacity that you need.
+               You can also scale in or scale out in response to demand.
+(04) Benefit from massive economies of scale
+     - By using cloud computing, you can achieve a lower variable cost than you can get on your own.
+     - Because usage from hundreds of thousands of customers can aggregate in the cloud, providers,
+       such as AWS, can achieve higher economies of scale.
+     - The economy of scale translates into lower pay-as-you-go prices.
+(05) Increase speed and agility 
+     - The flexibility of cloud computing makes it easier for you to develop and deploy applications.
+     - This flexibility provides you with more time to experiment and innovate.
+     - When computing in data centers, it may take weeks to obtain new resources that you need. By comparsion,cloud computing enables
+       you to access new resources within minutes.
+(06) Go global in minutes
+     - If you are located in a different part of the world than your customers,customers are able to access your applications
+       with minimal delays.
+  
+***************************************************************************************************************************************
+
+1, what is cloud computing?
+A, On-demand delivery of IT resources and applications through the internet with pay-as-you-go pricing.
+
+Other Option:
+1, It is possible to back up files to the cloud.
+2, Deploying applications connected to on-premises infrastructure is a sample use case for a hybrid cloud deployment.
+   Cloud computing also has cloud and on-premises deployment models.
+3, AWS Lambda is an AWS service that lets you run code without needing to manage or provision servers.
+
+2, What is another name for on-premises deployment?
+A, Private cloud deployment
+
+Other Option:
+1, Cloud based applications are fully deployed in the cloud and do not have any parts that run on premises.
+2, A hydrid depolyment connects infrastructure and applications between cloud-based resources and existing resources
+   that are in the cloud, such as on-premises resources. However, a hybrid deployment is not equivalent
+   to an on-premises deployment because it involves resources that are located in the cloud.
+3, The AWS cloud offers three cloud depolyment models: cloud, hybrid, and on-premises.
+
+3, How does the scale of cloud computing help you to save costs?
+A, The aggreaged cloud usage from a large number of customers results in lower pay-as-you-go prices.
+
+Other Option:
+1, Not having to invest in technology resources before using them relates to "Trade upfront expense for variable expense".
+2, Accessing services on-demand to prevent excess or limited capacity relates to stop guessing capacity.
+3, Quickly deploying applicatons to customers and providing them with low latency relates to Go global in minutes.
+
+
+******************************************************************************************************************************** 
+
+                              Introduction to Amazon EC2
+
+********************************************************************************************************************************
+
+* You need raw compute capacity to host your applications and provide the compute power that your businees needs.
+  When you're working with AWS, those servers are virtual. And the service you use to gain access to virtual servers is called EC2.
+  
+* Using EC2 for compute is highly flexible, cost effective and quick.
+
+* EC2 runs on top of physical host machines managed by AWS using virtualization technology. 
+
+* When you spin up an EC2 instance, you aren't necessarily taking an entire host to yourself. Instead, you are sharing the host with   
+  multiple other instances, otherwise known as virtual machines. And a hypervisor running on the host machine is responsible for 
+  sharing the underlying physical resources between the virtual machines. This idea of sharing underlying hardware is called
+  multitenancy. The hypervisor is responsible for isolating the virtual machines from each other as they share resources from the host.
+  
+* You also have the flexibiliy and control over the configuration of those instances. When you provision an EC2 instance, you can
+  choose the operating system based on either windows or Linux. You can provision thousands of EC2 instances on demand. With a blend
+  of operating systems and configurations to power your business different applications.
+
+* EC2 instances are also resizable. You might start with a small instance, realize the application you are running is starting to max out that server,
+  and then you can give that instance more memory and more CPU. Which is what we call vertically scaling an instance.
+  
+* You can also control the networking aspect of EC2. So what type of requests make it to your server and if they are publicly or privately accessible
+  is something you decide.
+  
+* Amazon Elastic Compute Cloud provides secure, resizable compute capacity in the cloud as Amazon EC2 instances.
+
+* How Amazon EC2 works
+
+  (01) Launch 
+       - First, you launch an instance. Begin by selecting a template with basic configurations for your instance.
+	     These configurations include the operating system, application server, or application.
+		 You also select the instance type, which is the specific hardware configuration of your instance.
+		 As you are preparing a launch an instance, you specify security settings to control the network traffic that
+		 can flow into and out of your instance.
+		 
+  (02) Connect 
+       - Next, connect to instance. You can connect to the instance in several ways. 
+	   - Your programs and applicatin have multiple different methods to connect directly to the instance and exchange data.
+	   - Users can also connect to the instance by logging in and accessing the computer desktop.
+	   
+  (03) Use 
+       - After you have connected to the instance, you can begin using it.
+	   - You can run commands to install software, add storage, copy and organize files, and more.
+	   
+* Amazon EC2 Instance Types : 
+
+- When selecting an instance type, consider the specific needs of your workloads and applications.
+- Instance types offer varying combinations of CPU, memory, storage and networking capacity, and give you the flexibility to choose 
+  the appropriate mix of resources for your applications.
+- The different instance families in EC2 are 
+  (01) General purpose instances:
+       - provide a good balance of compute, memory and networking resources, and can be used for a variety of diverse workloads like
+	     web service or code repositories
+	   - you can use them for a variety of workloads, such as:
+	     (01) application servers
+		 (02) gaming server
+		 (03) backend servers for enterprise applications
+		 (04) small and medium database
+  (02) Compute optimized instances:
+       - are ideals for compute-intensive tasks like gaming servers, high performance computing or HPC, and even scientific modeling. 
+  (03) Memory optimized instances:
+       - are good for memory-intensive tasks.
+  (04) Accelerated computing:
+       - are good for floating point number calculations, graphics processing, or data pattern matching, as they use hardware accelerators.
+  (05) Storage optimized :
+       - Workloads that require high performance for locally stored data.
+
+
+1, What Amazon EC2 instance type is suitable for data warehousing applications?
+A, Storage optimized
+
+2, Which Amazon EC2 instance type balances compute, memory and networking resources?
+A, General purpose
+
+3, Which Amaxon EC2 instance type is ideal for high-performance databases?
+A, Memory optimized
+
+4, Which Amazon EC2 instance type offers high-performance processors?
+A, Compute optimized
+
+*******************************************************************************************************************************************
+
+                                       Amazon EC2 Pricing 
+
+******************************************************************************************************************************************* 
+
+* Amazon EC2 offers a variety of pricing options for different use cases.
+- Example : if your use case can withstand interruptions, you can save with spot instances. You can also save by committing early and locking in a minimum
+  level of use with Reserved Instances.
+  
+1, On-Demand
+   
+- On-Demand instances are ideal for short-term, irregular workloads that cannot be interruped.
+- No upfront costs or minimum contracts apply.
+- The instances run continuously until you stop them, and you pay for only the compute time you use.
+
+- Sample use cases for On Demand instances include developing and testing applications and running applications that have unpredictable usage patterns.
+- On-Demand instances are not recommanded for workloads that a year or longer because these workloads can experience greater cost savings using Reserverd instances.
+
+2, Reserved Instances :
+
+- Reserved instances are a billing discount applied to the use of on-demand instances in your account.
+- These are two available types of Reserved instances:
+  (01) Standard Reserved Instances (02) Convertiable Reserved instances
+  
+- You can purchase Standard Reserved and Convertiable Reserved Instances for a 1-year or 3-year term.
+- You realize greater cost savings with the 3-year option.
+
+(a) Standard Reserved Instances:
+
+- This is a good fit if you know 
+  (i) Instance type and size: For example, m3.xlarge
+  (ii) Platform description (operating system): For example, Microsoft Windows Server or Red Hat Enterprise Linux
+  (iii) Tenancy: Default tenancy or dedicated tenancy
+- You have the option to specify an Availability Zone for your EC2 Reserved instances.  If you make this specification, you get EC2 capacity reserveration.
+  This ensures that your desired amount of EC2 instances will be available when you need them.
+  
+(b) Convertible Reserver Instances:
+
+- If you need to run your EC2 instances in different Availability Zones or different instance types, then convertible Reserved instances might be right for you.
+- You trade in a deeper discount when you require flexibility to run your EC2 instances.
+
+- At the end of a Reserved Instance term, you can continue using the Amazon EC2 instance without interruption. However, you are charged on-demand rates until
+ you do one of the following:
+ 
+ 1, Terminate the instance.
+ 2, Purchase a new Reserved Instance that matches the instance attribute (instance family and size, Region, platform, and tenancy) 
+ 
+https://explore.skillbuilder.aws/learn/course/134/play/99519/aws-cloud-practitioner-essentials
+
+
+3, EC2 instance Savings Plans
+
+- AWS offers Savings Plans for a few compute services, including Amazon EC2.
+- EC2 instance Savings Plans reduce your EC2 instance costs when you make an hourly spend commitment to 
+  an instance family and region for a 1-year or 3-year term.
+- This term commitment results in savings of up to 72 percent compared to On-Demand rates.
+- Any usage up to the commitment is charged at the discounted savings plans rate. Any usage beyond the commitment is charged at regular On-Demand rates.
+- The EC2 instance savings plans are a good option if you need flexibility in your Amazon EC2 usage over the duration of the commitment term.
+- You have the benefit of saving costs on running any EC2 instance within an EC2 instance family in a chosen Region regardless of Availability Zone,
+   instance size, OS or tenancy.
+- The savings with EC2 instance savings plans are similar to the saving provided by Standard Reserved Instances.
+- Unlike Reserved Instances, however, you don't need to specify up front what EC2 instance type and size, OS and tenancy to get a discount. Further,
+  you don't need to commit to a certain number of EC2 instances over a 1-year or 3-year term. Additionally, the EC2 instance savings plans don't include
+  an EC2 capacity reservation option.
+- You'll review AWS Cost Explorer, which you can use to visualize,understand, and manage your AWS costs and usage over time.
+- AWS Cost Explorer also provides customized recommendations for saving plans.
+- These recommendations estimate how much you could save on your monthly Amazon EC2 costs, based on previous Amazon EC2 usage and the hourly commitment 
+  amount in a 1-year or 3-year savings plan.
+  
+4, Spot instance 
+
+-  Spot instances are ideal for workloads with flexible start and end times, or that can withstand interruptions.
+-  Spot instances unused Amazon EC2 computing capacity and offer you cost savings at up to 90% off of On-Demand prices.
+
+5, Dedicated Hosts
+
+- Dedicated Hosts are physical servers with Amazon EC2 instance capacity that is fully dedicated to your use.
+- You can purchase on-demand dedicated hosts and dedicated hosts reservations.
+- Of all the Amazon EC2 options that were covered, dedicated hosts are the most expensive.
+
+
+1, Which Amazon EC2 pricing option provides a discount when you specify a number of EC2 instances to run a specific OS,
+   instance family and size, and tenancy in one region?
+A, Standard Reserved instances
+
+2, Which Amazon EC2 pricing option provides a discount when you make an hourly spend commitment to an instance family and region
+   for a 1-year or 3-year term?
+A, EC2 instance savings plans
+
+
+*********************************************************************************************************************************
+
+									Scaling Amazon EC2 
+
+*********************************************************************************************************************************
+   
+  
+
+
+
+
+
+
+
+       
+			
+  
+  

@@ -1,0 +1,89 @@
+- Some examples of what JavaScript can do.
+
+- JavaScript can change HTML content. 
+* One of many JavaScript HTML methods is getElementById().
+* The example below "finds" an HTML element (with id="demo"),and
+  changes the element content(innerHTML) to "Hello JavaScript".
+  
+  document.getElementById("demo").innerHTML = "Hello JavaScript";
+  or
+  document.getElementById('demo').innerHTML = 'Hello JavaScript'
+  
+  <!DOCTYPE html>
+  <html>
+  <body>
+	<h2>What Can JavaScript Do?</h2>
+	<p id="demo">Java Script can change HTML content.</p>
+    <button type="button" onclick='document.getElementId("demo").innerHTML = "Hello JavaScript!"'>Click Me!</button>
+  </body>
+  </html>
+  
+  
+  
+- JavaScript can change HTML Attribute values
+* In this example JavaScript changes the value of src(source)
+  attribute of an <img> tag:
+  
+  <!DOCTYPE html>
+  <html>
+  <body>
+  <h2>What can JavaScript Do?</h2>
+  <p>JavaScript can change HTML attributes values.</p>
+  <p>In this case JavaScript changes the value of the src(source) attribute of an image.</p>
+  <button onclick="document.getElementId('myImage') src='pic_bulbon.gif'">Turn on the light</button>
+  <img id="myImage" src="pic_bulboff.gif" style="width:100px"
+  <button onclick="document.getElementId('myImage') src='pic_bulboff.gif'">Turn off the light</button>
+  </body>
+  </html>
+  
+- JavaScript can change HTML styles (CSS)
+* Changing the style of an HTML element, is a variant of changing an HTML attribute:
+   
+  document.getElementById("demo").style.fontsize = "35px"
+  
+  <!DOCTYPE html>
+  <html>
+	<body>
+		<h2>What Can JavaScript Do></h2>
+		<p id="demo">Java Script can change the style of an HTML element.</p>
+		<button type="button" onclick="document.getElementById('demo').style.fontsize='35px'">Click Me!</button>
+	</body>
+  </html>
+  
+  
+- JavaScript can hide HTML elements
+* Hiding HTML elements can be done by changing the display style.
+  document.getElementByID("demo").style.display="none"; 
+  
+  <!DOCTYPE html>
+  <html>
+  <body>
+   <h2>What can JavaScript Do?</h2>
+   <p id="demo">JavaScript can hid HTML elements.</p>
+   <button type="button" onclick="document.getElementById('demo').style.display = 'none'">Click Me!</button>
+   </body>
+   </html>
+   
+- JavaScript can show HTML elements.
+* Hiding HTML elements can also be done by changing the display style:
+  document.getElementById("demo").style.display="block"
+  
+  <!DOCTYPE html>
+  <html>
+  <body>
+    <h2>What can JavaScript Do?</h2>
+	<p id="demo" style="display:none">Hello JavaScript!</p>
+	<button type="button" onclick="document.getElementById('demo').style.display='block'">Click Me!</button>
+	</body>
+	</html>
+  
+** JavaScript and Java are completely different languages,both in concept and design.
+  
+
+   
+
+
+  
+  
+
+  

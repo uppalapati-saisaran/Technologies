@@ -1,0 +1,24 @@
+// To create a module just save the code you want in a file with the file extension .py:
+
+def greeting(name):
+	print("Hello, " + name)
+	
+	
+person1 = {
+	"name": "John",
+	"age": 36,
+	"country": "Norway"
+}
+	
+// Use a Module
+
+import mymodule
+mymodule.greeting("Jonathan") 
+
+a = mymodule.person1["age"]
+print(a) 
+
+***********************************************************************************************
+
+
+

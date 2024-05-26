@@ -1,0 +1,42 @@
+import datetime
+
+x = datetime.datetime.now()
+print(x) 
+
+Output:
+2024-03-18 17:39:01.989212
+
+***************************************************
+
+// Return the year and name of weekday
+x = datetime.datetime.now()
+
+print(x.year)
+print(x.strftime("%A"))
+
+Output:
+
+2024
+Monday
+
+***************************************************
+
+import datetime
+x = datetime.datetime(2020,5,17)
+print(x) 
+
+Output :
+
+2020-05-17 00:00:00
+
+// The datetime() class also takes parameters for time and timezones 
+(hour,minutes,second,microsecond,tzone), but they are
+optional, and has a default value of 0, (None for timezone)
+
+
+********************************************************************
+
+
+
+
+

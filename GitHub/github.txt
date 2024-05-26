@@ -1,0 +1,32 @@
+
+// create a new repository on the command line
+echo "# Technologies" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/uppalapati-saisaran/Technologies.git
+git push -u origin main
+
+
+// push an existing repository from the command line
+git remote add origin https://github.com/uppalapati-saisaran/Technologies.git
+git branch -M main
+git push -u origin main
+
+
+*************************************************************************************************************
+
+// when you create a respository on github.com, it exists as a remote 
+// you can clone your respository to create a local copy on your computer and sync between the two locations.
+
+https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository 
+
+************************************************************************************************************ 
+
+Delete the respository 
+
+https://docs.github.com/en/repositories/creating-and-managing-repositories/deleting-a-repository
+
+
+*************************************************************************************************************

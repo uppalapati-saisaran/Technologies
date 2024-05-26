@@ -1,0 +1,456 @@
+// Download and install "MySQL Connector":
+
+C:\Users\YourName\AppData\Local\Programs\Python\Python36-32\Scripts>python -m pip install mysql-connector-python
+
+-m = execute modules within packages 
+
+*****************************************************************************************************************
+
+
+// Test MySQL Connector
+
+demo_mysql_test.py : 
+
+import mysql.connector
+// if the above code was executed with no errors,"MySQL Connector" is installed and ready to be used.
+
+*****************************************************************************************************************
+
+
+// Create Connection
+
+Start by creating a connection to the database. 
+
+demo_mysql_connection.py
+
+import mysql.connector
+
+mydb = mysql.connector.connect(
+		host="localhost",
+		user="yourusername",
+		password="yourpassword"
+	   )
+	   
+print(mydb) 
+
+Output:
+
+<mysql.connector.connection.MySQLConnection object ar 0x016645F0> 
+
+*****************************************************************************************************************
+
+// Creating a Database
+
+- To create a database in MySQL, use the "CREATE DATABASE" statement:
+- create a database named "mydatabase"
+
+import mysql.connector
+
+mydb = mysql.connector.connect(
+		host="localhost",
+		user="yourusername",
+		password="yourpassword"
+	   )
+	   
+mycursor = mydb.cursor()
+
+mycursor.execute("CREATE DATABASE mydatabase")
+
+Output:
+
+if this page is executed with no error, you have successfully created a database.
+
+
+***************************************************************************************************************
+
+// Check if Database Exists
+
+import mysql.connector
+
+mydb = mysql.connector.connect(
+		host="localhost",
+		user="yourusername",
+		password="yourpassword"
+		)
+
+mycursor = mydb.cursor();
+
+mycursor.execute("SHOW DATABASES")
+
+for x in mycursor:
+	print(x)
+	
+Output :
+
+('information_scheme',)
+('mydatabase',)
+('performance_schema',)
+('sys',)
+	
+*******************************************************************************************************************
+
+// you can try to access the database when making the connection:
+
+import mysql.connector
+
+mydb = mysql.connector.connect(
+       host="localhost",
+       user="yourusername",
+       password="yourpassword",
+      database="mydatabase"
+)
+
+Output:
+
+If the database does not exist, you will get an error.
+
+
+********************************************************************************************************************	  
+
+// Creating a table
+
+import mysql.connector
+
+mydb = mysql.connector.connect(
+		host="localhost",
+		user="yourusername",
+		password="yourpassword",
+		database="mydatabase"
+		)
+		
+mycursor = mydb.cursor();
+
+mycursor.execute("CREATE TABLE customers(name VARCHAR(255), address VARCHAR(255))")
+
+Output:
+
+If the above code was executed with no errors, you have now successfully created a table.
+
+**********************************************************************************************************************
+
+// Check if Table Exists
+
+import mysql.connector
+
+mydb = mysql.connector.connect(
+		host="localhost",
+		user="yourusername",
+		password="yourpassword",
+		database="mydatabase"
+	   )
+	   
+mycursor = mydb.cursor();
+
+mycursor.execute("SHOW TABLES")
+
+for x in mycursor:
+	print(x)
+	
+Output:
+
+
+import mysql.connector
+​
+mydb = mysql.connector.connect(
+  host="localhost",
+  user="myusername",
+  password="mypassword",
+  database="mydatabase"
+)
+​
+mycursor = mydb.cursor()
+​
+mycursor.execute("SHOW TABLES")
+​
+for x in mycursor:
+     print(x)
+​
+('customers',)
+
+***********************************************************************************************************************
+
+// Create primary key when creating the table
+
+import mysql.connector
+
+mydb = mysql.connector.connect(
+		host="localhost",
+		user="yourusername",
+		password="yourpassword",
+		database="mydatabase"
+		)
+		
+mycursor = mydb.cursor()
+
+mycursor.execute("CREATE TABLE customer(id INT AUTO_INCREMENT PRIMARY KEY,name VARCHAR(255),address VARCHAR(255))")
+
+Output:
+
+if this page is execute with no error, the table "customers" now has a primary key
+
+or
+
+If the table already exists, use the ALTER TABLE Keyword:
+
+import mysql.connector
+
+mydb = mysql.connector.connect(
+		host="localhost",
+		user="yourusername",
+		password="yourpassword",
+		database="mydatabase"
+		)
+		
+mycursor = mydb.cursor();
+
+mycursor.execute("ALTER TABLE customers ADD COLUMN id INT AUTO_INCREMENT PRIMARY KEY")
+
+Output:
+
+if this page is execute with no error, the table "customers" now has a primary key
+
+*********************************************************************************************************************
+
+// Insert Into TABLE
+
+To fill a table in MySQL, use the "INSERT INTO" statment.
+
+import mysql.connector
+
+mydb = mysql.connector.connect(
+		host="localhost",
+		user="yourusername",
+		passwrod="yourpassword",
+		database="mydatabase"
+		)
+		
+mycursor = mydb.cursor();
+sql = "INSERT INTO customers (name,address) VALUES (%s,%s)"
+val = ("John","Highway 21")
+
+or
+
+// multiple record
+val = [('John','Highway 21'),
+       ('Viola','Sideway 1633')
+	  ]
+
+mycursor.execute(sql,val); 
+
+mydb.commit()
+
+print(mycursor.rowcount,"record inserted.");
+
+Output:
+
+1 record inserted.
+
+*****************************************************************************************************************
+
+// You can get the id of the row you just inserted by asking the cursor object.
+
+import mysql.connector
+mydb = mysql.connector.connect(
+		host="localhost",
+		user="yourusername",
+		password="yourpassword",
+		database="mydatabase"
+	   )
+	   
+mycursor = mydb.cursor()
+
+sql = "INSERT INTO customers(name,address) VALUES (%s,%s)"
+val = ("Michelle","Blue Village")
+mycursor.execute(sql,val);
+
+mydb.commit()
+
+print("1 record inserted, ID :",mycursor.lastrowid)
+
+
+1 record inserted, ID: 15
+
+*****************************************************************************************************************
+
+// select all records from the customers table, and display the result
+
+import mysql.connector
+
+mydb = mysql.connector.connect(
+		host="localhost",
+		user="yourusername",
+		password="yourpassword",
+		database="mydatabase"
+		)
+
+mycursor = mydb.cursor();
+
+mycursor = execute("SELECT * FROM customers")
+
+or
+
+// select only the name and address columns.
+
+mycursor = execute("select name,address FROM customers")
+
+myresult = mycursor.fetchall()
+
+or
+
+// The fetchone() method will return the first row of the result:
+
+myresult = mycursor.fetchone() 
+
+
+for x in myresult:
+	print(x)
+	
+Output: 
+	
+(1, 'John', 'Highway 21')
+(2, 'Peter', 'Lowstreet 27')
+(3, 'Amy', 'Apple st 652')
+
+
+***************************************************************************************************************
+
+
+// Select with a Filter
+
+import mysql.connector
+
+mydb = mysql.connector.connect(
+		host="localhost",
+		user="yourusername",
+		password="yourpassword",
+		database="mydatabase"
+		)
+		
+mycursor = mydb.cursor();
+
+sql = "SELECT * FROM customers WHERE address = 'Park Lane 38'"
+
+or
+
+sql = "SELECT * FROM customers WHERE address like '%way%'" 
+
+mycursor.execute(sql)
+
+myresult = mycursor.fetchall()
+
+for x in result:
+	print(x)
+	
+*************************************************************************************************************
+
+// Escape query values by using the placeholder %s method
+
+import mysql.connector
+
+mydb = mysql.connector.connect(
+	   host="localhost",
+	   user="yourusername",
+	   password="yourpassword",
+	   database="mydatabase"
+	   )
+	   
+mycursor = mydb.cursor();
+
+sql = "SELECT * FROM customers WHERE address = %s"
+adr = ("Yellow Graden 2",)
+mycursor.execute(sql,adr)
+
+myresult = mycursor.fetchall()
+
+for x in result:
+	print(result)
+	
+***************************************************************************************************************
+
+MySQL Order By
+
+***************************************************************************************************************
+
+MySQL Delete
+
+***************************************************************************************************************
+
+MySQL Drop TABLE
+
+1, DROP TABLLE customers
+
+2, DROP TABLE IF EXISTS customers
+
+**************************************************************************************************************
+
+MySQL Update TABLE 
+
+1, UPDATE customers SET address='Canyon 123" WHERE address = 'Vally 345'
+
+2, 
+sql = "UPDATE customers SET address = %s WHERE address = %s"
+val = ("Vally 345","Canyon 123")
+
+***************************************************************************************************************
+
+MySQL Limit:
+
+//Select the 5 first records in the customers table
+1, SELECT * FROM customers LIMIT 5)
+
+// If you want to return five records, starting from the third record, you can use the OFFSET keyword.
+2, SELECT * FROM customers LIMIT 5 OFFSET 2
+
+****************************************************************************************************************
+
+MySQL Join
+
+import mysql.connector
+
+mydb = mysql.connector.connect(
+		host="localhost",
+		user="yourusername",
+		password="yourpassword",
+		database="mydatabase"
+		)
+		
+mycursor =  mydb.cursor()
+
+sql = "SELECT \
+       users.name AS user, \
+	   products.name AS favorite \
+	   FROM users \
+	   INNER JOIN products ON users.fav = products.id"
+	   
+	   
+mycursor.execute(sql)
+
+myresult=mycursor.fetchall()
+
+for x in result:
+	print(x)
+	
+Left Join :
+
+sql = "SELECT \
+	   users.name AS user, \
+	   products.name AS favorite \
+	   FROM users \
+	   LEFT JOIN products ON users.fav = products.id"
+	   
+sql = "SELECT \
+       users.name AS user, \
+       products.name AS favorite \
+	   from users \
+	   RIGHT JOIN products ON users.fav = products.id" 
+	   
+	   
+
+	
+	
+
+
+
+
+
+

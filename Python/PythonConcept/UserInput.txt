@@ -1,0 +1,14 @@
+- Python 3.6 uses the input() method.
+
+- Python 2.7 uses the raw_input() method.
+
+- Asks for the username, and when you entered the username, it gets printed on the screen. 
+
+  username = input("Enter username:")
+  print("Username is:" + username)
+  
+  Enter username:paarth
+  Username is: paarth
+  
+- Python stops executing when it comes to the input() function, and continues when the user has give some input.
+

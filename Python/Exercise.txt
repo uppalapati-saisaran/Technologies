@@ -1,0 +1,2498 @@
+1, Insert the missing part of the code below to output "Hello World".
+
+print("Hello World")
+
+2, Complete the code block, print "Yes" if 5 is larger than 2.
+
+if 5 > 2:
+	print("YES")
+	
+3, Comments in Python are written with a special character, which one?
+
+#This is a comment
+
+4, Use a multiline string to make the a multiline comment:
+
+'''
+This is a comment
+written in
+more than just one line
+'''
+
+5, Create a variable named carname and assign the value Volvo to it.
+
+carname = "Volvo"
+
+6, Create a variable named x and assign the value 50 to it.
+x = 50
+
+7, Display the sum of 5+10, using two varibles: x and y.
+x = 5
+y = 10
+print(x+y)
+
+8, Create a variable called z, assign x+y to it, and display the result.
+
+x = 5
+y = 10
+z = x + y
+print(z)
+
+9, Insert the correct syntax to assign values to multiple variables in one line
+x,y,z = "Orange","Banana","Cherry"
+
+10, Insert the correct syntax to assign the same value to all three variables in one code line.
+x = y = z = "Orange"
+
+11, Insert the correct keyword to make the variable x belong to the global scope.
+def myfunc():
+	global x
+	x = "fantastic" 
+
+12, The following code example would print the data type of x, what data type would that be?
+
+x = 5
+print(type(x))
+
+int
+
+13, The following code example would print the data type of x, what data type would that be?
+
+x = "Hello World"
+print(type(x))
+
+str
+
+14, The following code example would print the data type of x, what data type would that be?
+
+x = 20.5
+print(type(x))
+
+float
+
+15, The following code example would print the data type of x, what data tyep would that be?
+
+x = ["apple",'banana","cherry"]
+print(type(x))
+
+list
+
+16, The following code example would print the data type of x, what data type would that be?
+
+x = ("apple","banana","cherry")
+print(type(x))
+
+tuple
+
+17, The following code example would print the data type of x, what data type would that be?
+
+x = {"name" : "John","age" : 36}
+print(type(x))
+
+dict
+
+18, The following code example would print the data type of x, what data type would that be?
+x = True
+print(type(x))
+
+bool 
+
+19, Insert the correct syntax to convert x into a floating point number.
+
+x = 5
+x = float(x)
+
+20, Insert the correct syntax to convert x into a integer
+
+x = 5.5
+x = int(x)
+
+21, Insert the correct syntax to convert x into a complex number
+
+x = 5
+x = complex(x) 
+
+(5+0j) 
+
+22, Use the len function to print the length of the string.
+
+x = "Hello World"
+print(len(x))
+
+23, Get the first character of the string txt.
+
+txt = "Hello World"
+x = txt[0] 
+
+24, Get the characters from index 2 to index 4 (llo)
+
+txt = "Hello World"
+x = txt[2:5]
+
+25, Return the string without any whitespace at the beginning or the end
+
+txt = " Hello World "
+x = txt.strip() 
+
+26, Convert the value of txt to upper case.
+
+txt = "Hello World"
+txt = txt.upper()
+
+27, Convere the value to txt to lower case.
+
+txt = "Hello World"
+txt = txt.lower()
+
+28, Replace the character H with  a J.
+
+txt = "Hello World"
+txt = txt.replace("H","J")
+
+29, Insert the correct syntax to add a place holder for the age paramter.
+
+age = 36
+txt = "My name is John, and I am {}"
+print(txt.format(age)) 
+
+30, The statement below would print a Boolean value, which one?
+
+print(10 > 9)
+
+True
+
+31, The statement below would print a Boolean value, which one?
+
+print(10 == 9)
+
+False
+
+32, The statement below would print a Boolean value, which one?
+
+print(10 < 9)
+
+False
+
+33, The statement below would print a Boolean value, which one?
+
+print(bool("abc"))
+
+True
+
+34, The statement below would print a Boolean vlaue, which one?
+
+print(bool(0))
+
+False 
+
+35, Print the cubes of all the elments in a list using a for loop. 
+
+original_list = [1,2,3,4,5,6]
+cubes_list = []
+
+for i in original_list:
+	cubes_list.append(i**3)
+
+print(cubes_list) 
+
+Output:
+[1,8,27,64,125,216]
+
+
+36, Given the folloiwng 2-D list, create a 1-D list containing all of the automobile company names:
+    [['Volkswagen','Mercedes','BMW'],['Honda','Toyota','Mazda']]
+	
+    original_list = [['Volkswagen','Mercedes','BMW'],
+	                 ['Honda','Toyota','Mazda']]
+					
+	flattened_list = []
+	
+	for cars_list in original_list:
+		for car in car_list:
+			flattened_list.append(car)
+	print(flattened_list)
+	
+	['Volkswagen','Mercedes','BMW','Honda','Toyota','Mazda']
+	
+37, Use the range function to print all the leap years in the 21th century.
+
+    leap_year_range = range(2000,2100,4)
+	leap_year_list = list(leap_year_range)
+	print(leap_year_list)
+	
+
+38, Which Two of the following statment about for loops in Python are TRUE?
+
+1, They may have an associated else block.
+2, They can iterate over the elements in tuples,lists, and dictionaries.
+
+39, what is the maximum value in the sequenc?
+x = range(2,14)
+
+13
+
+40, Given a variable my_dict which is a dictionary, consider you use it in a for loop in this manner:
+    for x in my_dict:
+		print(x)
+
+The keys in the dictionary
+
+41, what is the correct value of x given the assignment shown?
+
+x = list(range(-17,-7,2)) 
+
+[-17,-15,-13,-11,-9]
+
+42, Which of the following function calls will generate the list below?
+[10,7,4,1,-2]
+
+list(range(10,-3,-3)) 
+
+43, Given the following code, what is the type of x which is printed out in each iteration?
+
+my_list = [['tiger','lion','leopard'],['camel','llama','alpaca'],['zebra','donkey','wildebeest']]
+
+for x in my_list:
+	print(x)
+	
+A list of strings.
+
+44, Which of these Python data types can NOT be iterated through using for loops?
+
+A, int 
+  
+45, List 4 built-in functions available in Python and how they are used?
+
+A, 
+(01) print(): Takes in any data type and prints it to screen as a string.
+(02) len() : To find the length of a sequence, the sequence can ba a list or a string.
+(03) type() : Takes in a variable or a value and displays the data type.
+(04) round() : Takes a nueric value and rounds it to the next highest integer.
+
+46, Define what a variable is in Python and show code examples using variables?
+
+A, Container to store values. Values can be of any data type. Instead of using values directly can use variables to represent those values.
+   
+   num_1 = 10
+   num_2 = 12
+   total = num_1 + num_2
+   
+   str1="Alpha"
+   str2="Al" 
+ 
+47, Explain the different ways to create strings and when you would choose one way over another.
+
+A, 'This is a valid string in single quotes'
+   "This is a valid string in double quotes"
+   """This is a valid string in triple quotes"""
+   
+48, Which of the following are valid string operations in Python?
+A "Hello" + "World" 
+  "Hello" * 3
+
+49, Consider this bit of Python code:
+   num_1 = 10
+   num_2 = 20
+   num_3 = num_1
+   num_1 = 100
+   what is the final value stored in num_3?
+   
+A, 10 
+
+50, What is the output of the following bit of code?
+13//5
+
+A, 2
+
+
+51, which of the following terms best describes Jupyter notebooks that you can use to write Python code?
+A, Browser-based, Interactive, Can view results on the same screen as the code
+
+52, Which of the following is an open source disturbution of the Python and R programming languages that uses the Conda package manager?
+A, Anaconda
+
+53, Which of the following functions are valid built-in functions in Python?
+A, len(), type() and print()
+
+54, Consider two python variables intialized as shown below. 
+    which of the following logical statements below will have a value of True?  a = True b = True
+A, a and b, a or b 
+
+55, Which of the following are valid data types in Python?
+A, bool, float and int
+
+56, Which of the following commands are valid to store a numeric value of 2 in a variable named num_x?
+A, num_x = 2 , num_x = 6 - 4
+
+57, what is the correct syntax for specifying multi-line strings in Python?
+A, """ This is a multi-line string """
+
+58, As a new user of Python which version of Python should you use?
+A, Either version of Python is fine but 3.7 should be preferred.
+
+59, How can you execute shell commands on Jupyter notebook code cells?
+A, Prefix the shell using !i.e.  !python -version
+
+60, If you want to increment the value stored in the num_1 variable by 10 which of the following Python statements are valid?
+A,  num_1 = num_1 + 10,  num_1+=10 
+
+61, Change the order of precedence of operators in an expression e.g., 10 - 4 * 2
+
+    10 - 4 * 2 = 2
+	(10 - 4)* 2 = 12
+
+62, Summarize the membership operators in python.
+
+    colors = ["pink","blue","red"]
+	if "pink" in colors:
+		print("this color is present in the list")
+	if "purple" not in colors:
+		print("this color is not present in the list") 
+	    
+63, Convert a string to a list of characters.
+
+    my_string="hello"
+	my_list = list(my_string)
+	print(my_list)
+	
+	Output: ['h','e','l','l','o']
+	
+64, what is the output of the code snippet below?
+
+    value = 4
+	a = str(value)
+	b = a + "^" + "2"
+	c = a + "^" + "3"
+	print(value,"+",b,"+",c) 
+	
+	Output: 4 + 4^2 + 4^3
+	
+65, What do the values of d[0],d[1],d[2],d[3] evaluate to after the execution of the Python code below?
+
+    new_list = ["Red","Blue","White","Green"]
+	z = sorted(new_list)
+	d = list(z)
+	d[0],d[1],d[2],d[3] = d[3],d[2],d[1],d[0]
+	
+    "White","Red","Green","Blue"
+
+66, what is the output of the program below?
+  
+    var = "hi"
+    if(type(var) == int):
+		print("Type of the variable is Integer")
+	elif(type(var) == float):
+		print("Type of the variable is Float")
+	elif(type(var) == complex):
+	   print("Type of the variable is Complex")
+	else:
+	   print("Type of the variable is Unknown")
+	   
+	Type of the variable is Unknown
+
+67, How is the body of an if-statement block syntactially represented in Python?
+ 
+    Using additional indentation from the left relative to lines just before and after the block
+
+68, What would the output of the following code snippet be?
+
+    num_one = 76
+    num_two = 23.4
+    print("datatype of num_one:",type(num_one))
+    print("datatype of num_two:",type(num_two))
+
+    datatype of num_one: <class 'int'> datatype of num_two: <class 'float'>
+	
+69, What is the output of the program below?
+  
+    total_classes = 100
+	attended_classes = 67
+	
+	attendance = (attended_classes/total_classes)*100
+	if attendance >= 75:
+		print("You are eligible to appear for the test.")
+	else:
+		print("Sorry, you are ineligible to appear for the test.")
+	
+	Sorry, you are ineligible to appear for the test.
+	
+70, Evaluate the expression provided. What does the following expression evaluate to?
+
+    '1' + '2' if '123'.isdigit() else '2' + '3'
+	
+	'12'
+	
+71, What is the value of b in the snippet of python code?
+
+    a="six"
+	b=(int(a),float(b))
+	
+	ValueError: invalid literal for int() with base 10:'six' 
+	
+72, what is the output of the code?
+
+    a = [1,'one',{2,'two'},3]
+	b = len(a)
+	
+	if b == 4:
+		print('Length of this list is 4')
+		if b == 5:
+			print('Length of this list is 5')
+	    else:
+			print(b) 
+			
+	Length of this list is 4 4
+	
+73, What is the output for this code?
+    
+	if None:
+		print('Hi')
+		
+	Nothing is printed - no output
+	
+74, What is the output for this code?
+
+    if 'bin' in { 'float':1.2, 'bin': 0b010}:
+		print('a')
+		print('b')
+	print('c')
+	
+	a b c
+	
+75, Consider the following snippet of Python code:
+
+    a = "40.6 "
+	b = "60.4 "
+	c = a + b
+	
+	what does c evaluate to?
+	
+	40.6 60.4
+	
+76, Consider three variables with values as shown:
+    a = 5
+	b = 10
+	c = "five"
+	
+	What are the results of evaluating the conditional expression?
+	
+	a == c
+	a >= b
+	not(a < b and a > b)
+	
+	False False True 
+	
+77, Compare for and while loops
+
+    - Both are used to run sections of code repeately.
+	- While 
+	   - loop until a condition is satisfied.
+	   - used when number of iterations is not know up front. 
+	
+    - For
+	    - iterate over a sequence of values.
+		- used when we have an iterable object of a known length. 
+		- an iterable object can be defined with the range() function.
+
+78, Write code to repeately prompt the user for the capital of Egypt until
+    - They enter the correct value (Cairo)
+    - They give up and enter "quit"
+
+	response = ""
+	while True:
+		response = input("\nWhat is the capital of Egypt? ")
+		if response == 'quit':
+			print("The correct answer is Cairo. Better luck next time!")
+			break
+		
+		if response.upper() == "CAIRO":
+			print("That is the correct answer!")
+	        break;
+			
+		else:
+			print("That is not the correct answer. Try again...")
+
+79, Which Two of the following statements about while and for loops are TRUE?
+
+A, 1, while loops continue to loop while the condition is True and end when the condition evaluates to False.
+   2, for loops iterate over a sequence without the user needing to maitain an index to that sequence
+   
+80, What is the number of iterations the following while loop will perform before terminating?
+
+    x = 4
+	while x < 10:
+		print(x+1)
+		
+A, Infinite
+
+81, Which of the following statments about the use of break statements in a while loop are true?
+A, If break is invoked, the else block associated with the while loop is not executed.
+
+82, What is the output of the following code?
+     
+	my_list = ['a','b','c','d','e','f','g','h']
+	vowels = ['a','e','i','o','u']
+	i = 0
+	
+	while i < len(my_list):
+		if(my_list[i] in vowels):
+		   i += 1
+		   continue
+		   
+	print(my_list[i])
+	i += 2
+
+A, b d f h
+   
+	
+83, What is the output of this while loop?
+
+x = 8
+while x < 10: print(x) x+=1
+
+A, Syntax error
+
+84, What is the number of iterations that following while loop will perform terminating?
+   
+x = 4
+while x < 4+6:
+	print(x)
+	x += 1
+	
+A, 6
+
+85, what is the effect of the pass statement within a nested while loop being invoked?
+A, There is no effect on code exeuction
+
+86, Consider the code below
+
+inventory = []
+item = ""
+
+while item != "quit":
+	item = input("Enter an item to add to the inventory: ")
+	print("Adding item: ", item)
+	inventory.append(item)
+	
+what is the number of iteration of the while loop?
+
+A, Depends on when the user types "quit" 
+
+
+87, what is the output of the following code?
+
+my_list = ['a','b','c','d','e','f','g','h']
+i = 0
+while i < len(my_list):
+	print(my_list[i])
+	i += 3
+
+A, a d g 
+
+88, 
+
+num_days = [31,28,31,30,31,30,31,31,30,31,30,31]
+months = [ "Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
+
+new_dict = dict[]
+
+for i,j in zip(months, num_days):
+	new_dict.update({i:j})
+    if new_dict[i] < 29:
+		continue
+	
+	else:
+	  print(i, "month has", new_dict[i], "days")
+	
+*************************  List Comprehensions *******************************
+
+	
+89. 
+
+    num = range(10)
+	[x*x for x in num]
+	
+	Output : [0,1,4,9,16,25,36,49,64,81]
+	
+90, 
+   
+    letters = [letter for letter in "anxiety"]
+	print[letters]
+	
+	Output : ['a','n','x','i','e','t','y']
+	
+91, 
+ 
+    list_of_words = ["this","is","a","list","of","words"]
+    items = [word[0] for word in list_of_words]
+	print(items)
+	
+    Output: [ 't','i','a','l','o','w' ]
+	
+	or
+	items = [word[0].upper() for word in list_of_words]
+	print(items)
+	
+	Output: [ 'T','I','A','L','O','W' ]
+	
+	or
+	items = [word.upper() for word in list_of_words]
+	print(item)
+	
+	Output: ['THIS','IS','A','LIST','OF','WORDS"]
+	
+	
+92, 
+
+     [ x * x for x in num if x % 2 !=0 ]
+
+     Output: [1,9,25,49,81]
+	 
+93, Write a for loop which iterates over a random list of numbers and
+    * prints them
+	   * except it they are divisible by 7
+	* stops iterations if the number 315 is encountered
+	
+	list_of_enums = [124,148,173,231,256,301,315,361,399]
+	for i in list_of_nums:
+		if (i == 315):
+			break
+		if (i % 7 == 0):
+			continue
+		
+		print(i,end =' ')
+	
+94, Start with a random list of numbers
+    * Use list comprehension to generate cubes of numbers from numbers in the original list.
+	  * only if the original number is divisible by 3
+	  
+	original_list = [2,3,6,7,8,11,12,13,17,18]
+	
+	cubes_list = [ x ** 3 for x in original list if x % 3 == 0]
+	
+	print(cubes_list) 
+	
+	[27, 216, 1728, 5832]
+	
+95, Which of these statments about statments is TRUE?
+
+A, continue terminates the current iteration of the for loop.
+
+96, What is the output of the following line of code?
+    [ x * 3 if x <5 else x * 4 for x in [1, 4, 5]]
+	
+A, [3,12,20] 
+
+97, Which of these keywords has no effect on code execution when used in for loops?
+A, pass
+
+98, Which of the following about the break statement in for loops is TRUE?
+A, It terminates the current iteration immediately and the for loop as well.
+
+99, Which Two of these points about continue and break statments are accurate?
+A, (01) Continue ends the current iteraton, break ends the for loop
+   (02) Continue and break can be used within the same for loop.
+   
+100, what is the output of the following line of code?
+[ x * 3 for x in [1,4,5]]
+A, [3,12,15]
+
+101, Which Two of the following about break statements within Python for loops are TRUE?
+A, (01) If invoked, the current iteration and the for loop in general terminates
+   (02) When invoked in the if block, the code in the else block of the for loop is not executed.
+   
+   
+102, NumPy EcoSystem - Below are some of the libraries uses NumPy 
+     (01) Statsmodel - Estimate statistical models and perform tests.
+	 (02) Scikit-image - Collection of algorithms for image processing.
+	 (03) Scikit-learn - Simple and efficient tools for machine learning in Python.
+	 (04) Pandas - Data analysis and manipulation
+	 (05) Matplotlib - Plotting library for 2D graphs and visualizations.
+	 
+103, update to latest version of NumPy
+     pip install numpy --upgrade
+	
+104, Create an array x of the same shape as another array y with all elements set to 1.
+
+      x = numpy.ones_like(y) 
+
+105, Retrieve the last 20 rows and the 2nd to 5th columns of an 2-D array.
+
+     array_slice = array_orig[-20:,2:6] 
+
+106, Recall the 2 main ways in which a 2-D array can be flattened to a 1-D array.
+
+     Two main ways to flatten an array
+	    * Row major or C-style ordering
+		* Column-major or F-style ordering. 
+
+107, Capture an array returned by a function and reshape it to one containing 4 columns -
+    and let NumPy infer the number of rows. 
+	
+	new_array = returned_array.reshape(-1,4) 
+	
+108, What would be the output of the following code:
+     
+	 import numpy as np
+	 x = np.array([[1,2],[3,4]])
+	 y = np.array([ [5,6],[7,8])
+	 z=(x*y)
+	 z
+	 
+Output: [[5,12],[21,32]]
+
+109, Which of these slicing operations can be used to quickly get the reversed contents of a numpy array called "array"?
+A, array[::-1]
+
+110, Which of these statements regarding the ravel() object in Python are true?
+A, ravel() belongs to the numpy library and can be used on any object that can be parsed.
+   The ravel() function reduces a multi-dimensional array to a single dimensional array. 
+
+111, What would be the output of the following section of code?
+
+    Import numpy as np
+	x = np.array([4,6,2,8])
+	np.median(x)
+	
+Output: 5
+
+112, What will be the value stored in the varible y after we have executed the following code
+     
+	 import numpy np
+	 y=np.arange(2,4,0.5)
+	 
+Output: [2,2.5,3,3.5]
+
+113, Let's say you have imported the numpy package as np and you want to assign the variable "x" with a 3 by 2 array of type integer,
+     all of whose values are 1. which of these commands will you use to do so?
+	
+Output: x = np.ones((3,2),dtype=np.int32) 
+
+114, Which of these correctly match the following libraries in the Numpy ecosystem with what that library is used for?
+
+A, Scikit-image : Contains a collection of algorithms used for image processing.
+   Matplotlib : Data visualization tool used for plotting 2-D graphs.
+   Statsmodel : Used to perform statistical operations.
+   
+115, Match the following features of the numpy nditer function mentioned here with the correct boolean category. 
+A, - Using this function, we can iterate through each of the individual elements of the array passed as an input argument.
+   - 
+   
+116, Let's say you have imported the numpy package as np and you want to print the first 2000 natural numbers in the form of an array and 
+     you want all 2000 of the numbers to be visiable on screen when printing (including the number 2000). Which of these commands
+	 would you use to do so?
+	 
+A, np.set_printoptions(threshold=np.nan) print(np.arrange(1,20001)) 
+
+
+Operator 
+
+117,  Use the correct logical operator to check if at least one of two statments is True.
+
+  if 5 == 10 or 4 == 4
+	print("At least one of the statment is true") 
+	
+118, print the second item in the fruits list.
+
+   fruits = ["apple","banana","cherry"]
+   print(fruits[1])
+   
+119, change the value from "apple" to "kiwi" in the fruits list.
+    
+	fruits = ["apple","banana","cherry"]
+	fruits[0] = "kiwi"
+	
+120, use the append method to add "orange" to the fruits list.
+
+    fruits = ["apple","banana","cherry"]
+	fruits.append("orange")
+
+121, Use the insert method to add "lemon" as the second item in the fruits list.
+
+    fruits = ["apple","banana","cherry"]
+	fruits.insert(1,"lemon")
+	
+122, Use the remove method to remove "banana" from the fruits list.
+ 
+    fruits=["apple","banana","cherry"]
+	fruits.remove("banana")
+	
+123, Use negative indexing to print the last item in the list.
+
+    fruits=["apple","banana","cherry"]
+	print(fruits[-1]) 
+	
+124, Use a range of indexes to print the thrid,fourth and fifth item in the list.
+     fruits = ["apple","banana","cherry","orange","kiwi","melon","mango"]
+	 print(fruits[2:5])
+	 
+125, Use the correct syntax to print the number of items in the list.
+     fruits = ["apple","banana","cherry"]
+	 print(len(fruits))
+
+126, Use the correct syntax to print the first item in the fruits tuple.
+     fruits = ("apple","banana","cherry")
+     print(fruits[0])	 
+	 
+127, Use the correct syntax to print the number of items in the fruits tuple.
+     fruits = ("apple","banana","cherry")
+	 print(fruits[0])
+	 
+128, Use the correct syntax to print the number of items in the fruits tuple.
+     fruits = ("apple","banana","cherry")
+	 print(len(fruits)
+	 
+129, Use negative indexing to print the last item in the tuple.
+     fruits = ("apple","banana","cherry")
+	 print(fruits[-1])
+	 
+130, Use range of indexes to print the third, fourth, and fifth item in the tuple.
+     fruits=("apple","banana","cherry","orange","kiwi","melon","mango")
+	 print(fruits[2:5])
+	 
+131, Check if "apple" is present in the fruits set.
+     fruits = {"apple","banana","cherry"}
+	 if "apple" in fruits:
+		print("Yes, apple is  a fruit!")
+
+132, Use the add method to add "orange" to the fruits set.
+     fruits = {"apple","banana","cherry"}
+	 fruits.add("oranage")
+	 
+133, Use the correct method to add multiple items (more_fruits) to the fruits set.
+     fruits={"apple","banana","cherry"}
+	 more_fruits=["orange","mango","grapes"]
+	 fruits.update(more_fruits)
+	 
+135, Use the remove method to remove "banana" from the fruits set.
+     fruits = {"apple","banana","cherry"}
+	 fruits.remove("banana")
+	 
+136, Use the discard method to remove "banana" from the fruits set.
+     fruits = {"apple","banana","cherry"}
+	 fruits.discard("banana")
+	 
+137, Use the get method to print the value of the "model" key of the car dictionary.
+     car = {
+		"brand": "Ford",
+		"model": "Mustang",
+		"year": 1964
+	 }
+	 print(car.get("model"))
+	 
+138, Change the "year" value from 1964 to 2020 
+     car = {
+		"brand": "Ford",
+		"model": "Mustang",
+		"year": 1964
+	 }
+	 car["year"] = 2020
+	 
+139, Add the key/value pair "color" : "red" to the car dictionary.
+
+    car = {
+		"brand": "Ford",
+		"model": "Mustang",
+		"year": 1964
+	}
+	car["color"] = "red" 
+	
+140, Use the pop method to remove "model" from the "car" dictionary.
+
+    car = {
+		"brand": "Ford",
+		"model": "Mustang",
+		"year": 1964
+	}
+	car.pop("model")
+	
+141, Use the clear method to empty the car dictionary.
+
+   car = {
+		"brand": "Ford",
+		"model": "Mustang",
+		"year": 1964
+   }
+   car.clear()
+   
+142, Print "Hello World" if a is greater than b.
+     
+	 a = 50
+	 b = 10
+	 if a > b:
+		print("Hello World")
+	 
+143, Print "Hello World" if a is not equal to b.
+
+     a = 50
+	 b = 10
+	 if a != b:
+		print("Hello World") 
+		
+144, Print "Yes" if a is equal to b, otherwise print "No".
+
+    a = 50
+	b = 10
+	if a == b:	
+		print("Yes")
+	else:
+		print("No")
+		
+145, Print "1" if a is equal to b, print "2" if a is greater than b, otherwise print "3".
+
+     a = 50
+	 b = 10
+	 if a == b:
+		print("1")
+	 elif a > b:
+		print("2")
+	 else
+		print("3") 
+		
+146, Print "Hello" if a is equal to b, and c is equal to d.
+
+	if a == b and c == d:
+		print("Hello")
+	
+147, Print "Hello" if a is equal to b, or if c is equal to d. 
+
+    if a == b or c == d:
+		print("Hello")
+		
+148, Complete the code block, print "YES" if 5 is larger than 2.
+
+    if 5 > 2:
+		print("YES")
+		
+149, Use the correct one line short hand syntax to print "YES" if a is equal to b,
+     other print("NO").
+	 
+	 a = 2
+	 b = 5
+	 print("YES") if a==b else print("NO")
+	 
+150, Use an if statement to print "YES" if either a or b is equal to c.
+  
+    a = 2
+	b = 50
+	c = 2
+	if a == c or b == c:
+		print("YES")
+		
+151, Print i as long as i less than 6
+  
+    i = 1
+	while i < 6:
+		print(i)
+		i += 1
+		
+152, Stop the loop if i is 3.
+
+    i = 1
+	while i < 6:
+	   if i == 3:
+		  break
+	   i += 1
+      
+153, In the loop, when i is 3, jump directly to the next iteration
+     
+     i = 0
+     while i < 6:
+		i += 1
+		if i == 3:
+			continue
+		print(i) 
+		
+154, Print a message once the condition is false.
+     
+	 i = 1
+	 while i < 6:
+		print(i)
+		i += 1
+	 else:
+		print("i is no longer less than 6")
+		
+155, Loop through the items in the fruits list.
+
+     fruits = ["apple","banana","cherry"]
+	 for x in fruits:
+		print(x)
+	
+156, In the loop, when the item value is "banana", jump directly to the next item.
+   
+     fruits = ["apple","banana","cherry"]
+     for x in fruits:
+		if x == "banana":
+		  continue
+		print(x) 
+		
+157, Use the range function to loop through a code set 6 times.
+ 
+     for x in range(6):
+		print(x)
+
+158, Exit the loop when x is "banana".
+
+     fruits = ["apple","banana","cherry"]
+	 for x in fruits:
+		if x == "banana":
+			break
+		print(x)
+		
+159, Create a function named my_function.
+	 def my_function():
+		print("Hello from a function")
+		
+160, Execute a function named my_function.
+
+     def my_function()
+		print("Hello from a function")
+	
+	 my_function()
+	 
+161, Inside a function with two parameters, print the first parameter.
+      
+	 def my_function(fname,lname):
+		print(fname)
+		
+
+162, Let the function return the x paramter + 5.
+
+     def my_function(x):
+		return x + 5
+
+163, If you do not know the number of arguments that will be passed into your function, 
+     there is a prefix you can add in the function definition, which prefix?
+	 
+	 def my_function(*kids):
+		print("The youngest child is " + kids[2])
+		
+164, If you do not know the number of keyword arguments that will be passed into your function,
+     there is a prefix you can add in the function definition, which prefix?
+	
+	 def my_function(**kid):
+		print("His last name is " + kid["lname"])
+		
+https://www.w3schools.com/python/exercise.asp?filename=exercise_functions6 
+		
+165, Create a lambda function that takes one parameter (a) and returns it.
+
+	x = lambda a : a 
+	
+166, Create a class named MyClass:
+
+	class MyClass:
+		x = 5
+
+167, Create an object of MyClass called p1:
+
+     class MyClass:
+		x = 5
+		
+	 p1 = MyClass()
+	 
+168, Use the p1 object to print the value of x:
+     
+	 class MyClass:
+		x = 5
+	 p1 = MyClass()
+	 print(p1.x) 
+	 
+169, What is the correct syntax to assign a "init" function to a class?
+  
+     class Person:
+		def __init__(self,name,age):
+			self.name = name
+			self.age = age
+
+170, What is the correct syntax to create a class named Student that will inherit properties and
+     methods from a class named Person?
+	 
+	class Student(Person):
+	
+171, We have used the student class to create an object named x.
+     What is the correct syntax to execute the printname method of the object x?
+	 
+	 class Person:	
+		def __init__(self, fname):
+			self.firstname = fname
+		
+		def printname(self):
+			print(self.firstname)
+			
+	 class Student(Person):
+		pass
+	  
+	 x = Student("Mike")
+	 x.printname()
+	 
+172, What is the correct syntax to import a module named "mymodule"?
+
+	import mymodule
+	
+173, If you want to refer to a module by using a different name, you can create an alias.
+ 
+     what is the correct syntax for creating an alias for a module? 
+	 
+	 import mymodule as mx
+	 
+174, What is the correct syntax of printing all variables and functions of the "mymodule" module?
+  
+     import mymodule
+	 print(dir(mymodule)) 
+	 
+175, What is the correct syntax of importing only the person1 dictionary of the "mymodule" module?
+
+     from mymodule import person1
+	 
+	 
+https://www.w3schools.com/quiztest/result.asp  
+	 
+176, What is a correct syntax to output "Hello World" in Python?
+
+     print("Hello World")
+	 
+177, How do you insert COMMENTS in Python code?
+
+     #This is a comment
+	 
+178, Which one is NOT a legal variable name?
+
+     my-var
+	 
+179, How do you create a variable with the numeric value 5?
+
+     x = 5 or x = int(5)
+
+180, What is the correct file extension for Python files?
+
+    .py 
+
+181, How do you create a variable with the floating number 2.8?
+
+    x = float(2.8)
+	x = 2.8 
+
+182, What is the correct syntax to output the type of a variable or object in Python?
+
+    print(type(x))
+
+183, What is the correct way to create a function in Python?
+ 
+    def myFunction(): 
+	
+184, In Python, 'Hello', is the same as "Hello" 
+
+     True
+	 
+185, What is a correct syntax to return the first character in a string?  
+
+     x = "Hello"[0] 
+
+186, Which method can be used to remove any whitespace from both the beginning and the end of a string?
+
+     strip()
+	 
+187, Which method can be used to return a string in upper case letters?
+
+     upper()
+	 
+188, Which method can be used to replace parts of a string?
+
+     replace()
+	 
+189, which operator is used to multiply numbers?
+
+     * 
+	 
+190, which operator can be used to compare two values?
+
+     == 
+	 
+191, Which of these collections defines a LIST?
+
+     ["apple","banana","cherry"]
+	 
+192, which of these collections defines a TRUE? 
+
+    ("apple","banana","cherry")
+	
+193, Which of these collections defines a SET?
+
+    {"apple","banana","cherry"}
+	
+194, Which of these collections defines a DICTIONARY? 
+
+    {"name":"apple","color":"green"}
+	
+195, Which collection is ordered, changeable, and allows duplicate members?
+
+    LIST
+	
+196, Which collection does not allow duplicate members?
+
+    SET
+
+197, How do you start writing an if statement in Python?
+
+    if x > y:
+	
+198, How do you start writing a while loop in Python?
+
+    while x > y:
+	
+199, How do you start writing a for loop in Python?
+
+     for x in y:
+	 
+200, Which statement is used to stop a loop?
+
+     break 
+
+https://www.w3schools.com/python/showpython.asp?filename=demo_mongodb_limit
+
+
+201, Limit the result 
+
+import pymongo
+
+myclient = pymongo.MongoClient("mongodb://localhost:27017/")
+mydb = myclient["mydatabase"]
+mycol = mydb["customers"]
+
+myresult = mycol.find().limit(5)
+
+#print the result
+for x in myresult:
+	print(x)
+	
+202, Update many/all documents
+
+import pymongo
+
+myclient = pymongo.MongoClient("mongodb://localhost:27017/")
+mydb = myclient["mydatabase"]
+mycol = mydb["customers"]
+
+myquery = { "address": { "$regex": "^S" }}
+newvalues = { "$set": { "name":"Minnie" }} 
+
+x = mycol.update_many(myquery,newvalues)
+print(x.modified_count,"documents updated.")
+
+203, Update a documents
+
+import pymongo
+
+myclient = pymongo.MongoClient("mongodb://localhost:27017/")
+mydb = myclient["mydatabase"]
+mycol = mydb["customers"]
+
+query = { "address": "Vally 345" }
+newvalue = { "$set" : "address": "Canyon 123"}} 
+
+mycol.update_one(query,newvalues)
+
+#print "customers" after the update:
+for x in mycol.find():
+	print(x)
+	
+204, Delete a collection 
+
+import pymongo
+myclient = pymongo.MongoClient("mongodb://localhost:27017/")
+mydb = myclient["mydatabase"]
+mycol = mydb["customers"]
+
+mycol.drop()
+
+205, Delete all documents in a collection
+
+import pymongo
+myclient = pymongo.MongoClient("mongodb://localhost:27017/")
+mydb = myclient["mydatabases"]
+mycol= mydb["customers"]
+x = mycol.delete_many({})
+print(x.deleted_count, "documents deleted")
+
+206, Delete one 
+
+import pymongo
+myclient = pymongo.MongoClient("mongodb://localhost:27017/")
+mydb = myclient["mydatabase"]
+mycol = mydb["customers"]
+
+myquery = { "address": "Mountain 21" }
+mycol.delete_one(myquery) 
+
+#print the customers collection after the deletion:
+for x in mycol.find():
+	print(x) 
+	
+207, Sort the result descending ( reverse alphabetically )
+
+import pymongo
+
+myclient = pymongo.MongoClient("mongodb://localhost:27017/")
+mydb = myclient["mydatabase"]
+mycol = mydb["customers"]
+
+mydoc = mycol.find().sort("name",-1)
+
+for x in mydoc:
+	print(x) 
+	
+	
+208, Sort the result alphabetically 
+
+import pymongo
+
+myclient = pymongo.MongoClient("mongodb://localhost:27017/")
+mydb = myclient["mydatabase"]
+mycol = mydb["customers"]
+
+mydoc = mycol.find().sort(name)
+
+for x in mydoc:
+	print(x)
+	
+	
+209, Filter with regular expressions 
+
+import pymongo
+myclient = pymongo.MongoClient("mongodb://localhost:27017/")
+mydb = myclient["mydatabase"]
+mycol = mydb["customers"]
+
+#address starts with S:
+myquery = { "address" : { "$regex": "^S" }
+mydoc = mycol.find(myquery)
+
+for x in mydoc:
+	print(x)
+	
+210, Advanced query 
+
+import pymongo
+myclient = pymongo.MongoClient("mongodb://localhost:27017/")
+mydb = myclient["mydatabase"]
+mycol = mydb["customers"]
+
+#address greater than 'S':
+myquery = {"address": {"$gt": "S"} }
+
+mydoc = mycol.find(myquery)
+
+for x in mydoc:
+	print(x) 
+	
+	
+211, Filter the results 
+
+import pymongo
+
+myclient = pymongo.MongoClient("mongodb://localhost:27017/")
+mydb = myclient["mydatabase"]
+mycol = mydb["customers"]
+
+myquery = {"address": "Park Lane 38" }
+mydoc = mycol.find(myquery) 
+
+for x in mydoc:
+	print(x) 
+
+
+212, Find only some fields
+
+import pymongo
+myclient = pymongo.MongoClient("mongodb://localhost:27017/")
+mydb = myclient["mydatabase"]
+mycol = mydb["customers"]
+
+for x in mycol.find({},{ "_id": 0, "name": 1, "address": 1 }):
+	print(x) 
+	
+213, Find all documents in the selection 
+
+import pymongo
+myclient = pymongo.MongoClient("mongodb://localhost:27017/")
+mydb = myclient["mydatabase"]
+mycol = mydb["customers"]
+
+for x in mycol.find():
+	print(x)
+	
+214, Find the first document in the selection 
+
+import pymongo
+myclient = pymango.MongoClient("mongodb://localhost:27017/")
+mydb = myclient["mydatabase"]
+mycol = mydb["customers"]
+
+x = mycol.find_one()
+
+print(x) 
+
+215, Insert multiple documents with specified IDs:
+
+import pymongo
+myclient = pymongo.MongoClient("mongodb://localhost:27017/")
+mydb = myclient["mydatabase"]
+mycol = mydb["customers"]
+
+mylist = [
+   { "_id": 1, "name": "John", "address": "Highway 37"},
+   { "_id": 2, "name": "John", "address": "Highway 37"},
+   { "_id": 3, "name": "John", "address": "Highway 37"}
+]  // Output will be [1 2 3]
+or
+mylist = [
+   { "name": "John", "address": "Highway 37"},
+   { "name": "John", "address": "Highway 37"},
+   { "name": "John", "address": "Highway 37"}
+]  // Output will be [ObjectId('5b19112f2ddb101964065487'), ObjectId('5b19112f2ddb101964065488'), ObjectId('5b19112f2ddb101964065489')]
+
+x = mycol.insert_many(mylist)
+
+#print a list of the _id values of the inserted documents:
+print(x.inserted_ids)
+
+
+216, Return id fields
+
+import pymongo
+myclient = pymongo.MongoClient('mongodb://localhost:27017/')
+mydb = myclient["mydatabase"]
+mycol = mydb["customers"]
+
+mydict = { "name" : "Peter", "address": "Lowstreet 27" }
+
+x = mycol.insert_one(mydict)
+
+print(x.inserted_id)
+
+
+217, Inserted to collection 
+
+import pymongo
+
+myclient = pymongo.MongoClient('mongodb://localhost:27017/')
+mydb = myclient['mydatabase']
+mycol = mydb["customers"]
+
+mydict = { "name": "John", "adress": "Highway 37" }
+
+x = mycol.insert_one(mydict)
+
+print(x) 
+
+https://www.w3schools.com/python/showpython.asp?filename=demo_mongodb_insert
+
+     
+218, Check if a collection exist 
+
+import pymongo
+myclient = pymongo.MongoClient('mongodb://localhost/27017/')
+mydb = myclient['mydatabase']
+mycol = mydb["customers"]
+print(mydb.list_collection_names())
+
+
+219, Create a collection 
+
+import pymongo
+myclient = pymongo.MongoClient('mongodb://localhost:27017/'
+mydb = myclient['mydatabase']
+mycol = mydb['customers'] 
+
+220, Check if a database exist 
+
+import pymongo
+myclient = pymongo.MongoClient('mongodb://localhost:27017/')
+print(myclient.list_database_names()) 
+
+221, Create a database 
+
+import pymongo
+myclient = pymongo.MongoClient('mongodb://localhost:27017/')
+mydb = myclinet['mydatabase']
+
+*************************************************************************************************
+
+222, Right Join 
+
+import mysql.connector
+
+mydb = mysql.connector.connect(
+		host="localhost",
+		user="myusername",
+		passwd="mypassword",
+		database="mydatabase"
+	   )
+	   
+mycursor = mydb.cursor() 
+
+sql = "SELECT \
+	   users.name AS user, \
+	   products.name AS favourite \
+	   FROM users \
+	   RIGHT JOIN products ON users.fav = products.id"
+	   
+mycursor.execute(sql)
+
+myresult = mycursor.fetchall()
+
+for x in myresult:
+	print(x) 
+	
+	
+223, Left Join 
+
+import mysql.connector
+
+mydb = mysql.connector.connect(
+		host="localhost",
+		user="myusername",
+		passwd="mypasword",
+		database="mydatabase"
+		)
+		
+mycursor = mydb.cursor()
+
+sql = "SELECT \
+       users.name AS user, \
+	   products.name AS favorite \
+	   FROM users \
+	   LEFT JOIN products ON users.fav = products.id" 
+	   
+mycursor.execute(sql)
+
+myresult = mycursor.fetchall() 
+
+for x in myresult:
+	print(x) 
+	
+	
+224, Combine rows from two or more tables, based on a related column between them.
+
+import mysql.connector
+
+mydb = mysql.connector.connect(
+		host="localhost",
+		user="myusername",
+		password="mypassword",
+		database="mydatabase"
+	  )
+	  
+mycursor = mydb.cursor() 
+
+sql = "SELECT \
+	  users.name AS user, \
+	  products.name AS favorite \
+	  FROM users \
+	  INNER JOIN products ON users.fav = products.id"
+	  
+mycursor.execute(sql)
+
+myresult = mycursor.fetchall()
+
+for x in myresult:
+	print(x) 
+	
+	
+225, Limit the number of records returned from a query. 
+
+import mysql.connector
+
+mydb = mysql.connector.connect(
+		host="localhost",
+		user="myusername",
+		password="mypassword",
+		database="mydatabase"
+	   )
+	   
+mycursor = mydb.cursor()
+mycursor.execute("SELECT * FROM customers LIMIT 5")
+myresult = mycursor.fetchall()
+
+for x in myresult:
+	print(x)
+	
+226, Prevent SQL injection
+
+import mysql.connector
+
+mydb = mysql.connector.connect(
+		host="localhost",
+		user="myusername",
+		password="mypassword",
+		database="mydatabase"
+	   )
+	   
+mycursor = mydb.cursor() 
+
+sql = "UPDATE customers SET address = %s WHERE address = %s"
+val = ("Valley 345", "Canyon 123")
+
+mycursor.execute(sql,val)
+
+mydb.commit() 
+
+print(mycursor.rowcount, "record(s) affected") 
+
+
+227, Update existing records in a table 
+
+import mysql.connector
+mydb = mysql.connector.connect(
+		host="localhost",
+		username="myusername",
+		password="mypassword",
+		database="mydatabase"
+	  )
+	  
+mycursor = mydb.cursor() 
+
+sql = "UPDATE customers SET address = 'Canyon 123' WHERE address = 'Valley 345'"
+
+mycursor.execute(sql)
+
+mydb.commit() 
+
+print(mycursor.rowcount, "record(s) affected")
+
+228, Delete a table if it exist 
+
+import mysql.connector
+mydb = mysql.connector.connect(
+		host="localhost",
+		username="myusername",
+		password="mypassword",
+		database="mydatabase"
+	  ) 
+
+mycursor = mydb.cursor() 
+
+sql = "DROP TABLE IF EXISTS customers"
+
+mycursor.execute(sql) 
+# if this page was executed with no error(s),
+# you have successfully deleted the "customers" table.
+
+229, Delete an existing table 
+
+import mysql.connector
+mydb = mysql.connector.connect(
+		host="localhost",
+		username="myusername",
+		password="mypassword",
+		database="mydatabase"
+	  )
+	  
+mycursor = mydb.cursor() 
+
+sql = "DROP TABLE customers"
+
+mycursor.execute(sql) 
+
+#If this page was executed with no error(s), you have successfully deleted the "customers" table. 
+
+https://www.w3schools.com/python/python_examples.asp
+
+230, Prevent SQL injection 
+
+import mysql.connector
+
+mydb = mysql.connector.connect(
+	   host="localhost",
+	   user="myusername",
+	   password="mypassword",
+	   database="mydatabase"
+	  )
+	  
+mycursor = mydb.cursor() 
+
+sql = "SELECT * FROM customers WHERE address = %s"
+adr = ("Yellow Garden 2",)
+
+mycursor.execute(sql, adr)
+
+myresult = mycursor.fetchall() 
+
+for x in myresult:
+	print(x) 
+	
+231, Wildcards characters 
+
+import mysql.connector
+
+mydb = mysql.connector.connect(
+		host="localhost",
+		user="username",
+		password="mypassword",
+		database="mydatabase"
+	  ) 
+	  
+mycursor = mydb.cursor() 
+
+sql = "SELECT * FROM customers WHERE address Like '%way%'"
+mycursor.execute(sql) 
+myresult = mycursor.fetchall() 
+for x in myresult:
+	print(x) 
+	
+
+232, Select with a filter 
+
+import mysql.connector
+
+mydb = mysql.connector.connect(
+		host="localhost",
+		user="username",
+		password="mypassword",
+		database="mydatabase"
+	  )
+	  
+sql = "SELECT * FROM customers WHERE address = 'Park Lane 38'"
+mycursor.execute(sql)
+
+myresult = mycursor.fetchall()
+
+for x in myresult:
+	print(x) 
+	
+
+233, Use the fetchone() method to fetch only one row in a table 
+
+import mysql.connector
+
+mydb = mysql.connector.connect(
+	   host="localhost",
+	   user="myusername",
+	   password="mypassword",
+	   database="mydatabase"
+	  )
+
+mycursor = mydb.cursor() 
+mycursor.execute("SELECT * FROM customers")
+myresult = mycursor.fetchone()
+print(myresult) 
+
+
+234, Select only some of the columns in a table 
+
+import mysql.connector
+
+mydb = mysql.connector.connect(
+		host="localhost",
+		user="myusername",
+		password="mypassword",
+		database="mydatabase"
+	   )
+	   
+mycursor = mydb.cursor()
+mycursor.execute("SELECT name,address FROM customers")
+myresult = mycursor.fetchall() 
+
+for x in myresult:
+	print(x) 
+	
+	
+235, Select all records from a table
+
+import mysql.connector
+
+mydb = mysql.connector.connect(
+		host="localhost",
+		user="myusername",
+		password="mypassword",
+		database="mydatabase"
+	   ) 
+	   
+mycursor = mydb.cursor()
+
+mycursor.execute("SELECT * FROM customers")
+
+myresult = mycursor.fetchall() 
+
+for x in myresult: 
+	print(x) 
+	
+
+236, Get inserted IDs
+
+import mysql.connector
+mydb = mysql.connector.connect(
+		host="localhost",
+		user="myusername",
+		password="mypassword",
+		database="mydatabase"
+	   )
+	   
+mycursor = mydb.cursor() 
+
+sql = "INSERT INTO customers (name,address) VALUES (%s,%s)"
+val = ("Michelle","Blue Village")
+mycursor.execute(sql,val);
+
+mydb.commit() 
+
+print("1 record inserted, ID: ", mycursor.lastrowid) 
+
+237, Insert multiple rows
+
+import mysql.connector
+mydb = mysql.connector.connect(
+       hostname="localhost",
+	   userr="myusername",
+	   password="mypassword",
+	   database="mydatabase"
+	   ) 
+	 
+mycursor = mydb.cursor()
+
+sql = "INSERT INTO customers (name, address) VALUES (%s,%s)"
+val = [
+  ('Peter','Lowstreet 4'),
+  ('Amy','Apple st 652')
+  ] 
+  
+mycurosor.executemany(sql,val);
+
+mydb.commit() 
+
+print(mycursor.rowcount, "record was inserted.")
+
+238, insert one records
+
+import mysql.connector
+
+mydb = mysql.connector.connect(
+		host="localhost",
+		user="myusername",
+		password="mypassword",
+		database="mydatabase"
+		) 
+		
+mycursor = mydb.cursor() 
+
+sql = "INSERT INTO customers (name,address) VALUES (%s, %s)"
+val = ("John","Highway 21")
+
+mycursor.execute(sql,val)
+mydb.commit() 
+
+print(mycursor.rowcount, "record inserted.")
+
+
+239, Create primary key when creating a table
+
+import mysql.connector
+mydb = mysql.connector.connect(
+		host="localhost",
+		user="yourusername",
+		password="yourpassword",
+		database="mydatabase"
+	  )
+	  
+mycursor = mydb.cursor() 
+
+mycursor.execute("CREATE TABLE customers (id INT AUTO_INCREMENT PRIMARY KEY,name VARCHAR(255), address VARCHAR(255))")
+# if this page is executed with no error, the table "customers" now has a primary key.
+
+
+240, Check if table exist
+
+import mysql.connector
+mydb = mysql.connector.connect(
+		host="localhost",
+		user="myusername",
+		password="yourpassword",
+		database="mydatabase"
+	  ) 
+	  
+mycursor = mydb.cursor() 
+mycursor.execute("SHOW TABLES")
+
+for x in mycursor:
+	print(x) 
+	
+241, Create a table 
+
+import mysql.connector
+mydb = mysql.connector.connect(
+		host="localhost",
+		user="myusername",
+		password="yourpassword",
+		database="mydatabase"
+		)
+		
+mycursor = mydb.cursor()
+mycursor.execute("CREATE TABLE customers (name VARCHAR(255),address VARCHAR(255))")
+
+#if the page is executed with no error, you have successfully created a table named "customers"
+
+242, Check if the database exist
+
+import mysql.connector
+
+mydb = mysql.connector.connect(
+		host="localhost",
+		user="myusername",
+		password="mypassword"
+	   )
+mycursor = mydb.cursor();
+
+mycursor.execute("SHOW DATABASES")
+
+for x in mycursor:
+	print(x) 
+	
+
+243, Create a database in MySQL 
+
+import mysql.connector
+mydb = mysql.connector.connect(
+		host="localhost",
+		user="myusername",
+		password="mypassword"
+	   )
+	   
+mycursor = mydb.cursor();
+mycursor.execute("CREATE DATABASE mydatabase")
+
+#If this page is executed with no error, you have successfully created a database.
+
+244, Create a connection to a database
+
+import mysql.connector
+mydb = mysql.connector.connect(
+	host="localhost",
+	user="myusername".
+	password="mypassword"
+	)
+	
+print(mydb)
+
+245, Loop through the lines of a file to read the whole file, line by line
+
+f = open("demofile.txt","r")
+for x in f:
+	print(x) 
+	
+
+246, Read one line of a file 
+
+f = open("demofile.txt","r")
+print(f.readline());
+
+247, Read only part of the file
+
+f = open("demofile.txt","r")
+print(f.read(5))
+
+248, Read a file 
+
+f = open("demo.txt","r")
+print(f.read()) 
+
+249, Use the finally block to execute code regardless if the try block raises an error or not
+
+# The finally block gets executed no matter if the try block raises any errors or not:
+
+try:
+	print(x)
+except:
+	print("Something went wrong")
+finally:
+	print("The 'try except' is finished")
+	
+250, Use the else keyword to define a block of code to be executed if no errors were raised.
+
+# The try block does not raise any errors, so the else block is executed:
+try:
+	print("Hello")
+except:
+	print("Something went wrong")
+else:
+	print("Nothing went wrong")
+	
+
+251, More exceptions
+
+# The try block will generate a NameError, because x is not defined.
+try:
+	print(x)
+except NameError:
+	print("Variable x is not defined")
+except:
+	print("Something else went wrong") 
+	
+252, When an error occurs, print the text 
+
+# The try block will generate an error, because x is not defined:
+
+try:
+   print(x)
+except:
+   print("An exception occured")
+   
+253, Using a package
+
+import camelcase
+c = camelcase.CamelCase()
+txt = "lorem ipsum dolor sit amet"
+print(c.hump(txt)) 
+
+#The method capitalizes the first letter of each word.
+
+
+254, Using the sub() function 
+
+import re
+
+#Replace all white-space characters with the digit "9":
+
+txt = "The rain in Spain"
+x = re.sub("\s","9",txt)
+print(x) 
+
+
+255, Use the split function 
+
+import re
+
+#Splict the string at every white-space character and prints it in list datatype format. 
+
+txt = "The rain in Spain"
+x = re.split("\s",txt);
+print(x) 
+
+256, Using the search() function 
+
+import re
+
+txt = "The rain in Spain"
+x = re.search("\s",txt)
+
+print("The first white-space character is located in position:", x.start())
+
+257, Using the findall() function
+
+import re
+
+#Return a list containing every occurance of "ai":
+
+txt = "The rain in Spain"
+x = re.findall("ai",txt);
+print(x) 
+
+258, Search a string to see if it starts with "The" and ends with "Spain"
+
+import re
+
+#Check if the string starts with "The" and ends with "Spain":
+
+txt = "The rain in Spain"
+x = re.search("^The.*Spain$",txt)
+
+if x:
+	print("YES! We have a match!")
+else:
+	print("No match")
+	
+259, Use the sort_keys parameter to specify if the result should be sorted or not.
+
+import json
+
+x = {
+	"name": "John",
+	"age": 30,
+	"married": True,
+	"divorced": False,
+	"children": ("Ann","Billy"),
+	"pets": None,
+	"cars" : [
+		{"model":"BMW 230", "mpg": 27.5},
+		{"model":"FordEdge", "mpg": 24.1}
+	]
+   }
+   
+#Sort the result alphabetically by keys
+print(json.dumps(x, indent=4, sort_keys=True))
+
+
+260, Use the separators parameter to change the default separators
+
+import json
+x = {
+	"name": "John",
+	"age": 30,
+	"married": True,
+	"divorced": False,
+	"children": ("Ann","Billy"),
+	"pets": None,
+	"cars": [
+	    {"model": "BMW 230", "mpg":27.5},
+		{"model": "Ford Edge", "mpg": 24.1}
+	 ]
+    }
+	
+#Use . and a space to separate objects, and a space, a = and a space to separate keys from their values:
+print(json.dumps(x, indent=4, separators=(". "," = "))) 
+
+
+https://www.w3schools.com/python/python_examples.asp
+
+261, Recall what shallow and deep copies mean for complex data types.
+
+  - Shallow copies are made when two variables point to the same location in memory.
+  - Updates made using one variable are reflected when accessing the data using the other variable.
+  - The same complex data types has just two names i.e., the two variables.
+  
+  - Deep copies are made when the same data is copied over to an entirely new memory location. 
+  - Changes made to the deep copy are not reflected in the original memory.
+
+262, Explain how copying works with strings.
+
+   - Strings are immutable in Python.
+   - Once created, strings cannot be updated.
+   - Using assignment operations with strings referene the same location in memory.
+   - But that location cannot be changed.
+   - Assigning a new string vlaue to a variable just creates a new string. 
+
+
+263, Explain how copying works with lists.
+
+     list_b = list_a // This creates a shallow copy of a list.
+	 
+	 list_b = list_a[:] // This creates a deep copy of a list. 
+	 
+	 list_b = copy.copy(list_a) // This creates a deep copy of the outer list but shallow copies of any nested complex data types.
+	 
+	 list_b = copy.deepcopy(list_a) // This creates a deep copy of the outer list and all of the nested data types.
+	 
+264, Consider a tuple as show below:
+
+     Code Editor:
+	 tuple_a = ("John","Amy","Jules",["Jim","Ana"])
+	 
+	 What code would you run to create a deep copy of this tuple?
+	 
+	 deep_copy = copy.deepcopy(tuple_a)
+	 
+265, For a set in Python what is the difference between copy.copy() and the copy.deepcopy() method?
+
+     No difference between the two because sets cannot hold mutable types like lists
+	 
+267, Consider the following code:
+
+     Code Editor:
+	 old_list = ["John","Amy","Jules"]
+	 new_list = old_list
+	 new_list.append("Emily")
+	 
+	 What will be the value stored in old_list after these lines of code are executed?
+	 
+	 ["John","Amy","Jules","Emily"]
+	 
+268, Consider the following bit of code: 
+
+     Code Editor:
+     dict_a = {"John":35,"Jim":22,"Jill":44}
+     dict_copy = dict_a
+     dict_copy['John']=40
+     del dict_copy['John']
+
+     After executing this code, what is the value of associated with John in dict_a? 
+
+     The key John does not exist in dict_a
+
+269, Consider the following code:
+     
+     Code Editor:
+	old_str = "Hello"
+	new_str = old_str
+	new_str = "World"
+	
+	What will be the value stored in old_str after these lines of code are executed? 
+	
+	"Hello"
+	
+270, Consider the following code:
+     
+	 Code Editor:
+	 old_list = ["John","Amy","Jules"]
+	 new_list = old_list.copy()
+	 new_list.append("Emily")
+	 
+	 What will be the value stored in old_list after these lines of code are executed?
+	 
+	 ["John","Amy","Jules]
+	 
+271, Coniser the following bit of code:
+
+     Code Editor:
+	 dict_a = {"John":35,"Jim":22,"Jill":44}
+	 dict_copy = dict_a.copy()
+	 dict_copy['John'] = 40
+	 
+	 After executing this code, what is the value associtaed with John in dict_a?
+	 
+     35
+	 
+	 
+ 
+272, Use the indent parameter to define the numbers of indents. 
+
+import json 
+
+x = {
+	"name": "John",
+	"age": 30,
+	"married": True,
+	"divorced": False,
+	"children": ("Ann","Billy"),
+	"pets": None,
+	"cars": [
+	{"model":"BMW 230","mpg":27.5},
+	{"model":"Ford Edge","mpg":24.1}
+	]
+}
+
+#Use four indents to make it easier to read the result:
+print(json.dumps(x, indent=4)
+
+
+273, convert a python objects containing all the legal data types.
+
+import json 
+
+x = {
+	"name": "John",
+	"age": 30,
+	"married": True,
+	"divorced": False,
+	"children": ("Ann","Billy"),
+	"pets": None,
+	"cars": [
+	{"model":"BMW 230","mpg":27.5},
+	{"model":"Ford Edge","mpg":24.1}
+	]
+}
+
+#Convert into JSON:
+y = json.dumps(x)
+
+#the result is a JSON string:
+print(y) 
+
+274, convert python to json 
+
+import json
+# a Python object (dict):
+x = {
+	"name":"John",
+	"age": 30,
+	"city": "New York"
+}
+#Convert into JSON
+y = json.dumps(x)
+
+#The result is a JSON string:
+print(y) 
+
+
+275, convert json to python
+
+import json
+# some JSON:
+x = '{"name":"John","age":30,"city":"New York"}'
+
+# parse x:
+y = json.loads(x)
+
+#The result is a python dicitionary:
+print[y["age"])
+
+276, Return the value of PI 
+
+import math
+x = math.pi
+print(x) 
+
+277, Round a number upwards and downwards to its nearest integer
+
+#Import math library
+import math 
+
+#Round a number upward to its nearest integer
+x = math.ceil(1.4)
+
+#Round a number downward to its nearest integer
+y = math.floor(1.4)
+
+
+print(x)
+print(y)
+
+
+278, Square root of a number
+import math
+x = math.sqrt(64)
+print(x)
+
+279, Return the value of x to the power of y.
+x = pow(4,3)
+print(x)
+
+280, Return the absolute value of a number.
+x = abs(-7.25)
+print(x)
+
+281, Find the lowest and highest value in an iterable
+
+x = min(5,20,25)
+y = max(5,20,25)
+print(x)
+print(y)
+
+282, The strftime() method
+
+import datetime
+x = datetime.datetime(2018,6,1)
+print(x.strftime("%B")) 
+
+Output: June 
+
+283, Create a date object 
+
+import datetime
+x = datetime.datetime(2020,5,17)
+print(x)
+
+Output: 2020-05-17 00:00:00
+
+284, Return the year and name of weekday. 
+
+import datetime
+x = datetime.datetime.now() 
+
+print(x.year)
+print(x.strftime("%A"))
+
+Output: 
+2024
+Tuesday
+
+
+285, Import the datetime module and display the current date.
+
+import datetime
+x = datetime.datetime.now()
+print(x) 
+
+Output: 
+
+2024-04-23 16:08:00.156885
+
+286, Import from module
+
+from mymodule import person1
+print(person1["age"])
+
+287, using the dir() function 
+
+import platform
+x = dir(platform)
+print(x)
+
+288, Built-in modules 
+
+import platform
+x = platform.system()
+print(x) 
+
+289, Re-naming a module 
+
+import mymodule as mx
+a = mx.person1["age"]
+print(a)
+
+290, Variables in module
+
+import mymodule
+a = mymodule.person1["age"]
+print(a) 
+
+291, use of module
+import mymodule
+mymodule.greeting("Jonathan")
+
+
+
+
+
+
+
+
+
+
+ 
+
+     
+
+	 
+	 
+	 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	   
+	  
+
+
+ 
+
+    
+	 
+	 
